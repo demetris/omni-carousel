@@ -19,11 +19,11 @@
   @use './views/docs';
 
   @use './objects/section';
+  @use './objects/icon';
 
   @use './components/header';
   @use './components/nav';
   @use './components/main';
-  @use './components/demos';
   @use './components/footer';
   @use './components/skip-link';
   @use './components/entry';
@@ -46,3 +46,5 @@
 //@use './font-face/font-family-geist-mono';
 
   @use './utilities';
+
+  @use './demos/main' as demos;

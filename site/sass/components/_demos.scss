@@ -1,7 +1,0 @@
-@use '@sass/mixins/media-queries' as mq;
-
-.demos__body {
-  @include mq.to-lg {
-    padding-inline: var(--space-x);
-  }
-}
