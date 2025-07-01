@@ -1,4 +1,4 @@
-import type { Context } from '../core';
+import type { Context } from '../types';
 
 /**
  * Handles keyboard events for carousel navigation

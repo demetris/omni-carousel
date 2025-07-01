@@ -16,7 +16,7 @@ export type {
   Selectors,
   State,
   Utils,
-} from './types';
+} from '../types';
 
 export { createOmniCarousel } from './carousel';
 export { mergeConfig } from './config';

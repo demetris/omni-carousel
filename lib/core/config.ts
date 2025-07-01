@@ -1,4 +1,4 @@
-import type { Config, Options } from './types';
+import type { Config, Options } from '../types';
 
 import { defaults } from './defaults';
 

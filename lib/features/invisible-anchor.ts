@@ -1,6 +1,6 @@
-import type { Context } from '../core';
+import type { Context } from '../types';
 
-import { internalConfig } from '../core';
+import { internalConfig } from '../core/internal-config';
 
 /**
  * @needed for scrollAlign:'center' + scrollSteps:'many'

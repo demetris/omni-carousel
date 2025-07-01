@@ -1,4 +1,4 @@
-import type { Context, InboundItems, ScrollDirection } from '../core';
+import type { Context, InboundItems, ScrollDirection } from '../types';
 
 import { getItemSpacing } from '../utils';
 

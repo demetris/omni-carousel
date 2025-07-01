@@ -1,6 +1,6 @@
-import type { Context } from '../core';
+import type { Context } from '../types';
 
-import { internalConfig as internal } from '../core';
+import { internalConfig as internal } from '../core/internal-config';
 
 /**
  * Handles the transitionend event for the carousel slides

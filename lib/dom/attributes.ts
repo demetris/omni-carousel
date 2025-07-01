@@ -1,6 +1,6 @@
-import type { Context, InitialState } from '../core';
+import type { Context, InitialState } from '../types';
 
-import { internalConfig as internal } from '../core';
+import { internalConfig as internal } from '../core/internal-config';
 
 /**
  * Captures the initial state of attributes for later restoration

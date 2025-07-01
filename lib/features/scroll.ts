@@ -1,6 +1,6 @@
-import type { Context, ScrollDirection } from '../core';
+import type { Context, ScrollDirection } from '../types';
 
-import { internalConfig as internal } from '../core';
+import { internalConfig as internal } from '../core/internal-config';
 import { getInboundItems } from './steps-many-align-all';
 import { placeInvisibleAnchor } from './invisible-anchor';
 import { supportsScrollend } from '../utils/browser-support';

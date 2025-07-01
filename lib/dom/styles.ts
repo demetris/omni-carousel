@@ -1,6 +1,6 @@
-import type { ScrollAlign, Context } from '../core';
+import type { ScrollAlign, Context } from '../types';
 
-import { internalConfig as internal } from '../core';
+import { internalConfig as internal } from '../core/internal-config';
 
 /**
  * Gets CSS scroll-snap-align value of an element to use as preferred scroll alignment

@@ -1,6 +1,6 @@
 import type { Emitter } from 'nanoevents';
-import type { Context, OmniEvents, InitialState } from '../core';
-import { internalConfig as internal } from '../core';
+import type { Context, OmniEvents, InitialState } from '../types';
+import { internalConfig as internal } from '../core/internal-config';
 
 import {
   clearItemAttributes,

@@ -1,4 +1,4 @@
-import type { Context } from '../core';
+import type { Context } from '../types';
 
 /**
  * Updates the previous and start button states based on whether the first item is fully visible

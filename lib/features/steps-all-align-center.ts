@@ -1,11 +1,11 @@
-import type { Context, ScrollDirection } from '../core';
+import type { Context, ScrollDirection } from '../types';
 
 import {
   getFallbackItem,
   getRectCenterX,
 } from './utils';
 
-import { internalConfig as internal} from '../core';
+import { internalConfig as internal} from '../core/internal-config';
 
 /**
  * @neededfor scrollAlign:'center' + scrollSteps:'one'

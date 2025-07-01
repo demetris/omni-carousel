@@ -1,6 +1,6 @@
-import type { Context, ScrollDirection } from '../core';
+import type { Context, ScrollDirection } from '../types';
 
-import { internalConfig as internal } from '../core';
+import { internalConfig as internal } from '../core/internal-config';
 
 import { determineAlignmentForIndicator } from '../features/indicators';
 import { getAdjacentItem } from '../features/steps-all-align-start';

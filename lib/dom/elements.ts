@@ -1,4 +1,4 @@
-import type { OmniElements, Selectors } from '../core';
+import type { OmniElements, Selectors } from '../types';
 
 /**
  * Gets all necessary DOM elements for the carousel

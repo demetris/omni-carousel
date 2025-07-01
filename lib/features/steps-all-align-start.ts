@@ -1,4 +1,4 @@
-import type { Context, ScrollDirection } from '../core';
+import type { Context, ScrollDirection } from '../types';
 
 /**
  * @neededfor scrollAlign:'start' + scrollSteps:'one'

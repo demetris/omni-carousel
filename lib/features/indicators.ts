@@ -1,6 +1,6 @@
-import type { Context } from '../core';
+import type { Context } from '../types';
 
-import { internalConfig as internal } from '../core';
+import { internalConfig as internal } from '../core/internal-config';
 import { calculateCenterScrollPosition } from './utils';
 
 /**

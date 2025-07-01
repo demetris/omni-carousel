@@ -1,4 +1,4 @@
-import type { Context, IntersectionState, ItemIntersectionObservation } from '../core';
+import type { Context, IntersectionState, ItemIntersectionObservation } from '../types';
 
 import { insertInOrder, removeAtIndex } from '../utils';
 

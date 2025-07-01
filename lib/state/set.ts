@@ -1,9 +1,9 @@
-import type { Context, State, Config } from '../core';
+import type { Context, State, Config } from '../types';
 
 import { centerIndicators } from '../features';
 import { debounce } from '../utils/debounce';
 import { supportsScrollend, hasBlinkEngine } from '../utils/browser-support';
-import { internalConfig as internal } from '../core';
+import { internalConfig as internal } from '../core/internal-config';
 
 /**
  * Creates and initializes the carousel state

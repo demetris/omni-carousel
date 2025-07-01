@@ -1,4 +1,4 @@
-import type { Selectors } from './types';
+import type { Selectors } from '../types';
 
 /**
  * Default selectors for the carousel elements

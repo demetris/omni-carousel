@@ -6,7 +6,7 @@ import type {
   OmniEvents,
   Options,
   Utils,
-} from './types';
+} from '../types';
 
 import {
   internalConfig as internal

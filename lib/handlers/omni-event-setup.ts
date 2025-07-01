@@ -1,4 +1,4 @@
-import type { Context, InitialState } from '../core';
+import type { Context, InitialState } from '../types';
 
 import {
   getScrollSnapAlign,
