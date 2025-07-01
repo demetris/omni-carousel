@@ -2,6 +2,7 @@
 import SearchClose from '@components/SearchClose.astro';
 import MagnifyingGlass from '@icons/fa/magnifying-glass-solid.svg'
 import Git from '@icons/simple-icons/git.svg';
+import Logo from 'public/favicon.svg';
 import { SITE } from '@root/site/site.config';
 import MenuToggle from './MenuToggle.astro';
 
@@ -16,16 +17,19 @@ const { title, description } = Astro.props;
 <header class="header">
   <a 
     href="/" 
-    class="home-link site-title"
+    class="home-link site-branding"
     aria-current={Astro.url.pathname === '/' ? 'page' : undefined}
   >
-    {title}
+    <Logo
+      class="icon icon--site-logo"
+      aria-label="Omni Carousel logo"
+    />
+    <span class="site-title">{title}</span>
   </a>
 
   {/*
     Styling for this element is found in: src/sass/components/_search.scss
   */}
-
   <a
     href="/search/"
     class="search-input-link search-input-appearance"

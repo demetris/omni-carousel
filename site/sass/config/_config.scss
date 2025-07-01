@@ -87,6 +87,9 @@
   --height-for-header: calc(var(--height-for-header-row-title) + var(--height-for-header-row-search));
   --height-for-footer: 128px;
 
+  --gap-for-branding: var(--xs);
+  --width-for-logo: var(--lg-xl);
+
   @include mq.from-multi-col {
     --height-for-button: 3rem;
 

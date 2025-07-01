@@ -6,6 +6,8 @@
 
   --bg-color: var(--white);
 
+  --color-for-logo: var(--teal-11);
+
   --color-for-link: var(--brown-11);
   --color-for-link-decoration: rgba(127, 127, 127, 0.125);
   --color-for-link-decoration-interaction: var(--color);
@@ -51,6 +53,6 @@
   ///
   /// a11y (Accessibility)
   ///
-  --bg-color-for-skip-link: var(--gray-12);
   --color-for-skip-link: var(--white);
+  --bg-color-for-skip-link: var(--gray-12);
 }
