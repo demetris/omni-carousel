@@ -2,6 +2,8 @@
 Know your track width
 ================================================================================
 
+**This document is WIP**
+
 Tecnhiques for controlling the width and height of responsive slides
 
 ```css
