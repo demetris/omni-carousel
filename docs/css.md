@@ -2,6 +2,8 @@
 Essential and recommended CSS
 ================================================================================
 
+**This document is WIP**
+
 All examples use the default CSS selectors (data attributes) of Omni.
 You can change change the default selectors to your own selectors with the `selectors` property.
 
