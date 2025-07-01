@@ -1,0 +1,65 @@
+
+#
+# Directory to for various files not tracked in Git
+#
+.local/
+
+#
+# Claude Code
+#
+CLAUDE.md
+**/.claude/settings.local.json
+
+#
+# build output
+#
+dist/
+
+#
+# Generated types
+#
+.astro/
+
+#
+# Test coverage
+#
+coverage/
+src/coverage/
+src/lib/coverage/
+**/coverage/
+**/*.html.map
+
+#
+# Dependencies
+#
+node_modules/
+
+#
+# Logs
+#
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+#
+# Environment variables
+#
+.env
+.env.local
+.env.production
+
+#
+# macOS
+#
+.DS_Store
+
+#
+# JetBrains settings
+#
+.idea/
+
+#
+# Pagefind: Local index and files for the dev server
+#
+public/pagefind

@@ -1,0 +1,181 @@
+<div class="debugger">
+  {/*
+  <p class="message cqw">
+    cqw:
+    <span class="not-supported">not</span>
+    <span class="supported">supported</span>
+  </p>
+  <p class="message color-gamut">
+    color-gamut:
+    <strong>
+      <span class="srgb">sRGB</span>
+      <span class="p3">P3</span>
+      <span class="rec2020">rec2020</span>
+      <span class="none">standard</span>
+    </strong>
+  </p>
+  <p class="message color-mix">
+    color-mix():
+    <span class="not-supported">not</span>
+    <span class="supported">supported</span>
+  </p>
+  */}
+  <p class="message prefers-reduced-motion">
+    prefers-reduced-motion:
+    <strong>
+      <span class="reduce">reduce</span>
+      <span class="no-preference">no-preference</span>
+    </strong>
+  </p>
+  {/*
+  <p class="message scroll-behavior">
+    scroll-behavior: <span class="not-supported">not</span> <span class="supported">supported</span>
+  </p>
+  */}
+</div>
+
+<style lang="scss">
+  .debugger {
+    --border-width: var(--4xs);
+    --border-color: var(--color-blue-600);
+  }
+  .debugger {
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--shadow-1);
+  //border-block: var(--border-width) solid var(--border-color);
+    background-color: var(--color-blue-100);
+    padding-inline: var(--space-x);
+    padding-block: var(--xs) var(--sm);
+    color: var(--color-blue-950);
+    font-size: var(--md-sm);
+
+    /*
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: var(--border-width);
+      background-color: var(--border-color);
+    }
+
+    &::before {
+      left: 0;
+    }
+    */
+
+    .feature {
+      font-weight: var(--font-weight-bold);
+    }
+  }
+
+  .debugger > p {
+    margin-bottom: 0;
+    line-height: calc(1 * var(--scale));
+  }
+
+  ///
+  /// Container queries: cqw unit
+  /// 
+  .debugger .cqw {
+    .supported {
+      @supports (width: 100cqw) {
+        font-weight: var(--font-weight-bold);
+      }
+    }
+    
+    .not-supported {
+      display: inline;
+      font-weight: var(--font-weight-bold);
+
+      @supports (width: 100cqw) {
+        display: none;
+      }
+    }
+  }
+
+  .debugger .color-mix {
+    .supported {
+      @supports (color: color-mix(in srgb, black, white)) {
+        font-weight: var(--font-weight-bold);
+      }
+    }
+    
+    .not-supported {
+      display: inline;
+      font-weight: var(--font-weight-bold);
+
+      @supports (color: color-mix(in srgb, black, white)) {
+        display: none;
+      }
+    }
+  }
+
+  .scroll-behavior {
+    .supported {
+      @supports (scroll-behavior: smooth) {
+        font-weight: var(--font-weight-bold);
+      }
+    }
+    
+    .not-supported {
+      display: inline;
+      font-weight: var(--font-weight-bold);
+
+      @supports (scroll-behavior: smooth) {
+        display: none;
+      }
+    }
+  }
+
+  .debugger .prefers-reduced-motion {
+    @media (prefers-reduced-motion) {
+      .no-preference {
+        display: none;
+      }
+    }
+
+    @media not (prefers-reduced-motion) {
+      .reduce {
+        display: none;
+      }
+    }
+  }
+
+  .debugger .color-gamut {
+    .srgb, .p3, .rec2020 {
+      display: none;
+    }
+
+    @media (color-gamut: srgb) {
+      .srgb {
+        display: inline;
+      }
+
+      .none {
+        display: none;
+      }
+    }
+
+    @media (color-gamut: p3) {
+      .p3 {
+        display: inline;
+      }
+
+      .srgb, .none {
+        display: none;
+      }
+    }
+
+    @media (color-gamut: rec2020) {
+      .rec2020 {
+        display: inline;
+      }
+
+      .p3, .srgb, .none {
+        display: none;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,70 @@
+@use '@sass/mixins/media-queries' as mq;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  height: var(--height-for-header);
+
+  ///
+  /// Use box-shadow instead of border for this one:
+  /// Does not affect content size and makes calculations easier.
+  /// Also add a subtle shadow for the sticky header.
+  ///
+  box-shadow:
+    0 0 0 var(--border-width-for-section) var(--border-color-for-section),
+    var(--shadow-2);
+
+  background-color: var(--bg-color);
+  padding-inline: var(--space-x);
+
+  @include mq.to-multi-col {
+    align-items: center;
+    padding-bottom: var(--height-for-header-row-search);
+  }
+
+  @include mq.from-multi-col {
+    align-items: center;
+  }
+
+  @include mq.from-lg {
+  }
+}
+
+.site-title {
+  text-decoration: none;
+  color: inherit
+}
+
+.header-links {
+  transition-property: opacity;
+  transition-duration: var(--transition-duration);
+
+  margin-left: auto;
+  margin-right: var(--xs);
+
+  @include mq.from-multi-col {
+    margin-right: 0;
+  }
+
+  .search-page & {
+    opacity: 0;
+  }
+
+
+}
+
+.header-links a {
+  display: grid;
+  place-content: center;
+
+  width: var(--height-for-button);
+  height: var(--height-for-button);
+
+  border: 1px solid var(--border-color-for-button);
+  border-radius: var(--border-radius-sm);
+}
+
+.header-links .icon {
+  font-size: var(--lg);
+}

@@ -1,0 +1,33 @@
+@use '@sass/mixins/media-queries' as mq;
+
+p {
+  margin-block: 0 var(--margin-bottom);
+  max-width: var(--width-readable);
+}
+
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: var(--margin-bottom);
+  padding-left: var(--md);
+}
+
+ul ul {
+  margin-bottom: 0;
+}
+
+li > ul {
+  margin-top: var(--margin-bottom-for-list-item);
+}
+
+li {
+  padding-left: var(--4xs);
+
+  &:not(:last-child) {
+    margin-bottom: var(--margin-bottom-for-list-item);
+  }
+}
+
+pre {
+  font-family: var(--font-family-monospace);
+}

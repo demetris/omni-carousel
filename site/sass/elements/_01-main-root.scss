@@ -1,0 +1,30 @@
+@use '@sass/mixins/media-queries' as mq;
+
+html {
+  background-color: var(--bg-color);
+
+  line-height: var(--line-height);
+
+  font-size: 15px;
+
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+
+  @include mq.from-md() {
+    font-size: 16px;
+  }
+
+  @include mq.from-lg() {
+  }
+
+  @include mq.from-xl() {
+  }
+
+  @include mq.from-2xl() {
+    font-size: 17px;
+  }
+
+  @include mq.from-3xl() {
+    font-size: 18px;
+  }
+}

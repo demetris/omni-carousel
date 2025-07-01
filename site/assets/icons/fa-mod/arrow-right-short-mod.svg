@@ -1,0 +1,9 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
+  class="icon icon--arrow-right-short"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path d="M406.6 278.6a32 32 0 0 0 0-45.3l-128-128a32 32 0 0 0-45.3 45.3l73.4 73.4H128a32 32 0 1 0 0 64h178.7l-73.4 73.4a32 32 0 0 0 45.3 45.3l128-128z"/>
+</svg>

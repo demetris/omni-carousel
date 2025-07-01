@@ -1,0 +1,102 @@
+///
+///
+/// Media queries
+///
+///
+
+@use '@sass/config/config-breakpoints' as *;
+@use 'sass:map';
+@use 'sass:list';
+
+$step: 0.02;
+$bp: $breakpoints;
+
+///
+/// Get breakpoint keys in order
+///
+
+$breakpoint-keys: map.keys($bp);
+
+///
+/// Media query generators
+///
+
+@function _to-query($breakpoint) {
+  @if not map.has-key($bp, $breakpoint) {
+    @error "Unknown breakpoint: #{$breakpoint}";
+  }
+  @return "(max-width: #{map.get($bp, $breakpoint) - $step})";
+}
+
+@function _from-query($breakpoint) {
+  @if not map.has-key($bp, $breakpoint) {
+    @error "Unknown breakpoint: #{$breakpoint}";
+  }
+  @return "(min-width: #{map.get($bp, $breakpoint)})";
+}
+
+@function _from-to-query($start, $end) {
+  @if not (map.has-key($bp, $start) and map.has-key($bp, $end)) {
+    @error "Unknown breakpoint names: #{$start} or #{$end}";
+  }
+  @return "(min-width: #{map.get($bp, $start)}) and (max-width: #{map.get($bp, $end) - $step})";
+}
+
+///
+/// Simplified API mixins
+///
+
+@mixin to($breakpoint) {
+  @media #{_to-query($breakpoint)} { @content; }
+}
+
+@mixin from($breakpoint) {
+  @media #{_from-query($breakpoint)} { @content; }
+}
+
+@mixin from-to($start, $end) {
+  @media #{_from-to-query($start, $end)} { @content; }
+}
+
+@mixin between($start, $end) {
+  @include from-to($start, $end) { @content; }
+}
+
+///
+/// For backward compatibility
+///
+
+@mixin to-xs { @include to('xs') { @content; } }
+@mixin to-sm { @include to('sm') { @content; } }
+@mixin to-md-sm { @include to('md-sm') { @content; } }
+@mixin to-md { @include to('md') { @content; } }
+@mixin to-md-lg { @include to('md-lg') { @content; } }
+@mixin to-lg { @include to('lg') { @content; } }
+@mixin to-xl { @include to('xl') { @content; } }
+@mixin to-2xl { @include to('2xl') { @content; } }
+@mixin to-3xl { @include to('3xl') { @content; } }
+
+@mixin to-multi-col { @include to('multi-col') { @content; } }
+
+@mixin from-xs { @include from('xs') { @content; } }
+@mixin from-sm { @include from('sm') { @content; } }
+@mixin from-md-sm { @include from('md-sm') { @content; } }
+@mixin from-md { @include from('md') { @content; } }
+@mixin from-md-lg { @include from('md-lg') { @content; } }
+@mixin from-lg { @include from('lg') { @content; } }
+@mixin from-xl { @include from('xl') { @content; } }
+@mixin from-2xl { @include from('2xl') { @content; } }
+@mixin from-3xl { @include from('3xl') { @content; } }
+
+@mixin from-multi-col { @include from('multi-col') { @content; } }
+
+@mixin from-xs-to-sm { @include from-to('xs', 'sm') { @content; } }
+@mixin from-sm-to-md-sm { @include from-to('sm', 'md-sm') { @content; } }
+@mixin from-sm-to-md { @include from-to('sm', 'md') { @content; } }
+@mixin from-md-sm-to-md { @include from-to('md-sm', 'md') { @content; } }
+@mixin from-md-to-md-lg { @include from-to('md', 'md-lg') { @content; } }
+@mixin from-md-to-lg { @include from-to('md', 'lg') { @content; } }
+@mixin from-md-lg-to-lg { @include from-to('md-lg', 'lg') { @content; } }
+@mixin from-lg-to-xl { @include from-to('lg', 'xl') { @content; } }
+@mixin from-xl-to-2xl { @include from-to('xl', '2xl') { @content; } }
+@mixin from-2xl-to-3xl { @include from-to('2xl', '3xl') { @content; } }

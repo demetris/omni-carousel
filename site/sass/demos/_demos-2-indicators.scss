@@ -1,0 +1,131 @@
+@use '@sass/mixins/media-queries' as mq;
+
+.demo {
+  --indicator-width: calc(var(--indicator-height) * var(--d-aspect-ratio));
+  --indicator-height: 16px;
+  --indicator-gap: calc(var(--indicator-height) / 2);
+}
+
+.demo--numbered-indicators {
+  --indicator-height: 34px;
+  --indicator-gap: calc(var(--indicator-height) / 4);
+}
+
+///
+///
+/// Εssential styles for the indicators
+///
+///
+
+[data-omni-indicators] {
+  display: flex;
+
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+[data-omni-indicator] {
+  flex: none;
+
+  ///
+  /// NOTE
+  /// Do NOT use justify-content on the container!
+  /// It interferes with the autocentering of the indicators (needed sometimes)
+  ///
+
+  &:first-child {
+    margin-left: auto;
+  }
+
+  &:last-child {
+    margin-right: auto;
+  }
+}
+
+///
+/// The DIV elements are generated dynamically.
+/// Use the :global() selector to make sure they are styled.
+/// See: https://docs.astro.build/en/guides/styling/
+///
+
+[data-omni-indicators] {
+  gap: var(--indicator-gap);
+  margin-block-start: calc(var(--xs) * -1);
+  height: calc(var(--indicator-height) + 2px);
+  padding-block-end: var(--sm);
+}
+
+[data-omni-indicator] {
+
+  transition-property: border-color, background-color, color;
+  transition-duration: calc(var(--transition-duration) * 4);
+
+  width: var(--indicator-width);
+  min-width: var(--indicator-width);
+  height: var(--indicator-height);
+  min-height: var(--indicator-height);
+  border-radius: var(--border-radius-sm);
+  border-width: 1px;
+  border-color: var(--border-color-for-slide);
+  box-shadow: var(--shadow-1);
+  background-color: transparent;
+  padding: 0;
+
+  &:active,
+  &:focus-visible {
+    border-color: var(--color);
+  }
+
+  ///
+  /// Styles to indicate indicators for fully and partially visible slides
+  ///
+
+  &.is-omni-current {
+    border-color: var(--color);
+  }
+
+  &.is-omni-part-current {
+    border-color: var(--gray-7);
+  }
+
+  &:hover {
+    transition-duration: var(--transition-duration);
+
+    border-color: var(--color);
+  }
+}
+
+.demo--numbered-indicators [data-omni-indicator] {
+  background-color: transparent;
+
+  color: var(--gray-9);
+  font-size: var(--xs);
+
+  &.is-omni-current {
+    border-color: var(--color);
+    background-color: transparent;
+
+    color: var(--color);
+  }
+
+  &.is-omni-part-current {
+    border-color: var(--gray-9);
+
+    color: var(--gray-11);
+  }
+
+  &:hover {
+    border-color: var(--blue-50v);
+    background-color: var(--blue-40v);
+
+    color: var(--white);
+  }
+}

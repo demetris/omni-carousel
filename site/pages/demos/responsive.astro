@@ -1,0 +1,79 @@
+---
+import Demos from '@components/Demos.astro';
+import Carousel from '@components/carousel/Carousel.astro';
+---
+
+<Demos
+  title="Responsive slides"
+  description="Carousels that display different numbers of slides based on screen size"
+>
+
+  <Carousel
+    title="Digits"
+    ariaLabel="Carousel with two text slides"
+    classes={[
+      'demo--responsive',
+      'demo--snap-center',
+      'demo--digits',
+      'demo--no-scrollbar',
+    ]}
+    indicators={true}
+    digitCount={6}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Zero configuration</dt>
+        <dd></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <Carousel
+    title="Photographs"
+    ariaLabel="Carousel with photographs"
+    classes={[
+      'demo--responsive',
+      'demo--snap-center',
+      'demo--images'
+    ]}
+    indicators={true}
+    photoIDs={[
+      "alex-padurariu-5rlktbEX5bY",
+      "alex-padurariu-ZR48YvUpk04",
+      "hamed-daram-776370",
+      "hendrik-kespohl-Stk2vfPWr0w",
+      "clark-van-der-beken-chcyjyRQV74", 
+      "delila-ziebart-3P6E2y2lyus",
+      "william-daigneault-733670",
+      "ferdinand-stohr-O2JbMiA6ias"
+    ]}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Zero configuration</dt>
+        <dd></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <style lang="scss" is:global>
+    @use '@sass/demos/main';
+  </style>
+</Demos>
+
+<script>
+  import { domReady } from '@utils/dom-ready';
+  import { createOmniCarousel } from '@lib/index';
+
+  domReady(() => {
+    const carouselElements = document.querySelectorAll('.demo--responsive');
+    const carousels = [];
+
+    carouselElements.forEach((element) => {
+      const carousel = createOmniCarousel(element as HTMLElement, {});
+
+      carousel.init();
+      carousels.push(carousel);
+    });
+  });
+</script>

@@ -1,0 +1,320 @@
+///
+/// Pagefind search styling
+///
+/// Also includes input styles since this is the only input on the site
+///
+
+///
+/// Abbreviations
+///
+/// input: The search input field
+/// close: The close button for the search page
+/// icon: The magnifying glass icon
+/// clear: The clear button for the search input
+///
+
+@use '@sass/mixins/media-queries' as mq;
+
+:root {
+  --top-for-input: var(--height-for-header-row-title);
+  --left-for-input: calc(50% - var(--width-for-content-half));
+
+  --top-for-icon: calc(
+    var(--height-for-header-row-title)
+    + (var(--height-for-input) / 2) - (var(--height-for-icon)) / 2)
+  ;
+  --left-for-icon: calc(var(--left-for-input) + ((var(--width-for-input) - var(--width-for-icon)) / 2));
+  --left-for-icon: calc(
+    var(--left-for-input)
+    + ((var(--height-for-input) - var(--width-for-icon)) / 2)
+    + (var(--border-width-for-input) / 2)
+  );
+
+  --top-for-clear: calc(
+    var(--height-for-header-row-title)
+    + var(--border-width-for-input)
+    + var(--gap-for-clear)
+  );
+  --right-for-clear: calc(var(--space-x) + var(--border-width-for-input) + var(--gap-for-clear));
+
+  --z-index-for-input: calc(var(--z-index-for-header) + 1);
+  --z-index-for-icon: calc(var(--z-index-for-header) + 2);
+
+  --width-for-icon: var(--md-sm);
+  --height-for-icon: var(--width-for-icon);
+
+  --width-for-input: var(--width-for-content);
+  --height-for-clear: calc(
+    var(--height-for-button)
+    - (var(--border-width-for-input) * 2)
+    - (var(--gap-for-clear) * 2)
+  );
+
+  ///
+  /// Space for the icon (magnifying glass)
+  ///
+  --padding-left-for-input: var(--height-for-input);
+  --padding-right-for-input: var(--lg);
+
+  --bg-color-for-input: var(--gray-2-5);
+  --bg-color-for-input-focus: var(--blue-3);
+
+  --gap-for-clear: 2px;
+
+  @include mq.from-multi-col {
+    --top-for-input: calc((var(--height-for-header) - var(--height-for-input)) / 2);
+    --top-for-icon: calc((var(--height-for-header) - var(--height-for-icon)) / 2);
+    --top-for-clear: calc((var(--height-for-header) - var(--height-for-clear)) / 2);
+    --right-for-clear: calc(
+      50%
+      - var(--width-for-content-half)
+      + var(--border-width-for-input)
+      + var(--gap-for-clear)
+    );
+  }
+
+  @include mq.from-lg {
+  }
+}
+
+body {
+  &.search-page {
+    min-height: calc(100vh + 1px);
+    min-height: calc(100dvh + 1px);
+  }
+}
+
+.search-close {
+  border-color: var(--border-color-for-button);
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--border-color-for-search-input-hover);
+    background-color: var(--bg-color-for-search-input-hover);
+  }
+}
+
+///
+/// Common styling for both the link (that looks like an input) and the input
+///
+.search-input-appearance,
+.pagefind-ui__search-input {
+  position: fixed;
+  top: var(--top-for-input);
+  left: var(--left-for-input);
+
+  z-index: var(--z-index-for-input);
+
+  width: var(--width-for-content);
+  height: var(--height-for-input);
+  border-width: var(--border-width-for-input);
+  border-style: solid;
+  border-radius: var(--border-radius);
+  padding-top: 0;
+  padding-bottom: var(--border-width-for-input);
+  padding-bottom: 0;
+  padding-left: var(--padding-left-for-input);
+  padding-right: var(--padding-right-for-input);
+
+  color: inherit;
+  line-height: var(--line-height-for-input);
+}
+
+.search-input-link {
+  display: flex;
+  align-items: center;
+
+  opacity: 1;
+
+  transition-property: opacity;
+  transition-duration: calc(var(--transition-duration) / 2);
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
+
+  border-color: transparent;
+  background-color: var(--bg-color-for-input);
+
+  text-decoration: none;
+
+  ///
+  /// Same value as var(--color)
+  /// Same opacity as opacity used for the input
+  ///
+  color: var(--color-for-search-placeholder) !important;
+
+  .is-pagefind-ready & {
+    opacity: 0;
+  }
+}
+
+.header + .icon--magnifying-glass-solid {
+  pointer-events: none;
+
+  position: fixed;
+  top: var(--top-for-icon);
+  left: var(--left-for-icon);
+
+  z-index: var(--z-index-for-icon);
+
+  width: var(--width-for-icon);
+  height: var(--height-for-icon);
+}
+
+.pagefind-ui {
+  opacity: 0;
+  transition: opacity 62.5ms ease-in;
+
+  .is-pagefind-ready & {
+    opacity: 1;
+  }
+}
+
+.pagefind-ui__search-input {
+  margin-bottom: calc((var(--height-for-header) - var(--height-for-input)) / 2);
+  border-width: var(--border-width-for-input); /// NEEDS TO BE ADDED!
+
+  border-color: var(--bg-color-for-input);
+
+  font-family: inherit;
+  font-size: inherit;
+
+  &:focus-visible {
+    border-color: var(--border-color-for-input-focus);
+  }
+}
+
+.pagefind-ui__search-clear {
+  position: fixed;
+  top: var(--top-for-clear);
+  right: var(--right-for-clear);
+
+  transition-property: opacity, background-color, color;
+  transition-duration: calc(var(--transition-duration) * 1);
+
+  z-index: var(--z-index-for-input);
+
+  height: var(--height-for-clear);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--bg-color-for-button);
+  padding-inline: var(--2xl);
+
+  font-size: var(--sm);
+
+  &:hover {
+    background-color: var(--bg-color-for-button-hover);
+    color: var(--color-for-button-hover);
+  }
+
+  &.pagefind-ui__suppressed {
+    pointer-events: none;
+    opacity: 0;
+  }
+}
+
+///
+/// Search result link icons
+///
+.pagefind-ui a::after {
+  display: inline-block;
+
+  margin-left: 0.375em;
+  width: calc(1em / var(--scale));
+  height: calc(1em / var(--scale));
+  background-color: currentColor;
+
+  font-size: calc(1em / var(--scale));
+
+  ///
+  /// When in a SCSS module, the URL should be relative to
+  /// the main SCSS file, rather than the module itself!
+  ///
+  mask: url('../assets/icons/fa/arrow-right-solid.svg') no-repeat 50% 50%;
+  mask-size: cover;
+
+  content: '';
+}
+
+.pagefind-ui__drawer {
+  padding-top: var(--xl);
+}
+
+.pagefind-ui__message {
+  font-size: var(--sm);
+}
+
+.pagefind-ui__results {
+  margin-left: 0;
+  padding-left: var(--2xl);
+
+  list-style: none;
+}
+
+.pagefind-ui__result {
+  position: relative;
+
+  margin-block: var(--lg);
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.pagefind-ui__result::before {
+  display: inline-block;
+
+  position: absolute;
+
+  width: calc(1em * 0.96875);
+  height: calc(1em * 0.96875);
+  background-color: currentColor;
+
+  font-size: calc(1em * 0.96875);
+
+  mask: url('../assets/icons/fa/file-lines-solid-no-attrs.svg') no-repeat 50% 50%;
+  mask-size: cover;
+
+  content: '';
+}
+
+.pagefind-ui__result:has(a[href="/"])::before,
+.pagefind-ui__result:has(a[href^="/docs"])::before {
+  top: calc(var(--2xs) - 0px);
+  left: calc(var(--2xl) * -1);
+
+  background-color: var(--bg-color-for-search-icon-docs);
+
+  mask: url('../assets/icons/fa/file-lines-regular-no-attrs.svg') no-repeat 50% 50%;
+}
+
+.pagefind-ui__result:has(a[href^="/demos"])::before {
+  top: calc(var(--2xs) - 0px);
+  left: calc(var(--2xl) * -1);
+
+  background-color: var(--bg-color-for-search-icon-demos);
+
+  mask: url('../assets/icons/fa/image-regular-no-attrs.svg') no-repeat 50% 50%;
+}
+
+
+.pagefind-ui__result-link {
+  color: inherit;
+
+  font-weight: var(--font-weight-bold);
+}
+
+.pagefind-ui__result-title {
+  margin-bottom: calc(var(--margin-bottom) / 8);
+
+  font-size: var(--md-lg);
+}
+
+.pagefind-ui__result-excerpt {
+  margin-bottom: 0;
+}
+
+.pagefind-ui__result-excerpt mark {
+  border-radius: var(--border-radius-sm);
+  background-color: var(--bg-color-for-search-highlight);
+  padding-bottom: var(--6xs);
+  padding-inline: var(--4xs);
+
+  color: var(--color-for-search-highlight);
+}

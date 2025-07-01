@@ -1,0 +1,124 @@
+---
+import Demos from '@components/Demos.astro';
+import Carousel from '@components/carousel/Carousel.astro';
+---
+
+<Demos
+  title="Peek-a-boo effect"
+  description="Carousels that show partial views of adjacent slides"
+>
+  <Carousel
+    title="Digits"
+    ariaLabel="Peek-a-boo carousel with digit slides"
+    classes={[
+      'demo--four-nav-buttons',
+      'demo--snap-center',
+      'demo--peek-a-boo',
+      'demo--digits',
+      'demo--no-scrollbar',
+    ]}
+    boundaryButtons={true}
+    indicators={true}
+    digitCount={12}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Zero configuration</dt>
+        <dd></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <Carousel
+    title="Photos"
+    ariaLabel="Peek-a-boo carousel with photo slides"
+    classes={[
+      'demo--no-2',
+      'demo--four-nav-buttons',
+      'demo--snap-center',
+      'demo--peek-a-boo',
+      'demo--images',
+    ]}
+    boundaryButtons={true}
+    indicators={true}
+    photoIDs={[
+      "alex-padurariu-5rlktbEX5bY",
+      "alex-padurariu-ZR48YvUpk04",
+      "hamed-daram-776370",
+      "clark-van-der-beken-chcyjyRQV74",
+      "delila-ziebart-3P6E2y2lyus",
+      "henry-co-_QVC2G_ehOM",
+      "william-daigneault-733670",
+      "ferdinand-stohr-O2JbMiA6ias"
+    ]}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Configuration</dt>
+        <dd><code>preloadAdjacentImages: true</code></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <Carousel
+    title="Photos"
+    ariaLabel="Peek-a-boo carousel with photo slides"
+    classes={[
+      'demo--four-nav-buttons',
+      'demo--snap-center',
+      'demo--peek-a-boo',
+      'demo--peek-a-boo--responsive',
+      'demo--images',
+    ]}
+    boundaryButtons={true}
+    indicators={true}
+    photoIDs={[
+      "alex-padurariu-ZR48YvUpk04",
+      "alex-padurariu-5rlktbEX5bY",
+      "denise-bossarte-8rEJiVQk1Vw",
+      "henry-co-_QVC2G_ehOM",
+      "n-n-BtbjCFUvBXs",
+      "delila-ziebart-3P6E2y2lyus",
+      "hamed-daram-776370",
+      "clark-van-der-beken-chcyjyRQV74",
+      "william-daigneault-733670",
+      "ferdinand-stohr-O2JbMiA6ias",
+      "dmitri-popov-71519",
+      "hendrik-kespohl-Stk2vfPWr0w",
+      "janos-richter-111765",
+      "mateusz-derks-AREtip90zGM",
+    ]}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Configuration</dt>
+        <dd><code>scrollSteps: 'many'</code></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <style lang="scss" is:global>
+    @use '@sass/demos/main';
+  </style>
+</Demos>
+
+<script>
+  import { domReady } from '@utils/dom-ready';
+  import { createOmniCarousel } from '@lib/index';
+
+  domReady(() => {
+    const digitsCarouselRoot = document.querySelector('.demo--digits');
+    const imagesCarouselRoot = document.querySelector('.demo--images.demo--no-2');
+    const responsiveImagesCarouselRoot = document.querySelector('.demo--images.demo--peek-a-boo--responsive');
+    
+    createOmniCarousel(digitsCarouselRoot as HTMLElement).init();
+
+    createOmniCarousel(imagesCarouselRoot as HTMLElement, {
+      preloadAdjacentImages: true,
+    }).init();
+
+    createOmniCarousel(responsiveImagesCarouselRoot as HTMLElement, {
+      scrollSteps: 'many',
+    }).init();
+  });
+</script>

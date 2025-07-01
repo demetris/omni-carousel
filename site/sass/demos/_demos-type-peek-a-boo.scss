@@ -1,0 +1,49 @@
+@use '@sass/mixins/media-queries' as mq;
+
+///
+/// --width is a global property in the Omni Carousel site.
+///
+.demo--peek-a-boo {
+  --d-slide-width: calc(var(--width-for-content) * 0.875);
+  --d-slide-height: calc(var(--d-slide-width) / var(--d-aspect-ratio));
+  --oc-peek-width: calc((var(--width-for-content) * 0.125) / 2);
+}
+
+.demo--peek-a-boo.demo--peek-a-boo--responsive {
+  @include mq.from-md-lg {
+    --d-slide-width: calc(((var(--width-for-content) * 0.9375) - (var(--d-gap) * 2)) / 3);
+    --oc-peek-width: calc((var(--width-for-content) * 0.0625) / 2);
+  }
+}
+
+.demo--peek-a-boo {
+  [data-omni-track] {
+    &::before,
+    &::after {
+      flex: none;
+
+      width: var(--oc-peek-width);
+
+      content: "";
+    }
+  }
+
+  [data-omni-slide] {
+  }
+}
+
+.demo--peek-a-boo.is-omni-ready {
+  [data-omni-slide] {
+    transition-duration: calc(var(--transition-duration) * 2);
+    transition-property: opacity;
+    transition-timing-function: linear;
+  }
+
+  .is-omni-current {
+    opacity: 1;
+  }
+
+  [data-omni-slide]:not(.is-omni-current) {
+    opacity: 0.5;
+  }
+}

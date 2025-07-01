@@ -1,0 +1,171 @@
+@use '@sass/mixins/media-queries' as mq;
+
+///
+/// 'xs':          360px
+/// 'sm':          416px
+/// 'md-sm':       512px
+/// 'md':          768px
+/// 'md-lg':       864px
+/// 'lg':         1024px
+/// 'xl':         1152px
+/// '2xl':        1366px
+/// '3xl':        1600px
+///
+/// 'multi-col':  1024px
+///
+
+:root {
+  --z-index-for-skip-link:    10000;
+  --z-index-for-header:       1000;
+  --z-index-for-mobile-menu:  1;
+}
+
+///
+/// Layout base: sizes
+///
+:root {
+  ///
+  /// @TODO
+  ///
+  /// Start using width as the base for --space-x
+  /// in smaller screens too:
+  ///
+  /// Set width to 92.1875vw
+  /// Set width to 90.625vw from 768px
+  /// Switch to fixed widths (in pixels) at 864px
+  ///
+  --space-x: 14px;
+  --width-for-content: calc(100vw - (var(--space-x) * 2));
+  --width-for-content-half: calc(var(--width-for-content) / 2);
+  --width: var(--width-for-content);
+
+  @include mq.from-multi-col {
+    --column-gap-for-multi-col: var(--xl);
+  }
+
+  @include mq.from-sm {
+    --space-x: 16px;
+  }
+
+  @include mq.from-md-sm {
+    --space-x: 32px;
+  }
+
+  @include mq.from-md {
+    --space-x: calc(50% - var(--width-half));
+    --width-for-content: 40rem;
+    --width-for-sidebar: 0rem;
+    --width: calc(var(--width-for-content) + (var(--width-for-sidebar) * 2));
+    --width-half: calc(var(--width) / 2);
+
+  }
+
+  @include mq.from-lg {
+    --width-for-content: 40rem;
+    --width-for-sidebar: 12rem;
+  }
+
+  @include mq.from-xl {
+    --width-for-content: 44rem;
+    --width-for-sidebar: 13rem;
+  }
+
+  @include mq.from-2xl {
+    --width-for-content: 48rem;
+    --width-for-sidebar: 14rem;
+  }
+}
+
+///
+/// Component dimensions
+///
+:root {
+  --height-for-button: 40px;
+  --height-for-input: var(--height-for-button);
+
+  --height-for-header-row-title: 72px;
+  --height-for-header-row-search: 60px;
+  --height-for-header: calc(var(--height-for-header-row-title) + var(--height-for-header-row-search));
+  --height-for-footer: 128px;
+
+  @include mq.from-multi-col {
+    --height-for-button: 3rem;
+
+    --height-for-header-row-search: 6rem;
+    --height-for-header: var(--height-for-header-row-search);
+  }
+}
+
+///
+/// Spacing
+///
+:root {
+  --margin-bottom: var(--xs);
+
+  --space-y-for-section: var(--7xl);
+  --margin-top-for-entry-title: var(--3xl);
+  --margin-bottom-for-entry-header: var(--xl);
+  --margin-bottom-for-list-item: var(--6xs);
+
+  --space-x-for-menu: var(--2xl);
+  --space-y-for-menu: var(--2xl);
+
+  --margin-bottom-for-menu-title: var(--2xs);
+  --margin-bottom-for-menu: var(--lg);
+}
+
+///
+/// Typography
+///
+:root {
+//--font-size-adjust: 0.490;            /// Cabin
+//--font-size-adjust: 0.495;            /// Space Grotesk
+//--font-size-adjust: 0.497;            /// Source Sans 3
+//--font-size-adjust: 0.511;            /// Lato
+
+  --line-height: 1.618;
+  --line-height-for-headings: calc(var(--line-height) * pow(var(--scale), -1));
+  --line-height-for-intro: calc(var(--line-height) * pow(var(--scale), -0.5));
+
+  ///
+  /// Use 'normal' rather than numeric value.
+  /// With a numeric value, Chrome shows the real placeholder
+  /// one pixel lower than the dummy placeholder (of the search link).
+  ///
+  --line-height-for-input: normal;
+
+  --font-family: 'Lato', system-ui, sans-serif;
+  --font-family-monospace: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --font-size-for-intro: var(--lg);
+  --font-size-for-menu-title: var(--lg-xl);
+  --font-size-for-menu: var(--lg);
+  --font-size-for-code-block: var(--md-sm);
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  --width-readable: 68ch;
+
+  @include mq.from-multi-col {
+    --font-size-for-menu-title: var(--md);
+    --font-size-for-menu: var(--md-sm);
+  }
+
+  @include mq.from-md-lg {
+    --scale: var(--scale-lg);
+  }
+}
+
+///
+/// Appearance and interaction
+///
+:root {
+  --border-radius: 0.375rem;
+  --border-radius-sm: 0.1875rem;
+
+  --border-width-for-input: 2px;
+  --border-width-for-section: 0.125rem;
+
+  --transition-duration: 187.5ms;
+}

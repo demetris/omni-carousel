@@ -1,0 +1,35 @@
+---
+import { photos, getMediumImage, getLargeImage } from '../../photos-data';
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+const photo = photos[id];
+
+if (!photo) {
+  throw new Error(`Photo with ID '${id}' not found in the photos collection`);
+}
+
+const md = getMediumImage(id);
+
+if (!md) {
+  throw new Error(`Medium image for photo ID '${id}' not found`);
+}
+
+const lg = getLargeImage(id);
+---
+
+<img
+  width={md.width}
+  height={md.height}
+  src={`/images/photos/${md.filename}`}
+  srcset={lg
+    ? `/images/photos/${md.filename} ${md.width}w, /images/photos/${lg.filename} ${lg.width}w`
+    : `/images/photos/${md.filename} ${md.width}w`
+  }
+  sizes="(min-width: 1024px) 50vw, 90vw"
+  alt={photo.alt}
+  loading="lazy"
+/>

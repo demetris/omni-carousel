@@ -1,0 +1,51 @@
+@use '@sass/mixins/media-queries' as mq;
+
+.demo {
+  ///
+  /// Used to fix subpixel rendering issues
+  ///
+  --d-decipixel: 0.1px;
+
+  --d-button-height: 36px;
+
+  --d-nav-width: calc((var(--d-button-height) * 2) + var(--d-nav-gap));
+
+  --d-slide-width: calc(var(--d-slide-height) * var(--d-aspect-ratio));
+  --d-slide-height: 176px;
+
+  --d-row-gap: var(--md);
+  --d-gap: 8px;
+  --d-nav-gap: 8px;
+
+  --d-border-width-for-slide: 1px;
+
+  ///
+  /// Used to set the height in slides of responive width
+  ///
+  --d-aspect-ratio: calc(16 / 9);
+
+  --border-color-for-slide: var(--gray-7);
+  --bg-color-for-slide: var(--bg-color);
+  --d-bg-color-for-button: var(--gray-6);
+  --d-bg-color-for-button-interaction: var(--blue-7);
+
+  @include mq.from-md {
+  }
+
+  @include mq.to-lg {
+  }
+
+  @include mq.from-lg {
+  }
+
+  @include mq.from-xl {
+  }
+}
+
+.demo--squares {
+  --d-aspect-ratio: 1;
+}
+
+.demo--four-nav-buttons {
+  --d-nav-width: calc((var(--d-button-height) * 4) + (var(--d-nav-gap) * 3));
+}

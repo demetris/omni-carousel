@@ -1,0 +1,10 @@
+---
+import { SITE } from '@root/site/site.config';
+
+const currentYear = new Date().getFullYear();
+const yearRange = currentYear === SITE.since ? SITE.since : `${SITE.since}–${currentYear}`;
+---
+
+<footer class="footer">
+  © {SITE.authorName} {yearRange}
+</footer>

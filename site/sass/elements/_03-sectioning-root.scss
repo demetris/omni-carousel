@@ -1,0 +1,14 @@
+@use '@sass/mixins/media-queries' as mq;
+
+body {
+  position: relative;
+
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--bg-color);
+
+  color: var(--color);
+
+  font-family: var(--font-family);
+}

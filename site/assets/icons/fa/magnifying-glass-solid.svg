@@ -1,0 +1,9 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
+  class="icon icon--magnifying-glass-solid"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path d="M416 208c0 46-15 88-40 123l127 126a32 32 0 0 1-46 46L331 376a208 208 0 1 1 85-168zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+</svg>

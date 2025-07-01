@@ -1,0 +1,192 @@
+@use '@sass/mixins/media-queries' as mq;
+
+.demo {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--d-row-gap);
+
+  button .icon {
+    pointer-events: none;
+
+    fill: currentColor;
+
+    width: calc(var(--d-button-height) / pow(var(--scale), 7));
+    height: calc(var(--d-button-height) / pow(var(--scale), 7));
+  }
+
+  &.section {
+    border-bottom: none;
+    padding-bottom: var(--2xl);
+
+    &:last-child {
+      padding-bottom: var(--space-y-for-section);
+    }
+  }
+}
+
+.demo-header {
+  display: flex;
+  justify-content: center;
+
+  height: var(--d-button-height);
+}
+
+.demo-title {
+  grid-column: 1 / span 2;
+  align-self: end;
+
+  .demo--no-js & {
+    grid-column: 1 / span 3;
+  }
+}
+
+.demo-title-count {
+  opacity: 0.5;
+
+  margin-left: 0.5ch;
+
+  font-size: calc(1em / var(--scale));
+}
+
+.demo-nav {
+  display: flex;
+  justify-content: space-between;
+
+  transition-property: opacity;
+  transition-duration: var(--transition-duration);
+
+  opacity: 0;
+
+  margin-left: auto;
+  width: var(--d-nav-width);
+
+  .demo--no-js & {
+    display: none;
+  }
+
+  .is-omni-ready & {
+    transition-duration: calc(var(--transition-duration) * 0);
+    transition-delay: calc(var(--transition-duration) / 2);
+    opacity: 1;
+  }
+}
+
+.demo-button {
+  transition-property: opacity, background-color, color;
+  transition-duration: calc(var(--transition-duration) / 2);
+
+  width: var(--d-button-height);
+  height: var(--d-button-height);
+  border-width: 1px;
+  border-color: transparent;
+  padding-inline: 12px;
+
+  color: var(--black);
+
+  &:disabled {
+    opacity: 0.4375;
+  }
+
+  &:active,
+  &:focus-visible {
+    background-color: var(--d-bg-color-for-button-interaction);
+
+    color: var(--color-for-button-interaction);
+  }
+
+  @media (pointer: fine) {
+    &:not(:disabled):hover {
+      background-color: var(--d-bg-color-for-button-interaction);
+
+      color: var(--color-for-button-interaction);
+    }
+  }
+}
+
+[data-omni-track] {
+  width: var(--width-for-content);
+  margin-inline: auto;
+  padding-bottom: var(--md);
+}
+
+[data-omni-slide] {
+  display: grid;
+
+  width: var(--d-slide-width);
+  height: var(--d-slide-height);
+  padding-left: 0;
+
+  img {
+    object-fit: cover;
+
+    width: var(--d-slide-width);
+    height: var(--d-slide-height);
+    border-radius: var(--border-radius)
+  }
+}
+
+.omni-slide-content {
+  display: grid;
+  place-content: center;
+
+  box-shadow: var(--shadow-1);
+
+  .demo--digits & {
+    transition-property: border-color, color;
+    transition-duration: calc(var(--transition-duration) * 4);
+
+    border-width: var(--d-border-width-for-slide);
+    border-style: solid;
+    border-color: var(--border-color-for-slide);
+    border-radius: var(--border-radius);
+
+    color: var(--color);
+
+    font-size: var(--md);
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+///--------------------------------------------------------------------------\\\
+///                                                                          \\\
+/// Rules for utility classes                                                \\\
+///                                                                          \\\
+///--------------------------------------------------------------------------\\\
+
+///
+/// Style for slides that are centered or part of the centered group
+/// Applied for both single-step and multi-step carousels
+///
+.demo--digits:not(.demo--one-per-view) .is-omni-centered > * {
+  border-color: var(--blue-50v);
+
+  color: var(--blue-60v);
+}
+
+///
+/// The invisible anchor used for scroll anchoring
+///
+/*
+.omni-invisible-anchor {
+  pointer-events: none;
+
+  position: absolute;
+  top: 0;
+
+  transform: translateX(0);
+
+  z-index: 1000;
+
+  //
+  // Default width - will be overridden by JS
+  //
+  width: 1rem;
+  height: var(--d-slide-height);
+
+  border: var(--border-radius) dashed rgba(0, 0, 0, 0.5);
+  border-radius: var(--border-radius);
+  background-color: rgba(255, 255, 255, 0);
+
+  scroll-snap-align: center;
+}
+*/

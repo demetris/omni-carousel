@@ -1,0 +1,20 @@
+[data-omni-track] {
+  position: relative;               /// Used for scroll anchor positioning; added if missing
+
+  scroll-behavior: smooth;          /// Recommended for smooth scrolling
+  scroll-snap-type: x mandatory;    /// Recommended for snap behavior
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+[data-omni-slide] {
+  .demo--snap-start & {
+    scroll-snap-align: start;
+  }
+
+  .demo--snap-center & {
+    scroll-snap-align: center;
+  }
+}

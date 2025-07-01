@@ -1,0 +1,111 @@
+@use '../mixins/media-queries' as mq;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-for-header);
+  height: var(--height-for-header);
+}
+
+.body {
+  display: flex;
+}
+
+@include mq.to-multi-col {
+  .pagefind-ui {
+    padding-inline: var(--space-x);
+  }
+}
+
+@include mq.to-lg {
+  .body {
+    flex-direction: column;
+  }
+
+  .body > * {
+    width: 100%;
+  }
+
+  .header {
+  }
+}
+
+@include mq.from-multi-col {
+  body {
+    display: grid;
+    grid-template-areas:
+      'h h h'
+      'n m .'
+      'f f f'
+    ;
+    grid-template-columns: 1fr var(--width-for-content) 1fr;
+    grid-template-rows: var(--height-for-header) auto var(--height-for-footer);
+
+    column-gap: var(--column-gap-for-multi-col);
+  }
+
+  .header {
+    grid-area: h;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav {
+    position:fixed;
+    top: calc(var(--height-for-header) + var(--border-width-for-section));
+    left: var(--space-x);
+  }
+
+  .main {
+    grid-area: m;
+  }
+
+  .footer {
+    grid-area: f;
+  }
+}
+
+@include mq.from-multi-col {
+}
+
+// body {
+//   @include mq.from-lg {
+//     --width-for-column-1: calc(var(--width-for-sidebar) + var(--space-x));
+
+//     display: grid;
+//     grid-template-areas:
+//       'h h'
+//       's m'
+//       '. p'
+//       '. f'
+//     ;
+//     grid-template-columns: var(--width-for-column-1) minmax(0, 1fr);
+//     grid-template-columns: minmax(0, 2fr) minmax(0, 5fr);
+//     grid-template-rows: var(--height-for-header) repeat(3, auto);
+//   }
+
+// //@include mq.from-lg {
+// //  grid-template-areas:
+// //    'h h h'
+// //    's m .'
+// //    's p .'
+// //    's f f'
+// //  ;
+// //  grid-template-columns: var(--w-3-col-sidebar) var(--w-3-col-main) var(--w-3-col-sidebar);
+// //  grid-template-rows: var(--h-header) repeat(4, auto);
+// //}
+// }
+
+// .header {
+//   grid-area: h;
+// }
+
+// .nav {
+//   background-color: yellow;
+//   z-index: 99999;
+
+//   @include mq.from-lg {
+//     grid-area: s;
+//   }
+// }

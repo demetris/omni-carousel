@@ -1,0 +1,23 @@
+---
+import Slide from "./CarouselSlide.astro";
+
+interface Props {
+  count: number;
+  start?: number;
+}
+
+const { count, start = 1 } = Astro.props;
+
+//
+// Create an array of numbers from start to start + count - 1
+//
+const numbers = Array.from({ length: count }, (_, index) => index + start);
+---
+
+{
+  numbers.map((num, index) => (
+    <Slide count={count} index={index}>
+      {num}
+    </Slide>
+  ))
+}

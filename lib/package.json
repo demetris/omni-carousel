@@ -1,0 +1,48 @@
+{
+  "name": "omni-carousel",
+  "version": "0.2.0",
+  "description": "A lightweight carousel to enhance scrollable areas",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "../docs",
+    "../CHANGELOG.md",
+    "../LICENSE",
+    "../README.md"
+  ],
+  "keywords": [
+    "carousel",
+    "slider",
+    "javascript",
+    "typescript",
+    "lightweight",
+    "performance"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/demetris/omni-carousel.git",
+    "directory": "lib"
+  },
+  "homepage": "https://omnicarousel.dev",
+  "dependencies": {
+    "nanoevents": "^9.1.0"
+  },
+  "devDependencies": {
+    "terser": "^5.43.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "build": "tsup index.ts --format esm --dts --minify terser",
+    "typecheck": "tsc --noEmit"
+  }
+}

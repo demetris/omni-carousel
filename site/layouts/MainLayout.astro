@@ -1,0 +1,83 @@
+---
+import Head from '../components/head/Head.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SkipLink from '@components/SkipLink.astro';
+import NavLink from '@components/NavLink.astro';
+import MenuClose from '@components/MenuClose.astro';
+import { SITE } from '@root/site/site.config';
+
+interface Props {
+  title: string;
+  description?: string;
+  pagefindIgnore?: boolean;
+}
+
+const { title, description, pagefindIgnore } = Astro.props;
+const { pathname } = Astro.url;
+const isSearhPage = pathname.startsWith('/search');
+---
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <Head title={title} description={description} />
+  <body
+    data-pagefind-ignore={pagefindIgnore ? '' : undefined}
+    class:list={[
+      pathname === '/' && 'home-page',
+      pathname.startsWith('/demos') && 'demos-page',
+      pathname.startsWith('/docs') && 'docs-page',
+      pathname.startsWith('/search') && 'search-page',
+    ]}
+  >
+    <SkipLink />
+    <Header title={SITE.name} />
+    <main
+      id="main"
+      class="main"
+      data-pagefind-ignore={pagefindIgnore ? '' : undefined}
+    >
+      <slot name="main" />
+    </main>
+    <nav
+      id="nav"
+      class="nav"
+      aria-label={ !isSearhPage ? 'Site navigation' : undefined }
+      data-menu
+    >
+      { !isSearhPage && (
+        <>
+          <h2>Documentation</h2>
+          <ul class="nav--docs">
+            <li><NavLink href="/">Quick start</NavLink></li>
+            <li><NavLink href="/docs/html/">HTML</NavLink></li>
+            <li><NavLink href="/docs/css/">CSS</NavLink></li>
+            <li><NavLink href="/docs/config/">Config</NavLink></li>
+            <li><NavLink href="/docs/css-utilities/">CSS utilities</NavLink></li>
+            <li><NavLink href="/docs/css-tips/">CSS tips</NavLink></li>
+            <li><NavLink href="/docs/css-tips-track-width/">Track width</NavLink></li>
+            <li><NavLink href="/docs/api/">API</NavLink></li>
+          </ul>
+          <h2>Demos</h2>
+          <ul class="nav--demos">
+            <li><NavLink href="/demos/no-js/">No JS</NavLink></li>
+            <li><NavLink href="/demos/one-per-view/">One per view</NavLink></li>
+            <li><NavLink href="/demos/peek-a-boo/">Peek-a-boo</NavLink></li>
+            <li><NavLink href="/demos/responsive/">Responsive</NavLink></li>
+            <li><NavLink href="/demos/fixed-width-slides/">Fixed widths</NavLink></li>
+            <li><NavLink href="/demos/mixed-width-slides/">Mixed widths</NavLink></li>
+            <li><NavLink href="/demos/stress-tests/">Stress tests</NavLink></li>
+          </ul>
+        </>
+      )}
+      <MenuClose />
+    </nav>
+    <Footer />
+  </body>
+</html>
+
+<script>
+  import { initNav } from '@modules/nav';
+  initNav();
+</script>

@@ -1,0 +1,7 @@
+.demo--one-per-view {
+  --d-slide-width: var(--width-for-content);
+  --d-slide-height: calc(var(--d-slide-width) / var(--d-aspect-ratio));
+}
+
+.demo--one-per-view.demo--images {
+}

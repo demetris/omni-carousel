@@ -1,0 +1,14 @@
+#
+# Exclude package lock files
+#
+package-lock.json
+
+#
+# Exclude build artifacts
+#
+dist/
+
+#
+# Other files to ignore
+#
+.DS_Store

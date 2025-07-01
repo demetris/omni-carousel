@@ -1,0 +1,11 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 448 512"
+  class="icon icon--box-solid"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path
+    d="M51 59 0 160h208V32H94c-18 0-35 10-43 27zm189 101h208L397 59c-8-17-24-27-43-27H240v128zm208 32H0v224c0 35 29 64 64 64h320c35 0 64-29 64-64V192z"
+  />
+</svg>

@@ -1,0 +1,10 @@
+.section {
+}
+
+.section.demo {
+  margin-bottom: var(--space-y-for-section);
+
+  &:first-of-type {
+    margin-top: calc(var(--space-y-for-section) * var(--scale));
+  }
+}

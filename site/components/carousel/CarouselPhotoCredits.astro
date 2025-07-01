@@ -1,0 +1,28 @@
+---
+import { photos } from '../../photos-data';
+
+interface Props {
+  photoIDs: string[];
+}
+
+const { photoIDs } = Astro.props;
+const photoData = photoIDs.map(id => photos[id]).filter(Boolean);
+---
+
+<div class="infobox__photo-credits">
+  <h3>Photography</h3>
+  <ol>
+    { photoData.map((photo) => (
+      <li>
+        <a href={photo.authorURL}>
+          {photo.author}
+        </a>
+      </li>
+    ))}
+  </ol>
+</div>
+
+<style>
+  .section__credits {
+  }
+</style>

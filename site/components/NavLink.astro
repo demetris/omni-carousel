@@ -1,0 +1,16 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'a'>;
+
+const { href, class: className, ...attrs } = Astro.props;
+--- 
+
+<a
+  href={href}
+  aria-current={Astro.url.pathname === href ? 'page' : undefined}
+  data-astro-prefetch
+  {...attrs}
+>
+  <slot />
+</a>

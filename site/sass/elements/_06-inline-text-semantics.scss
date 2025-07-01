@@ -1,0 +1,80 @@
+@use '@sass/mixins/media-queries' as mq;
+
+a {
+  transition-property: text-decoration-color;
+  transition-duration: var(--transition-duration);
+
+  text-underline-offset: 0.3125em;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--color-for-link-decoration);
+
+  color: var(--color-for-link);
+
+  &:is(
+    :hover,
+    :active
+  ) {
+    text-decoration-color: var(--color-for-link-decoration-interaction);
+  }
+
+  .infobox & {
+    color: var(--color-for-infobox-link);
+  }
+}
+
+///
+/// Add an icon after external links
+///
+/// Selector matches only links that start with https.
+/// Internal links do not have https, since they are all relative.
+///
+a[href^="https"]::after {
+  .entry > &,
+  .infobox & {
+    display: inline-block;
+
+    margin-left: 0.375em;
+    width: calc(1em / var(--scale));
+    height: calc(1em / var(--scale));
+    background-color: currentColor;
+
+    font-size: calc(1em / var(--scale));
+
+    ///
+    /// When in a SCSS module, the URL should be relative to
+    /// the main SCSS file, rather than the module itself!
+    ///
+    mask: url('../assets/icons/fa/arrow-up-right-from-square-solid-no-attrs.svg') no-repeat 50% 50%;
+    mask-size: cover;
+
+    content: '';
+  }
+}
+
+b,
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+code {
+  font-family: var(--font-family-monospace);
+
+  :not(.astro-code) > & {
+    margin-inline: 0.09375em;
+    border-radius: calc(var(--border-radius) / 1);
+    background-color: var(--bg-color-for-inline-code);
+    padding-block: 0 0.125em;
+    padding-inline: 0.375em;
+
+    color: var(--color-for-inline-code);
+
+    font-size: 0.9375em;
+
+    ///
+    /// Temper Firefox rendering (Firefox renders in a heavier weight than Chrome)
+    ///
+    @supports (-moz-appearance: none) {
+    //opacity: 0.75;
+    }
+  }
+}

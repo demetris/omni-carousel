@@ -1,0 +1,26 @@
+@use '@sass/mixins/media-queries' as mq;
+
+.demo--no-scrollbar {
+}
+
+@supports (scroll-behavior: smooth) and (aspect-ratio: 1) {
+  ///
+  /// Hide scrollbars only when Omni will work
+  ///
+  /// aspect-ratio is supported in:
+  ///
+  /// - Chrome 88+ (Jan 2021)
+  /// - Firefox 89+ (June 2021)
+  /// - Safari 15+ (Sep 2021)
+  ///
+  /// Checking for aspect-ratio makes sure that
+  /// the scrollbar will not be hidden in non-enchanded carousels
+  ///
+  .demo--no-scrollbar [data-omni-track] {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

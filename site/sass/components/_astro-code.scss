@@ -1,0 +1,27 @@
+@use '@sass/mixins/media-queries' as mq;
+
+.astro-code {
+  padding-block: var(--2xl);
+
+  font-size: 0.9375rem;
+
+  @include mq.to-lg {
+    transform: translate(calc(var(--space-x) * -1));
+
+    width: 100vw;
+    padding-inline: var(--space-x);
+  }
+
+  @include mq.from-lg {
+    border-radius: var(--border-radius);
+    padding-inline:var(--xl);
+  }
+}
+
+p + .astro-code {
+  margin-top: calc(var(--margin-bottom) * pow(var(--scale), 3));
+}
+
+.astro-code + p {
+  margin-top: calc(var(--margin-bottom) * pow(var(--scale), 3));
+}

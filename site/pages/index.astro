@@ -1,0 +1,19 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+import Readme from '@root/README.md';
+---
+
+<Layout title="Omni Carousel">
+
+  <Fragment slot="main">
+
+    <article 
+      class="entry entry--readme entry--home-page"
+      aria-label="Documentation for Omni Carousel"
+    >
+      <Readme />
+    </article>
+
+  </Fragment>
+
+</Layout>

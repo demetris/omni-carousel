@@ -1,0 +1,210 @@
+@use '../mixins/media-queries' as mq;
+
+body.is-menu-open {
+  overflow: hidden;
+
+  ///
+  /// For iOS
+  ///
+  position: fixed;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+
+  padding-block: var(--space-y-for-menu);
+
+  @include mq.to-multi-col {
+    position: fixed;
+    ///
+    /// The bottom border for the header is really a box-shadow.
+    /// Include it in the height calculation! It is outslide the header!
+    ///
+    top: calc(var(--height-for-header) + var(--border-width-for-section));
+    right: 0;
+
+    transform: translateX(100%);
+    transition:
+      transform var(--transition-duration) ease-out,
+      visibility 0s var(--transition-duration)
+    ;
+
+    visibility: hidden;
+    z-index: var(--z-index-for-mobile-menu);
+
+    width: calc(100% - var(--space-x));
+    height: calc(100vh - var(--height-for-header) - var(--border-width-for-section));
+    height: calc(100dvh - var(--height-for-header) - var(--border-width-for-section));
+    box-shadow: var(--shadow-4);
+    background-color: var(--bg-color-for-menu-mobile);
+    padding-left: var(--space-x-for-menu);
+
+    overflow-y: auto;
+
+    &.is-open {
+      transform: translateX(0);
+      transition-delay: 0s;
+
+      visibility: visible;
+    }
+  }
+
+  @include mq.from-multi-col {
+  }
+}
+
+.nav > h2 {
+  margin-bottom: var(--margin-bottom-for-menu-title);
+
+  font-size: var(--font-size-for-menu-title);
+}
+
+.nav > ul {
+  margin-bottom: var(--margin-bottom-for-menu);
+  margin-left: 0;
+  padding-left: 0;
+
+  list-style: none;
+
+  font-size: var(--font-size-for-menu);
+}
+
+.nav > ul > li {
+  padding-left: 0;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+
+  transition-property: background-color, color;
+  transition-duration: var(--transition-duration);
+
+  padding-block: var(--8xs);
+  padding-inline: var(--sm);
+  border-radius: var(--border-radius-sm);
+
+  text-decoration-line: none;
+  color: inherit;
+
+  &:hover {
+    background-color: var(--bg-color-for-menu-item-interactive);
+  }
+
+  &:active {
+  }
+
+  &[aria-current="page"] {
+    background-color: var(--bg-color-for-menu-item-current);
+    color: var(--color-for-menu-item-current);
+  }
+
+  @include mq.from-multi-col {
+    padding-block: var(--6xs);
+    padding-inline: var(--2xs);
+  }
+}
+
+.nav--docs {
+  a {
+    &:hover,
+    &:active,
+    &:focus-visible,
+    &[aria-current="page"] {
+      &::after {
+      }
+    }
+  }
+
+  .icon {
+  }
+}
+
+.nav--demos {
+  a {
+    &:hover,
+    &:active,
+    &:focus-visible,
+    &[aria-current="page"] {
+      &::after {
+      }
+    }
+  }
+}
+
+///
+///
+/// Buttons
+///
+///
+
+.menu-toggle {
+  display: grid;
+  grid-template-areas: 'icon';
+  place-content: center;
+
+  padding: 0;
+
+  @include mq.from-multi-col {
+    display: none;
+  }
+}
+
+.icon {
+  .menu-toggle & {
+    grid-area: icon;
+
+    transition-property: opacity;
+    transition-duration: var(--transition-duration);
+  }
+}
+
+.icon--bars-solid {
+  .menu-toggle & {
+    opacity: 1;
+    font-size: var(--md-lg);
+  }
+
+  .menu-toggle[aria-expanded="true"] & {
+    opacity: 0;
+  }
+}
+
+.icon--xmark-solid {
+  .menu-toggle & {
+    opacity: 0;
+    font-size: var(--lg);
+  }
+
+  .menu-toggle[aria-expanded="true"] & {
+    opacity: 1;
+  }
+}
+
+.menu-close {
+  align-self: end;
+
+  position: sticky;
+  right: var(--space-x);
+  bottom: 0;
+
+  padding-inline: var(--xl);
+  padding-block: var(--md);
+  height: fit-content;
+  width: fit-content;
+
+  font-weight: var(--font-weight-bold);
+
+  &:hover,
+  &:active {
+    background-color: var(--bg-color-for-menu-close);
+
+    color: var(--color-for-menu-close);
+  }
+
+  @include mq.from-multi-col {
+    display: none;
+  }
+}

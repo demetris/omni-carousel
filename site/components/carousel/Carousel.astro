@@ -1,0 +1,176 @@
+---
+import { generateID } from '@root/site/utils/generate-id';
+
+import AngleLeft from '@icons/fa/angle-left-solid.svg';
+import AngleRight from '@icons/fa/angle-right-solid.svg';
+import AnglesLeft from '@icons/fa/angles-left-solid.svg';
+import AnglesRight from '@icons/fa/angles-right-solid.svg';
+
+import Slide from './CarouselSlide.astro';
+import Photo from './CarouselPhoto.astro';
+import PhotoCredits from './CarouselPhotoCredits.astro';
+import DigitSlides from './CarouselDigitSlides.astro';
+
+type RootModifier =
+  | 'demo--no-js'
+
+  | 'demo--fixed-widths'
+  | 'demo--one-per-view'
+  | 'demo--mixed-widths'
+  | 'demo--responsive'
+  | 'demo--peek-a-boo'
+  | 'demo--peek-a-boo--responsive'
+
+  | 'demo--snap-center'
+  | 'demo--snap-start'
+
+  | 'demo--steps-one'
+  | 'demo--steps-many'
+
+  | 'demo--centered'
+
+  | 'demo--digits'
+  | 'demo--four-nav-buttons'
+  | 'demo--no-scrollbar'
+  | 'demo--numbered-indicators'
+  | 'demo--images'
+  | 'demo--no-1'
+  | 'demo--no-2'
+  | 'demo--no-3'
+  | 'demo--no-4'
+  | 'demo--no-5'
+  | 'demo--squares'
+  | 'demo--three-slides'
+
+  | 'demo--effects'
+  | 'demo--effects--scale'
+
+  | 'demo--512-slides'
+  | 'demo--1024-slides'
+  | 'demo--2048-slides'
+  | 'demo--16384-slides'
+;
+
+interface Props {
+  title: string;
+  ariaLabel: string;
+  classes?: RootModifier[];
+  indicators?: boolean;
+  buttons?: boolean;
+  boundaryButtons?: boolean;
+
+  photoIDs?: string[];    // IDs for photographs in a photo carousel
+  digitCount?: number;    // Number of slides for a carousel with just digits
+}
+
+const {
+  title,
+  ariaLabel,
+  classes,
+  indicators,
+  buttons = true,
+  boundaryButtons,
+  photoIDs,
+  digitCount,
+} = Astro.props;
+
+const trackID = generateID();
+
+const hasPhotos = photoIDs && photoIDs.length > 0;
+const hasDigits = typeof digitCount === 'number' && digitCount > 0;
+const count = hasPhotos ? photoIDs.length : (hasDigits ? digitCount : 0);
+---
+
+<section
+  class:list={[ 'section', 'demo', classes ]}
+  aria-roledescription="carousel"
+  aria-label={ariaLabel}
+>
+  <header class="demo-header">
+    <h2 class="demo-title">
+      { count ? <>{title} <span class="demo-title-count">({count} sl.)</span></> : title }
+    </h2>
+  </header>
+  { buttons && (
+    <nav class="demo-nav">
+      { boundaryButtons && (
+        <button
+          class="demo-button"
+          type="button"
+          aria-label="Go to first slide"
+          aria-controls={trackID}
+          data-omni-button-start
+          disabled
+        >
+          <AnglesLeft />
+        </button>
+      )}
+      <button
+        class="demo-button"
+        type="button"
+        aria-label="Go to previous slide"
+        aria-controls={trackID}
+        data-omni-button-prev
+        disabled
+      >
+        <AngleLeft />
+      </button>
+      <button
+        class="demo-button"
+        type="button"
+        aria-label="Go to next slide"
+        aria-controls={trackID}
+        data-omni-button-next
+      >
+        <AngleRight />
+      </button>
+      { boundaryButtons && (
+        <button
+          class="demo-button"
+          type="button"
+          aria-label="Go to last slide"
+          aria-controls={trackID}
+          data-omni-button-end
+        >
+          <AnglesRight />
+        </button>
+      )}
+    </nav>
+  )}
+  <ul
+    id={trackID}
+    tabindex="0"
+    data-omni-track
+  >
+    { hasPhotos
+      ? photoIDs.map((id, index) => <Slide count={photoIDs.length} index={index}><Photo id={id} /></Slide>)
+      : hasDigits
+        ? <DigitSlides count={digitCount} />
+        : <slot />
+    }
+  </ul>
+  { indicators && <div data-omni-indicators></div> }
+
+  { (Astro.slots.has('description') || hasPhotos) && (
+    <div class="infobox">
+      <slot name="description" />
+
+      { !classes?.includes('demo--no-js') && (
+        <>
+        { classes?.includes('demo--responsive')   && <p>Slides per view set in CSS: 1, 2 or 3, depending on viewport.</p> }
+        { classes?.includes('demo--peek-a-boo')   && <p>Spacing at start/end added in CSS using pseudo-elements.</p> }
+        { classes?.includes('demo--peek-a-boo--responsive') && <p>Slides per view set in CSS: 1 or 3, depending on viewport.</p> }
+        { classes?.includes('demo--snap-center')  && <p>Scroll alignment (center) autodetected from CSS.</p> }
+        { classes?.includes('demo--snap-start')   && <p>Scroll alignment (start) autodetected from CSS.</p> }
+        { !classes?.some(c => c.includes('omni--snap-')) && <p>No scroll alignment found in CSS; using start.</p> }
+        { classes?.includes('demo--no-scrollbar') && <p>Scrollbar hidden in CSS.</p> }
+        </>
+      )}
+
+      <slot name="description-notes" />
+      
+      { hasPhotos && <PhotoCredits photoIDs={photoIDs} /> }
+    </div>
+  )}
+  
+</section>

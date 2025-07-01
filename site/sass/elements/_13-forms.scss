@@ -1,0 +1,40 @@
+@use '@sass/mixins/media-queries' as mq;
+
+button {
+  cursor: pointer;
+
+  appearance: button;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition-property: opacity;
+  transition-duration: calc(var(--transition-duration) / 2);
+
+  margin: 0;
+  width: var(--height-for-button);
+  height: var(--height-for-button);
+  border-style: solid;
+  border-color: transparent;
+  border-radius: var(--border-radius);
+  background-color: var(--bg-color-for-button);
+  padding-block: 0;
+  padding-inline: var(--sm);
+
+  font-family: inherit;
+  font-size: inherit;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6875;
+  }
+}
+
+[type="search"] {
+  appearance: textfield;
+
+  margin: 0;
+
+  outline-offset: -2px;
+}

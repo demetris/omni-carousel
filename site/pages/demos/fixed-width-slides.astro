@@ -1,0 +1,192 @@
+---
+import Demos from '@components/Demos.astro';
+import Carousel from '@components/carousel/Carousel.astro';
+---
+
+<Demos
+  title="Fixed-width slides"
+  description="Carousels with slides that have consistent, fixed widths"
+>
+  <Carousel
+    title="Small"
+    ariaLabel="Carousel with three fixed-width slides"
+    classes={[
+      'demo--three-slides',
+      'demo--fixed-widths',
+      'demo--snap-center',
+      'demo--digits',
+      'demo--squares',
+    ]}
+    indicators={true}
+    digitCount={3}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Zero configuration</dt>
+        <dd></dd>
+      </dl>
+    </Fragment>
+    <Fragment slot="description-notes">
+      <p>
+        Here Omni should set up only if the slides oveflow.
+        It should also respond automatically to track resizes.
+      </p>
+    </Fragment>
+  </Carousel>
+
+  <Carousel
+    title="Centered multi-step"
+    ariaLabel="Carousel with fixed-width slides, centered, multi-step"
+    classes={[
+      'demo--fixed-widths',
+      'demo--snap-center',
+      'demo--steps-many',
+      'demo--digits',
+      'demo--squares',
+      'demo--numbered-indicators',
+    ]}
+    indicators={true}
+    digitCount={48}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Configuration</dt>
+        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>indicatorNumbers: true</code></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <Carousel
+    title="Left-aligned multi-step"
+    ariaLabel="Carousel with fixed-width slides, left-aligned, multi-step"
+    classes={[
+      'demo--fixed-widths',
+      'demo--snap-start',
+      'demo--steps-many',
+      'demo--digits',
+      'demo--squares',
+    ]}
+    indicators={true}
+    digitCount={16}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Configuration</dt>
+        <dd><code>scrollSteps: 'many'</code></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <Carousel
+    title="Centered single-step"
+    ariaLabel="Carousel with fixed-width slides, centered, single-step"
+    classes={[
+      'demo--fixed-widths',
+      'demo--snap-center',
+      'demo--steps-one',
+      'demo--digits',
+      'demo--squares',
+    ]}
+    indicators={true}
+    digitCount={20}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Zero configuration</dt>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <Carousel
+    title="Left-aligned single-step"
+    ariaLabel="Carousel with fixed-width slides, left-aligned, single-step"
+    classes={[
+      'demo--fixed-widths',
+      'demo--snap-start',
+      'demo--steps-one',
+      'demo--digits',
+      'demo--squares',
+    ]}
+    indicators={true}
+    digitCount={20}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Configuration</dt>
+        <dd><code>scrollSteps: 'many'</code></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <Carousel
+    title="Centered multi-step"
+    ariaLabel="Centered multi-step carousel with fixed-width images"
+    classes={[
+      'demo--fixed-widths',
+      'demo--images',
+      'demo--snap-center',
+    ]}
+    indicators={true}
+    photoIDs={[
+      "alex-padurariu-5rlktbEX5bY",
+      "alex-padurariu-ZR48YvUpk04",
+      "hamed-daram-776370",
+      "clark-van-der-beken-chcyjyRQV74", 
+      "delila-ziebart-3P6E2y2lyus",
+      "henry-co-_QVC2G_ehOM",
+      "william-daigneault-733670",
+      "ferdinand-stohr-O2JbMiA6ias"
+    ]}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Configuration</dt>
+        <dd><code>scrollSteps: 'many'</code></dd>
+      </dl>
+    </Fragment> 
+  </Carousel>
+
+  <style lang="scss" is:global>
+    @use '@sass/demos/main';
+  </style>
+</Demos>
+
+<script>
+  import { domReady } from '@utils/dom-ready';
+  import { createOmniCarousel } from '@lib/index';
+
+  domReady(() => {
+    const threeSlidesRoot = document.querySelector('.demo--three-slides');
+    const centerMany = document.querySelector('.demo--digits.demo--snap-center.demo--steps-many');
+    const startMany = document.querySelector('.demo--digits.demo--snap-start.demo--steps-many');
+    const centerOne = document.querySelector('.demo--digits.demo--snap-center.demo--steps-one');
+    const startOne = document.querySelector('.demo--digits.demo--snap-start.demo--steps-one');
+    const images = document.querySelector('.demo--images');
+
+    const threeSlides = createOmniCarousel(threeSlidesRoot as HTMLElement);
+    threeSlides.init();
+    
+    const centerManyCarousel = createOmniCarousel(centerMany as HTMLElement, {
+      scrollSteps: 'many',
+      indicatorNumbers: true,
+    });
+    centerManyCarousel.init();
+
+    const startManyCarousel = createOmniCarousel(startMany as HTMLElement, {
+      scrollSteps: 'many',
+    });
+    startManyCarousel.init();
+
+    const centerOneCarousel = createOmniCarousel(centerOne as HTMLElement);
+    centerOneCarousel.init();
+
+    const startOneCarousel = createOmniCarousel(startOne as HTMLElement);
+    startOneCarousel.init();
+
+    const imagesCarousel = createOmniCarousel(images as HTMLElement, {
+      scrollSteps: 'many',
+    });
+    imagesCarousel.init();
+  });
+</script>

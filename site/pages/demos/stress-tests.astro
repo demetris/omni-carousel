@@ -1,0 +1,140 @@
+---
+import Demos from '@components/Demos.astro';
+import Carousel from '@components/carousel/Carousel.astro';
+---
+
+<Demos
+  title="Stress tests"
+  description="Carousels with large numbers of slides"
+>
+
+  <Carousel
+    title="Centered multi-step"
+    ariaLabel="Carousel with lots of varying-width slides, centered, multi-step"
+    classes={[
+      'demo--512-slides',
+      'demo--four-nav-buttons',
+      'demo--mixed-widths',
+      'demo--snap-center',
+      'demo--steps-many',
+      'demo--digits'
+    ]}
+    indicators={true}
+    boundaryButtons={true}
+    digitCount={512}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Configuration</dt>
+        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>hasEqualWidths: false</code></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <Carousel
+    title="Centered multi-step"
+    ariaLabel="Carousel with lots of varying-width slides, centered, multi-step"
+    classes={[
+      'demo--1024-slides',
+      'demo--four-nav-buttons',
+      'demo--mixed-widths',
+      'demo--snap-center',
+      'demo--steps-many',
+      'demo--digits'
+    ]}
+    indicators={true}
+    boundaryButtons={true}
+    digitCount={1024}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Configuration</dt>
+        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>hasEqualWidths: false</code></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <Carousel
+    title="Centered single-step"
+    ariaLabel="Carousel with lots of varying-width slides, centered, single-step"
+    classes={[
+      'demo--2048-slides',
+      'demo--four-nav-buttons',
+      'demo--fixed-widths',
+      'demo--snap-center',
+      'demo--steps-one',
+      'demo--digits',
+      'demo--squares',
+    ]}
+    indicators={true}
+    boundaryButtons={true}
+    digitCount={2048}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Zero configuration</dt>
+        <dd></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+  
+  <Carousel
+    title="Ultimate stress test"
+    ariaLabel="Extreme stress test carousel with 16384 slides, single-step"
+    classes={[
+      'demo--16384-slides',
+      'demo--four-nav-buttons',
+      'demo--fixed-widths',
+      'demo--snap-center',
+      'demo--steps-one',
+      'demo--digits',
+      'demo--squares',
+    ]}
+    indicators={true}
+    boundaryButtons={true}
+    digitCount={16384}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Zero configuration</dt>
+        <dd></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <style lang="scss" is:global>
+    @use '@sass/demos/main';
+  </style>
+</Demos>
+
+<script>
+  import { domReady } from '@utils/dom-ready';
+  import { createOmniCarousel } from '@lib/index';
+
+  domReady(() => {
+    const manyCenter512Element = document.querySelector('.demo--512-slides');
+    const manyCenter1024Element = document.querySelector('.demo--1024-slides');
+    const oneCenterElement = document.querySelector('.demo--2048-slides');
+    const extremeStressElement = document.querySelector('.demo--16384-slides');
+
+    const manyCenter512Carousel = createOmniCarousel(manyCenter512Element as HTMLElement, {
+      scrollSteps: 'many',
+      hasEqualWidths: false,
+    });
+    manyCenter512Carousel.init();
+    
+    const manyCenter1024Carousel = createOmniCarousel(manyCenter1024Element as HTMLElement, {
+      scrollSteps: 'many',
+      hasEqualWidths: false,
+    });
+    manyCenter1024Carousel.init();
+    
+    const oneCenterCarousel = createOmniCarousel(oneCenterElement as HTMLElement, {});
+    oneCenterCarousel.init();
+    
+    const extremeStressCarousel = createOmniCarousel(extremeStressElement as HTMLElement, {});
+    extremeStressCarousel.init();
+  });
+</script>

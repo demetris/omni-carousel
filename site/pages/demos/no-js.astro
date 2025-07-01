@@ -1,0 +1,84 @@
+---
+import Demos from '@components/Demos.astro';
+import Carousel from '@components/carousel/Carousel.astro';
+---
+
+<Demos
+  title="No JS (CSS only)"
+  description="Carousels made with CSS only (no JavaScript enhancement)">
+
+  <Carousel
+    title="Peek-a-boo effect"
+    ariaLabel="Peek-a-boo carousel with photo slides (in CSS only)"
+    classes={[
+      'demo--snap-center', 
+      'demo--peek-a-boo',
+      'demo--images',
+      'demo--no-js'
+    ]}
+    indicators={false}
+    photoIDs={[
+      "alex-padurariu-5rlktbEX5bY",
+      "alex-padurariu-ZR48YvUpk04", 
+      "hamed-daram-776370",
+      "clark-van-der-beken-chcyjyRQV74",
+      "delila-ziebart-3P6E2y2lyus",
+      "henry-co-_QVC2G_ehOM",
+      "william-daigneault-733670",
+      "ferdinand-stohr-O2JbMiA6ias",
+      "n-n-BtbjCFUvBXs"
+    ]}
+  />
+
+  <Carousel
+    title="Responsive slides (1/2/3 per view)"
+    ariaLabel="Carousel with slides of responsive width"
+    classes={[
+      'demo--responsive',
+      'demo--snap-start',
+      'demo--images',
+      'demo--no-js'
+    ]}
+    indicators={false}
+    photoIDs={[
+      "alex-padurariu-5rlktbEX5bY",
+      "alex-padurariu-ZR48YvUpk04", 
+      "hamed-daram-776370",
+      "clark-van-der-beken-chcyjyRQV74",
+      "delila-ziebart-3P6E2y2lyus",
+      "henry-co-_QVC2G_ehOM",
+      "william-daigneault-733670",
+      "ferdinand-stohr-O2JbMiA6ias",
+      "n-n-BtbjCFUvBXs"
+    ]}
+  />
+
+  <Carousel
+    title="Fixed-width slides"
+    ariaLabel="Carousel with slides of fixed width"
+    classes={[
+      'demo--fixed-widths',
+      'demo--squares',
+      'demo--digits',
+      'demo--no-js'
+    ]}
+    indicators={false}
+    digitCount={16}
+  />
+
+  <Carousel
+    title="One slide per view"
+    ariaLabel="Carousel with slides of full width (on per page)"
+    classes={[
+      'demo--one-per-view',
+      'demo--digits',
+      'demo--no-js'
+    ]}
+    indicators={false}
+    digitCount={4}
+  />
+
+  <style lang="scss" is:global>
+    @use '@sass/demos/main';
+  </style>
+</Demos>

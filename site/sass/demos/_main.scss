@@ -1,0 +1,15 @@
+@use 'demos-0-config';
+
+@use 'demos-1-essential';
+@use 'demos-1-recommended';
+@use 'demos-2-common';
+@use 'demos-2-indicators';
+@use 'demos-2-infobox';
+
+@use 'demos-type-fixed-widths';
+@use 'demos-type-mixed-widths';
+@use 'demos-type-one-per-view';
+@use 'demos-type-peek-a-boo';
+@use 'demos-type-responsive';
+
+@use 'demos-option-no-scrollbar';

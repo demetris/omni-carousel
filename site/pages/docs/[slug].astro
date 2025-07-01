@@ -1,0 +1,43 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Layout from '@layouts/MainLayout.astro';
+import { SITE } from '@root/site/site.config';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+
+  return docs.map(doc => ({
+    params: { slug: doc.id },
+    props: { doc },
+  }));
+}
+
+const { doc } = Astro.props;
+const renderResult = await render(doc);
+const title = renderResult.headings.find(heading => heading.depth === 1)?.text;
+
+if (!title) {
+  throw new Error(`Missing H1 heading in ${doc.id} markdown file`);
+}
+
+//
+// Get the corresponding metadata file
+//
+const meta = await getEntry('docsMeta', doc.id);
+
+if (!meta) {
+  throw new Error(`Missing metadata file for ${doc.id}`);
+}
+
+const { Content } = renderResult;
+const { description } = meta.data;
+const pageDescription = description || title;
+---
+
+<Layout title={title} description={pageDescription}>
+  <Fragment slot="main">
+    <article class="entry">
+      <Content />
+    </article>
+    </Fragment>
+</Layout>

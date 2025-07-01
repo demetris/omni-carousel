@@ -1,0 +1,37 @@
+:root {
+  ///
+  /// Base for modular scale
+  ///
+  --scale: 1.2;
+
+  ///
+  /// Larger base for modular scale
+  ///
+  --scale-lg: 1.25;
+
+  ///
+  /// Sizing and spacing
+  ///
+  --8xs:  calc(1rem * pow(var(--scale), -9));
+  --6xs:  calc(1rem * pow(var(--scale), -7));
+  --4xs:  calc(1rem * pow(var(--scale), -5));
+  --2xs:  calc(1rem * pow(var(--scale), -3));
+  --xs:   calc(1rem * pow(var(--scale), -2));
+  --sm:   calc(1rem * pow(var(--scale), -1));
+  --md:   calc(1rem * pow(var(--scale), 0));
+  --lg:   calc(1rem * pow(var(--scale), 1));
+  --xl:   calc(1rem * pow(var(--scale), 2));
+  --2xl:  calc(1rem * pow(var(--scale), 3));
+  --3xl:  calc(1rem * pow(var(--scale), 4));
+  --4xl:  calc(1rem * pow(var(--scale), 5));
+  --5xl:  calc(1rem * pow(var(--scale), 6));
+  --6xl:  calc(1rem * pow(var(--scale), 7));
+  --7xl:  calc(1rem * pow(var(--scale), 8));
+  --8xl:  calc(1rem * pow(var(--scale), 9));
+
+  --sm-xs: calc(1rem * pow(var(--scale), -1.5));
+
+  --md-sm: calc(1rem * pow(var(--scale), -0.5));
+  --md-lg: calc(1rem * pow(var(--scale), 0.5));
+  --lg-xl: calc(1rem * pow(var(--scale), 1.5));
+}

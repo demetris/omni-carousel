@@ -1,0 +1,31 @@
+@use '@sass/mixins/visually-hidden' as *;
+
+/*
+[hidden] {
+  display: none !important;
+}
+*/
+
+.is-hidden {
+  display: none !important;
+}
+
+.is-transparent {
+  opacity: 0 !important;
+}
+
+.is-larger-screen-only--word {
+  padding-inline-end: 0.375ch;
+}
+
+.visually-hidden {
+  @include visually-hidden();
+}
+
+.visually-hidden--focusable {
+  @include visually-hidden-focusable();
+}
+
+.no-breaks {
+  white-space: nowrap;
+}

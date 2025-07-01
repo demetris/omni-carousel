@@ -1,0 +1,9 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 320 512"
+  class="icon icon--caret-down-solid"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path d="M137.4 374.6a32 32 0 0 0 45.3 0l128-128a32 32 0 0 0-22.7-54.7L32 192a32.1 32.1 0 0 0-22.7 54.7l128 128z" />
+</svg>

@@ -1,0 +1,115 @@
+---
+import Demos from '@components/Demos.astro';
+import Carousel from '@components/carousel/Carousel.astro';
+---
+
+<Demos
+  title="Dist package"
+  description="Testing the distributed package version of Omni Carousel"
+  pagefindIgnore={true}
+>
+  <Carousel
+    title="Peek-a-boo with digits"
+    ariaLabel="Peek-a-boo carousel with digit slides"
+    classes={[
+      'demo--no-1',
+      'demo--four-nav-buttons',
+      'demo--snap-center',
+      'demo--peek-a-boo',
+      'demo--digits',
+      'demo--no-scrollbar',
+    ]}
+    boundaryButtons={true}
+    indicators={true}
+    digitCount={12}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Zero configuration</dt>
+        <dd></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <Carousel
+    title="Unequals with centered multi-step scrolling"
+    ariaLabel="Carousel with unequal-width slides and centered multi-step scrolling"
+    classes={[
+      'demo--no-2',
+      'demo--four-nav-buttons',
+      'demo--mixed-widths',
+      'demo--snap-center',
+      'demo--steps-many',
+      'demo--digits'
+    ]}
+    indicators={true}
+    boundaryButtons={true}
+    digitCount={64}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Configuration</dt>
+        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>hasEqualWidths: false</code></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <Carousel
+    title="One per view"
+    ariaLabel="Carousel with one photograph per view"
+    classes={[
+      'demo--no-3',
+      'demo--one-per-view',
+      'demo--four-nav-buttons',
+      'demo--snap-center',
+      'demo--images',
+    ]}
+    boundaryButtons={true}
+    indicators={true}
+    photoIDs={[
+      "alex-padurariu-5rlktbEX5bY",
+      "alex-padurariu-ZR48YvUpk04",
+      "hamed-daram-776370",
+      "clark-van-der-beken-chcyjyRQV74",
+      "delila-ziebart-3P6E2y2lyus",
+      "henry-co-_QVC2G_ehOM",
+      "william-daigneault-733670",
+      "ferdinand-stohr-O2JbMiA6ias"
+    ]}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Configuration</dt>
+        <dd><code>preloadAdjacentImages: true</code></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <style lang="scss" is:global>
+    @use '@sass/demos/main';
+  </style>
+</Demos>
+
+<script>
+  import { domReady } from '@utils/dom-ready';
+  import { createOmniCarousel } from '@lib/index';
+//import { createOmniCarousel } from '@omni-package';
+
+  domReady(() => {
+    const peekabooRoot = document.querySelector('.demo--peek-a-boo');
+    const unequalCenteredManyRoot = document.querySelector('.demo--no-2' + '.demo--steps-many' + '.demo--mixed-widths');
+    const oneperviewRoot = document.querySelector('.demo--one-per-view');
+    
+    createOmniCarousel(peekabooRoot as HTMLElement, {}).init();
+
+    createOmniCarousel(unequalCenteredManyRoot as HTMLElement, {
+      scrollSteps: 'many',
+      hasEqualWidths: false,
+    }).init();
+
+    createOmniCarousel(oneperviewRoot as HTMLElement, {
+      preloadAdjacentImages: true,
+    }).init();
+  });
+</script>

@@ -1,0 +1,20 @@
+@use '@sass/mixins/media-queries' as mq;
+
+.demo--responsive {
+  --d-slide-width: var(--width-for-content);
+  --d-slide-height: calc(var(--d-slide-width) / var(--d-aspect-ratio));
+
+  @include mq.from-md {
+    --d-per-view: 2;
+    --d-gaps-total-width: calc(var(--d-gap) * (var(--d-per-view) - 1));
+    --d-available-width: calc(var(--width-for-content) - var(--d-gaps-total-width));
+    --d-slide-width: calc((var(--d-available-width) / var(--d-per-view)) - var(--d-decipixel));
+  }
+
+  @include mq.from-lg {
+    --d-per-view: 3;
+  }
+}
+
+.demo--responsive.demo--digits {
+}

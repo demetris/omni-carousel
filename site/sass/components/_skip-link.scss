@@ -1,0 +1,22 @@
+///
+/// Skip link styling when it becomes visible on focus
+///
+
+.skip-link {
+  &:focus {
+    position: fixed;
+    top: 0.5rem;
+    left: 1rem;
+
+    z-index: var(--z-index-for-skip-link);
+
+    outline: 2px solid var(--blue-11);
+    outline-offset: 2px;
+    background-color: var(--bg-color-for-skip-link);
+    padding: 0.5rem 1rem;
+
+    text-decoration: none;
+
+    color: var(--color-for-skip-link);
+  }
+}

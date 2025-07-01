@@ -1,0 +1,19 @@
+---
+interface Props {
+  count: number;
+  index: number;
+}
+
+const { count, index } = Astro.props;
+---
+
+<li
+  aria-roledescription="slide"
+  aria-posinset={index + 1}
+  aria-setsize={count}
+  data-omni-slide
+>
+  <div class="omni-slide-content slide-content">
+    <slot />
+  </div>
+</li>

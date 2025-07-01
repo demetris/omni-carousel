@@ -1,0 +1,6 @@
+.demo--fixed-widths {
+}
+
+.demo--fixed-widths.demo--images {
+  --d-slide-width: calc(var(--d-slide-height) * 16 / 9);
+}

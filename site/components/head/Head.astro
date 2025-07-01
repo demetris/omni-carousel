@@ -1,0 +1,41 @@
+---
+import '@sass/global.scss';
+
+import Preloads from './Preloads.astro';
+import Styles from './Styles.astro';
+import { SITE } from '@site-config';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = SITE.name, description } = Astro.props;
+const { pathname } = Astro.url;
+
+const separator = ' - ';
+
+let titleContext = '';
+
+if (pathname.startsWith('/demos')) {
+  titleContext = 'Omni Carousel demos' + separator;
+} else if (pathname.startsWith('/docs')) {
+  titleContext = 'Omni Carousel documentation' + separator;
+}
+
+const fullTitle = titleContext + title;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{ fullTitle }</title>
+  { description && <meta name="description" content={description} /> }
+
+  <Styles />
+  
+  <Preloads />
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>

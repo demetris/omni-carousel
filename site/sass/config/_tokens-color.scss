@@ -1,0 +1,63 @@
+///
+/// Import Radix Colors
+/// From: https://www.radix-ui.com/colors
+/// By: Radix UI team (WorkOS)
+///
+@use 'tokens-color-radix/gray';
+@use 'tokens-color-radix/mauve';
+@use 'tokens-color-radix/slate';
+@use 'tokens-color-radix/sage';
+@use 'tokens-color-radix/olive';
+@use 'tokens-color-radix/sand';
+@use 'tokens-color-radix/tomato';
+@use 'tokens-color-radix/red';
+@use 'tokens-color-radix/ruby';
+@use 'tokens-color-radix/crimson';
+@use 'tokens-color-radix/pink';
+@use 'tokens-color-radix/plum';
+@use 'tokens-color-radix/purple';
+@use 'tokens-color-radix/violet';
+@use 'tokens-color-radix/iris';
+@use 'tokens-color-radix/indigo';
+@use 'tokens-color-radix/blue';
+@use 'tokens-color-radix/cyan';
+@use 'tokens-color-radix/teal';
+@use 'tokens-color-radix/jade';
+@use 'tokens-color-radix/green';
+@use 'tokens-color-radix/grass';
+@use 'tokens-color-radix/bronze';
+@use 'tokens-color-radix/gold';
+@use 'tokens-color-radix/brown';
+@use 'tokens-color-radix/orange';
+@use 'tokens-color-radix/amber';
+@use 'tokens-color-radix/yellow';
+@use 'tokens-color-radix/lime';
+@use 'tokens-color-radix/mint';
+@use 'tokens-color-radix/sky';
+
+///
+/// Black and white
+///
+:root {
+  --black: #000;
+  --white: #fff;
+}
+
+///
+/// Custom intermediates
+///
+
+:root {
+  --gray-2-5:     #f5f5f5;    /// Midpoint between gray-2 and gray-3
+  --gray-13:      #101010;    /// Midpoint between gray-12 and black
+
+  --blue-10-5:    #097edf;
+  --blue-11-5:    #0f5399;
+
+  --brown-10-5:   #916a4d;
+  --brown-11-25:  #705340;
+
+  --orange-10-5:  #de5700;
+
+  --yellow-13:    #241e10;
+}

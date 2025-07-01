@@ -1,0 +1,74 @@
+@use '@sass/mixins/media-queries' as mq;
+
+.entry {
+  @include mq.to-lg {
+    padding-bottom: var(--space-y-for-section);
+    padding-inline: var(--space-x);
+  }
+
+  @include mq.from-lg {
+  }
+}
+
+.entry h1 {
+  margin-top: var(--margin-top-for-entry-title);
+
+  font-size: var(--2xl);
+}
+
+///
+/// First paragraph after the title
+///
+/// The classless selector works for both
+/// Astro components and entries generated directly from Markdown files.
+///
+.entry h1 + p {
+  margin-top: var(--margin-bottom);
+  margin-bottom: var(--margin-bottom-for-entry-header);
+
+  line-height: var(--line-height-for-intro);
+
+  font-size: var(--font-size-for-intro);
+}
+
+.entry h2 {
+  text-wrap: balance;
+
+  font-size: var(--lg-xl);
+}
+
+///
+/// For entries generated dicrectly from Markdown files
+///
+.entry > h2 {
+  margin-top: calc(var(--space-y-for-section) / pow(var(--scale), 5));
+  margin-bottom: var(--margin-bottom);
+}
+
+.entry .astro-code + h2 {
+  margin-top: calc(var(--space-y-for-section) / pow(var(--scale), 3));
+}
+
+.entry p,
+.entry ul {
+}
+
+.entry a[href^="https"]::after {
+  display: inline-block;
+
+  margin-left: 0.375em;
+  width: calc(1em / var(--scale));
+  height: calc(1em / var(--scale));
+  background-color: currentColor;
+
+  font-size: calc(1em / var(--scale));
+  ///
+  /// When in a SCSS module, the URL should be relative to
+  /// the main SCSS file, rather than the module itself!
+  ///
+
+  mask: url('../assets/icons/fa/arrow-up-right-from-square-solid-no-attrs.svg') no-repeat 50% 50%;
+  mask-size: cover;
+
+  content: '';
+}

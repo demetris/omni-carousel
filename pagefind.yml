@@ -1,0 +1,9 @@
+#
+# '.demo--digits > ul > li' matches slides that have just numbers.
+#
+exclude_selectors:
+  - '.skip-link'
+  - '.header'
+  - '.nav'
+  - '.demo--digits > ul > li'
+  - '.footer'

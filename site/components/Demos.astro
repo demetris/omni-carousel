@@ -1,0 +1,30 @@
+---
+import MainLayout from '@layouts/MainLayout.astro';
+import { SITE } from '@root/site/site.config';
+
+interface Props {
+  title: string;
+  description?: string;
+  pagefindIgnore?: boolean;
+}
+
+const { title, description, pagefindIgnore } = Astro.props;
+---
+
+<MainLayout title={title} description={description} pagefindIgnore={pagefindIgnore}>
+  <Fragment slot="main">
+    <article class="entry entry--demos">
+      <header class="entry__header page-header">
+        <h1
+          class="entry__title page-title"
+          data-pagefind-weight="10"
+        >
+          {title}
+        </h1>
+        {description && <p class="entry__description page-description">{description}}
+      </header>
+      
+      <slot />
+    </article>
+  </Fragment>
+</MainLayout>

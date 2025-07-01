@@ -1,0 +1,40 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+import { SITE } from '@root/site/site.config';
+---
+
+<Layout title={`Search - ${SITE.name}`}>
+
+  <Fragment slot="main">
+
+    <div id="search"></div>
+
+    <script>
+      import { SITE } from '@site-config';
+      
+      window.addEventListener('DOMContentLoaded', async () => {
+        const { PagefindUI } = await import('@pagefind/default-ui');
+        const { initSearchInteraction } = await import('@root/site/modules/search-interaction');
+
+        new PagefindUI({
+          element: '#search',
+          autofocus: true,
+          pageSize: 50,
+          excerptLength: 15,
+          resetStyles: false,
+          showSubResults: false,
+          showImages: false,
+          translations: {
+            placeholder: SITE.searchPlaceholder,
+          }
+        });
+
+        document.body.classList.add('is-pagefind-ready');
+
+        initSearchInteraction();
+      });
+    </script>
+
+  </Fragment>
+
+</Layout>

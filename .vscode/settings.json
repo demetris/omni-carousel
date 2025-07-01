@@ -1,0 +1,22 @@
+{
+  "[scss]": {
+    "files.trimTrailingWhitespace": true
+  },
+  "[typescript]": {
+    "files.trimTrailingWhitespace": true
+  },
+  "cssvar.ignore": [
+    "**/node_modules/**"
+  ],
+  "cssvar.extensions": [
+    "css",
+    "scss",
+    "astro",
+    "ts",
+    "tsx",
+    "js",
+    "jsx"
+  ],
+  "workbench.colorCustomizations": {
+  }
+}
