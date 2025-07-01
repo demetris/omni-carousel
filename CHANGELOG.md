@@ -3,7 +3,7 @@ Omni Carousel releases and changes
 ================================================================================
 
 
-0.2.0 (2025-07-xx)
+0.2.0 (2025-07-01)
 ----------------------------------------
 
--   Initial release
+-   Made omni-carousel repository public on GitHub
