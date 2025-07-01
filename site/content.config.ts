@@ -8,7 +8,7 @@ const docs = defineCollection({
    * so that we can use the uncerscore convention for draft/private files
    */
   loader: glob({
-    pattern: "**/[^_]*.md",
+    pattern: ["**/[^_]*.md", "!resources/**"],
     base: "./docs"
   }),
   schema: z.object({
