@@ -83,7 +83,7 @@ For the CSS needed to make a functional scroller/carousel, see:
 
 -   [Essential and recommended CSS](docs/css.md)
 -   [CSS utility classes available in Omni](docs/css-utilities.md)
--   [CSS tips](docs/tips.md)
+-   [CSS tips](docs/css-tips.md)
 
 
 Quick start: Installation
