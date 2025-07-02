@@ -12,7 +12,7 @@
 .demo--peek-a-boo.demo--peek-a-boo--responsive {
   @include mq.from-md-lg {
     --d-slide-width: calc(((var(--width-for-content) * 0.9375) - (var(--d-gap) * 2)) / 3);
-    --oc-peek-width: calc((var(--width-for-content) * 0.0625) / 2);
+    --d-peek-width: calc((var(--width-for-content) * 0.0625) / 2);
   }
 }
 
@@ -22,7 +22,7 @@
     &::after {
       flex: none;
 
-      width: var(--oc-peek-width);
+      width: var(--d-peek-width);
 
       content: "";
     }
