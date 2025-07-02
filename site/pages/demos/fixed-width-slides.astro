@@ -8,7 +8,7 @@ import Carousel from '@components/carousel/Carousel.astro';
   description="Carousels with slides that have consistent, fixed widths"
 >
   <Carousel
-    title="Small"
+    title="Small carousel"
     ariaLabel="Carousel with three fixed-width slides"
     classes={[
       'demo--three-slides',
@@ -162,6 +162,12 @@ import Carousel from '@components/carousel/Carousel.astro';
 
     const threeSlides = createOmniCarousel(threeSlidesRoot as HTMLElement);
     threeSlides.init();
+
+    threeSlides.on('omni:destroy', (data) => {
+      if (data?.mode === 'partial') {
+        console.log('Partial teardown of the small carousel');
+      }
+    });
     
     const centerManyCarousel = createOmniCarousel(centerMany as HTMLElement, {
       scrollSteps: 'many',
