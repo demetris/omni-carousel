@@ -2,25 +2,29 @@
 API
 ================================================================================
 
-**This document is WIP**
+The public API made available by `createOmniCarousel()`
+
+
+Overview
+----------------------------------------
 
 ```js
-//
-// Navigation
-//
-carousel.next();     // Move to next slide(s)
-carousel.prev();     // Move to previous slide(s)
-carousel.goTo(3);    // Jump to a specific slide by its index
-
 //
 // Lifecycle
 //
 carousel.init();     // Initialize the carousel
 carousel.setup();    // Set up UI components
-carousel.destroy();  // Clean up and remove event listeners
+carousel.destroy();  // Clean up and remove everything
 
 //
-// Event subscription
+// Navigation
+//
+carousel.next();     // Go to next slide(s)
+carousel.prev();     // Go to previous slide(s)
+carousel.goTo(3);    // Go to specific slide by its index
+
+//
+// Custom events and event subscription
 //
 const unsubscribe = carousel.on('omni:visibility:change', (data) => {
   console.log('Visibility changed:', data);
@@ -28,16 +32,182 @@ const unsubscribe = carousel.on('omni:visibility:change', (data) => {
 ```
 
 
-Custom events emitted
+Example
 ----------------------------------------
 
-| Event                     | Emitted when                                     |
-|:--------------------------|:-------------------------------------------------|
-| `omni:visibility:change`  | Slide visibility changes                         |
-| `omni:dimensions:change`  | Carousel (track) width changes                   |
-| `omni:nav:prev`           | Navigating to previous slide or set of slides    |
-| `omni:nav:next`           | Navigating to next slide or set of slides        |
-| `omni:nav:index`          | Navigating by slide index                        |
-| `omni:init`               | Carousel initialization begins                   |
-| `omni:setup`              | Carousel setup begins                            |
-| `omni:destroy`            | Carousel destruction begins                      |
+```js
+import { createOmniCarousel } from 'omni-carousel';
+
+const root = document.querySelector('.carousel');
+const carousel = createOmniCarousel(root, {
+  preloadAdjacentImages: true,
+});
+
+carousel.init();
+```
+
+Note that the second parameter of `createOmniCarousel` is optional.
+For the configuration options you can pass with it, see
+[Configuration options](configuration-options.md)
+
+
+Lifecycle methods
+----------------------------------------
+
+### init()
+
+Starts the Omni operation.
+
+```js
+carousel.init();
+```
+
+Note that `init()` does not do the setup by itself.
+Setup only happens if the carousel root is visible
+in the viewport and if the carousel track overflows.
+
+### setup()
+
+Sets up everything.
+
+```js
+carousel.setup();
+```
+
+Omni calls this automatically when needed
+but you can also call it manually to force a setup.
+
+For styling when setup/destroy happen you can also use
+the `is-omni-setup` CSS class. `is-omni-setup` is added
+to the root element on setup and then removed on destroy.
+
+### destroy()
+
+```js
+carousel.destroy();
+```
+
+Removes everything added by Omni (attributes, classes, event handlers),
+restores any initial state Omni may have modified,
+and clears the internal state.
+
+
+Navigation methods
+----------------------------------------
+
+`prev()` and `next()` scroll to the previous and next slide, or
+to the previous and next set of slides, depending on the value of
+`scrollSteps`; see [Configuration options](configuration-options.md).
+
+`.goTo(number)` scrolls to a slide by its index (zero-based).
+
+
+Custom events
+----------------------------------------
+
+Omni emits eight custom events on the root element.
+
+All events bubble.
+
+| Event                    | Description                     | Data                     |
+|:-------------------------|:--------------------------------|:-------------------------|
+| `omni:visibility:change` | Slide visibility changes        | `{ state, slide, ... }`  |
+| `omni:dimensions:change` | Track dimensions change         | `{ width, scrollWidth }` |
+| `omni:nav:prev`          | Navigating to previous slide(s) | None                     |
+| `omni:nav:next`          | Navigating to next slide(s)     | None                     |
+| `omni:nav:index`         | Navigating to slide by index    | `{ index }`              |
+| `omni:init`              | Initialization begins           | None                     |
+| `omni:setup`             | Setup begins                    | None                     |
+| `omni:destroy`           | Teardown begins                 | `{ mode }` (optional)    |
+
+Omni uses these events internally and, of course, you can listen to them too.
+
+
+Event subscription
+----------------------------------------
+
+### on(event, callback)
+
+```js
+const unsubscribe = carousel.on('omni:visibility:change', (data) => {
+  console.log('Slide visibility changed:', data);
+});
+
+//
+// Later, to unsubscribe:
+//
+unsubscribe();
+```
+
+
+Event data details
+----------------------------------------
+
+### omni:visibility:change
+
+Fired when slide visibility changes.
+
+```js
+carousel.on('omni:visibility:change', (data) => {
+  const {
+    state,                    // Current carousel state
+    slide,                    // The slide element
+    fullIntersecting,         // Slide is fully visible
+    partIntersecting,         // Slide is partially visible
+    wasFullIntersecting,      // Slide was fully visible before
+    wasPartIntersecting,      // Slide was partially visible before
+    startBoundaryChanged,     // Visibility changed for the first slide
+    endBoundaryChanged        // Visibility changed for the last slide
+  } = data;
+});
+```
+
+
+### omni:dimensions:change
+
+Fires when the carousel track dimensions change.
+
+```js
+carousel.on('omni:dimensions:change', (data) => {
+  const {
+    width,          // Visible track width
+    scrollWidth     // Total scrollable width
+  } = data;
+});
+```
+
+
+### omni:nav:index 
+
+Fires when navigating to a specific slide by index.
+
+```js
+carousel.on('omni:nav:index', (data) => {
+  console.log(`Navigating to slide ${data.index}`);
+});
+```
+
+
+### omni:destroy
+
+Fires when the carousel is being destroyed.
+
+```js
+carousel.on('omni:destroy', (data) => {
+  if (data?.mode === 'partial') {
+    console.log('Partial destruction');
+  }
+});
+```
+
+
+Native event handling
+----------------------------------------
+
+You can also listen to custom events using native DOM methods:
+
+```js
+root.addEventListener('omni:nav:next', () => {
+  console.log('Next button clicked');
+});
+```
