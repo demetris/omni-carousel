@@ -77,11 +77,13 @@
 }
 
 .header-links {
+  display: flex;
+
   transition-property: opacity;
   transition-duration: var(--transition-duration);
 
   margin-left: auto;
-  margin-right: var(--xs);
+  margin-right: var(--md);
 
   @include mq.from-multi-col {
     margin-right: 0;
@@ -92,17 +94,36 @@
   }
 }
 
-.header-links a {
+.header-link {
   display: grid;
   place-content: center;
 
-  width: var(--height-for-button);
-  height: var(--height-for-button);
+  transition-property: font-weight;
+  transition-duration: var(--transition-duration);
 
-  border: 1px solid var(--border-color-for-button);
-  border-radius: var(--border-radius-sm);
+  height: calc(var(--height-for-button) / var(--scale));
+  padding-right: var(--4xs);
+
+  color: var(--color);
+  text-decoration: none;
+
+  &:not(:last-child) {
+    margin-right: var(--4xs);
+  }
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    color: var(--black);
+
+    font-weight: var(--font-weight-bold);
+  }
 }
 
-.header-links .icon {
-  font-size: var(--lg);
+.header-link--npm {
+  width: 5ch;
+}
+
+.header-link--github {
+  width: 7ch;
 }

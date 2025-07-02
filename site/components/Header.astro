@@ -1,7 +1,6 @@
 ---
 import SearchClose from '@components/SearchClose.astro';
 import MagnifyingGlass from '@icons/fa/magnifying-glass-solid.svg'
-import Git from '@icons/simple-icons/git.svg';
 import Logo from 'public/favicon.svg';
 import { SITE } from '@root/site/site.config';
 import MenuToggle from './MenuToggle.astro';
@@ -41,11 +40,20 @@ const { title, description } = Astro.props;
 
   <div class="header-links">
     <a
+      class="header-link header-link--npm"
+      href={SITE.npmURL}
+      title="View the Omni Carousel package on npm"
+      aria-label="View the Omni Carousel package on npm"
+    >
+      npm
+    </a>
+    <a
+      class="header-link header-link--github"
       href={SITE.githubURL}
-      title="View project on GitHub"
+      title="View the Omni Carousel repository on GitHub"
       aria-label="View the Omni Carousel repository on GitHub"
     >
-      <Git />
+      GitHub
     </a>
   </div>
 

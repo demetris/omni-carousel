@@ -18,7 +18,7 @@ export const SITE: Site = {
   description: 'A lightweight carousel component to enhance scrollable areas',
   siteURL: 'https://omnicarousel.dev',
   githubURL: 'https://github.com/demetris/omni-carousel',
-  npmURL: 'https://github.com/demetris/omni-carousel',
+  npmURL: 'https://www.npmjs.com/package/omni-carousel',
 
   authorName: 'Demetris Kikizas',
   since: 2025,
