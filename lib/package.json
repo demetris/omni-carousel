@@ -15,10 +15,10 @@
   },
   "files": [
     "dist",
-    "../docs",
-    "../CHANGELOG.md",
-    "../LICENSE",
-    "../README.md"
+    "docs",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
   ],
   "keywords": [
     "carousel",
@@ -44,6 +44,8 @@
   },
   "scripts": {
     "build": "tsup index.ts --format esm --dts --minify terser",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "cp ../README.md ../LICENSE ../CHANGELOG.md . && cp -r ../docs .",
+    "postpublish": "rm -f README.md LICENSE CHANGELOG.md && rm -rf docs"
   }
 }
