@@ -76,12 +76,12 @@ Omni expects a **root** element, a **track**, and **two** or more slides:
 ```
 
 The `data-omni-*` attributes are the default selectors of Omni.
-You can change them in the [configuration options](docs/config.md)
+You can change them in the [configuration options](docs/configuration-options.md)
 or add your own classes next to them and use those.
 
 For the CSS needed to make a functional scroller/carousel, see:
 
--   [Essential and recommended CSS](docs/css.md)
+-   [Essential and recommended CSS](docs/css-essential-and-recommended.md)
 -   [CSS utility classes available in Omni](docs/css-utilities.md)
 -   [CSS tips](docs/css-tips.md)
 
@@ -107,7 +107,7 @@ carousel.init();
 ```
 
 `createOmniCarousel` also takes a second parameter,
-which you can use to pass [configuration options](docs/config.md)
+which you can use to pass [configuration options](docs/configuration-options.md)
 
 Example:
 

@@ -68,7 +68,7 @@ HTML markup
 
 The `data-omni-*` attributes are what Omni uses by default to select the elements it manages.
 You can change any of them using the `selector` property
-in the [configuration options](config.md).
+in the [configuration options](configuration-options.md).
 
 If you keep the default selectors, you can target the elements in CSS in two ways:
 
