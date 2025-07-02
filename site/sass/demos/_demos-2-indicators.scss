@@ -1,14 +1,14 @@
 @use '@sass/mixins/media-queries' as mq;
 
 .demo {
-  --indicator-width: calc(var(--indicator-height) * var(--d-aspect-ratio));
-  --indicator-height: 16px;
-  --indicator-gap: calc(var(--indicator-height) / 2);
+  --d-indicator-width: calc(var(--d-indicator-height) * var(--d-aspect-ratio));
+  --d-indicator-height: 16px;
+  --d-indicator-gap: calc(var(--d-indicator-height) / 2);
 }
 
 .demo--numbered-indicators {
-  --indicator-height: 34px;
-  --indicator-gap: calc(var(--indicator-height) / 4);
+  --d-indicator-height: 34px;
+  --d-indicator-gap: calc(var(--d-indicator-height) / 4);
 }
 
 ///
@@ -57,9 +57,9 @@
 ///
 
 [data-omni-indicators] {
-  gap: var(--indicator-gap);
+  gap: var(--d-indicator-gap);
   margin-block-start: calc(var(--xs) * -1);
-  height: calc(var(--indicator-height) + 2px);
+  height: calc(var(--d-indicator-height) + 2px);
   padding-block-end: var(--sm);
 }
 
@@ -68,10 +68,10 @@
   transition-property: border-color, background-color, color;
   transition-duration: calc(var(--transition-duration) * 4);
 
-  width: var(--indicator-width);
-  min-width: var(--indicator-width);
-  height: var(--indicator-height);
-  min-height: var(--indicator-height);
+  width: var(--d-indicator-width);
+  min-width: var(--d-indicator-width);
+  height: var(--d-indicator-height);
+  min-height: var(--d-indicator-height);
   border-radius: var(--border-radius-sm);
   border-width: 1px;
   border-color: var(--border-color-for-slide);
