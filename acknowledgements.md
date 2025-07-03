@@ -10,11 +10,12 @@ Services
 -   [npm](https://www.npmjs.com) - Package registry for distributing Omni Carousel
 
 
-Libraries & tools
+Libraries, frameworks & tools
 ----------------------------------------
 
 -   [nanoevents](https://github.com/ai/nanoevents) - Tiny event emitter library
 -   [Astro](https://astro.build) - The framework used to build this site
+-   [Bootstrap][https://getbootstrap.com/] — For the visually-hidden mixins
 -   [Vite](https://vitejs.dev) - Frontend build tool
 
 
