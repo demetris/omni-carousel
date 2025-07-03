@@ -3,7 +3,7 @@ CSS utilities
 ================================================================================
 
 
-CSS utility classes added by Omni based on the state of the carousel and its components
+CSS utility classes added by Omni based on the state of the carousel and its parts
 
 
 You can use the CSS utility classes on this page
