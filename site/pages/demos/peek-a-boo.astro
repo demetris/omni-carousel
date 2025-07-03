@@ -92,7 +92,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     <Fragment slot="description">
       <dl>
         <dt>Configuration</dt>
-        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>scrollSteps: 'auto'</code></dd>
       </dl>
     </Fragment>
   </Carousel>
@@ -114,7 +114,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     }).init();
 
     createOmniCarousel(responsiveImagesCarouselRoot as HTMLElement, {
-      scrollSteps: 'many',
+      scrollSteps: 'auto',
     }).init();
   });
 </script>

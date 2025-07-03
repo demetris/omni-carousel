@@ -40,7 +40,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     classes={[
       'demo--fixed-widths',
       'demo--snap-center',
-      'demo--steps-many',
+      'demo--steps-auto',
       'demo--digits',
       'demo--squares',
       'demo--numbered-indicators',
@@ -51,7 +51,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     <Fragment slot="description">
       <dl>
         <dt>Configuration</dt>
-        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>scrollSteps: 'auto'</code></dd>
         <dd><code>indicatorNumbers: true</code></dd>
       </dl>
     </Fragment>
@@ -63,7 +63,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     classes={[
       'demo--fixed-widths',
       'demo--snap-start',
-      'demo--steps-many',
+      'demo--steps-auto',
       'demo--digits',
       'demo--squares',
     ]}
@@ -73,7 +73,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     <Fragment slot="description">
       <dl>
         <dt>Configuration</dt>
-        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>scrollSteps: 'auto'</code></dd>
       </dl>
     </Fragment>
   </Carousel>
@@ -114,7 +114,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     <Fragment slot="description">
       <dl>
         <dt>Configuration</dt>
-        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>scrollSteps: 'auto'</code></dd>
       </dl>
     </Fragment>
   </Carousel>
@@ -142,7 +142,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     <Fragment slot="description">
       <dl>
         <dt>Configuration</dt>
-        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>scrollSteps: 'auto'</code></dd>
       </dl>
     </Fragment> 
   </Carousel>
@@ -154,8 +154,8 @@ import Carousel from '@components/carousel/Carousel.astro';
 
   domReady(() => {
     const threeSlidesRoot = document.querySelector('.demo--three-slides');
-    const centerMany = document.querySelector('.demo--digits.demo--snap-center.demo--steps-many');
-    const startMany = document.querySelector('.demo--digits.demo--snap-start.demo--steps-many');
+    const centerMany = document.querySelector('.demo--digits.demo--snap-center.demo--steps-auto');
+    const startMany = document.querySelector('.demo--digits.demo--snap-start.demo--steps-auto');
     const centerOne = document.querySelector('.demo--digits.demo--snap-center.demo--steps-one');
     const startOne = document.querySelector('.demo--digits.demo--snap-start.demo--steps-one');
     const images = document.querySelector('.demo--images');
@@ -170,13 +170,13 @@ import Carousel from '@components/carousel/Carousel.astro';
     });
     
     const centerManyCarousel = createOmniCarousel(centerMany as HTMLElement, {
-      scrollSteps: 'many',
+      scrollSteps: 'auto',
       indicatorNumbers: true,
     });
     centerManyCarousel.init();
 
     const startManyCarousel = createOmniCarousel(startMany as HTMLElement, {
-      scrollSteps: 'many',
+      scrollSteps: 'auto',
     });
     startManyCarousel.init();
 
@@ -187,7 +187,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     startOneCarousel.init();
 
     const imagesCarousel = createOmniCarousel(images as HTMLElement, {
-      scrollSteps: 'many',
+      scrollSteps: 'auto',
     });
     imagesCarousel.init();
   });

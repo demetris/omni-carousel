@@ -49,8 +49,22 @@
   margin-top: calc(var(--space-y-for-section) / pow(var(--scale), 3));
 }
 
-.entry p,
-.entry ul {
+.entry h3 {
+  margin-top: calc(var(--space-y-for-section) / pow(var(--scale), 4));
+  margin-bottom: var(--margin-bottom);
+}
+
+.entry > h2 + h3 {
+  margin-top: calc(var(--space-y-for-section) / pow(var(--scale), 8));
+  margin-bottom: var(--margin-bottom);
+}
+
+.entry p {
+}
+
+.entry > table + p,
+.entry > .table-wrapper + p {
+  margin-top: var(--lg);
 }
 
 .entry a[href^="https"]::after {
@@ -71,4 +85,17 @@
   mask-size: cover;
 
   content: '';
+}
+
+.entry p + table {
+  margin-top: var(--lg);
+}
+
+.entry .table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
+}
+
+.entry .table-wrapper table {
+  min-width: max-content; // Prevent table from shrinking
 }

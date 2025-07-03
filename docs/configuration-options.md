@@ -16,7 +16,7 @@ import createOmniCarousel from 'omni-carousel';
 const root = document.querySelector('#carousel');
 
 const carousel = createOmniCarousel(root, {
-  scrollSteps: 'many',
+  scrollSteps: 'auto',
   preloadAdjacentImages: true,
   selectors: {
     track: '.carousel-track',
@@ -38,7 +38,7 @@ Default configuration
 ```js
 {
   scrollAlign: 'start', // 'start' | 'center'
-  scrollSteps: 'one', // 'one' | 'many'
+  scrollSteps: 'one', // 'one' | 'auto'
   indicatorNumbers: false,
   transitionHelpers: false,
   hasEqualWidths: true,
@@ -98,12 +98,12 @@ scrollSteps
 ----------------------------------------
 
 Default: `'one'`  
-Valid values: `'one'` and `'many'`  
+Valid values: `'one'` and `'auto'`  
 
 This controls how many slides the previous and next buttons scroll at a time:
-either one or as many as can fit.
+either one or automatically as many as can fit.
 
-Use `'many'` when multiple slides are fully visible per view
+Use `'auto'` when multiple slides are fully visible per view
 and you want the buttons to scroll by *pages* of slides rather than one at a time.
 
 
@@ -134,7 +134,7 @@ hasEqualWidths
 Default: `true`
 
 By default Omni assumes all slides are the same width.
-If you use `scrollSteps: 'many'` **and** slides of different widths,
+If you use `scrollSteps: 'auto'` **and** slides of different widths,
 set to `false` so that each slide is measured separately.
 
 This is important for Omni to be able to calculate correctly

@@ -16,7 +16,7 @@ import Carousel from '@components/carousel/Carousel.astro';
       'demo--four-nav-buttons',
       'demo--mixed-widths',
       'demo--snap-center',
-      'demo--steps-many',
+      'demo--steps-auto',
       'demo--digits'
     ]}
     indicators={true}
@@ -26,7 +26,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     <Fragment slot="description">
       <dl>
         <dt>Configuration</dt>
-        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>scrollSteps: 'auto'</code></dd>
         <dd><code>hasEqualWidths: false</code></dd>
       </dl>
     </Fragment>
@@ -38,7 +38,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     classes={[
       'demo--no-2',
       'demo--mixed-widths',
-      'demo--steps-many',
+      'demo--steps-auto',
       'demo--digits'
     ]}
     indicators={true}
@@ -47,7 +47,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     <Fragment slot="description">
       <dl>
         <dt>Configuration</dt>
-        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>scrollSteps: 'auto'</code></dd>
         <dd><code>hasEqualWidths: false</code></dd>
       </dl>
     </Fragment>
@@ -118,7 +118,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     <Fragment slot="description">
       <dl>
         <dt>Configuration</dt>
-        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>scrollSteps: 'auto'</code></dd>
         <dd><code>hasEqualWidths: false</code></dd>
       </dl>
     </Fragment>
@@ -130,20 +130,20 @@ import Carousel from '@components/carousel/Carousel.astro';
   import { createOmniCarousel } from '@lib/index';
 
   domReady(() => {
-    const manyCenterRoot = document.querySelector('.demo--digits.demo--snap-center.demo--steps-many');
-    const manyStartRoot = document.querySelector('.demo--digits.demo--no-2.demo--steps-many');
+    const manyCenterRoot = document.querySelector('.demo--digits.demo--snap-center.demo--steps-auto');
+    const manyStartRoot = document.querySelector('.demo--digits.demo--no-2.demo--steps-auto');
     const oneCenterRoot = document.querySelector('.demo--digits.demo--snap-center.demo--steps-one');
     const oneStartRoot = document.querySelector('.demo--digits.demo--snap-start.demo--steps-one');
     const imagesRoot = document.querySelector('.demo--images');
 
     const manyCenterCarousel = createOmniCarousel(manyCenterRoot as HTMLElement, {
-      scrollSteps: 'many',
+      scrollSteps: 'auto',
       hasEqualWidths: false,
     });
     manyCenterCarousel.init();
 
     const manyStartCarousel = createOmniCarousel(manyStartRoot as HTMLElement, {
-      scrollSteps: 'many',
+      scrollSteps: 'auto',
       hasEqualWidths: false,
     });
     manyStartCarousel.init();
@@ -155,7 +155,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     oneStartCarousel.init();
 
     const imagesCarousel = createOmniCarousel(imagesRoot as HTMLElement, {
-      scrollSteps: 'many',
+      scrollSteps: 'auto',
       hasEqualWidths: false,
     });
     imagesCarousel.init();

@@ -16,7 +16,7 @@ import Carousel from '@components/carousel/Carousel.astro';
       'demo--four-nav-buttons',
       'demo--mixed-widths',
       'demo--snap-center',
-      'demo--steps-many',
+      'demo--steps-auto',
       'demo--digits'
     ]}
     indicators={true}
@@ -26,7 +26,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     <Fragment slot="description">
       <dl>
         <dt>Configuration</dt>
-        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>scrollSteps: 'auto'</code></dd>
         <dd><code>hasEqualWidths: false</code></dd>
       </dl>
     </Fragment>
@@ -40,7 +40,7 @@ import Carousel from '@components/carousel/Carousel.astro';
       'demo--four-nav-buttons',
       'demo--mixed-widths',
       'demo--snap-center',
-      'demo--steps-many',
+      'demo--steps-auto',
       'demo--digits'
     ]}
     indicators={true}
@@ -50,7 +50,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     <Fragment slot="description">
       <dl>
         <dt>Configuration</dt>
-        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>scrollSteps: 'auto'</code></dd>
         <dd><code>hasEqualWidths: false</code></dd>
       </dl>
     </Fragment>
@@ -116,13 +116,13 @@ import Carousel from '@components/carousel/Carousel.astro';
     const extremeStressElement = document.querySelector('.demo--16384-slides');
 
     const manyCenter512Carousel = createOmniCarousel(manyCenter512Element as HTMLElement, {
-      scrollSteps: 'many',
+      scrollSteps: 'auto',
       hasEqualWidths: false,
     });
     manyCenter512Carousel.init();
     
     const manyCenter1024Carousel = createOmniCarousel(manyCenter1024Element as HTMLElement, {
-      scrollSteps: 'many',
+      scrollSteps: 'auto',
       hasEqualWidths: false,
     });
     manyCenter1024Carousel.init();

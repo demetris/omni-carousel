@@ -11,11 +11,11 @@ export const docsMeta: Record<string, DocMeta> = {
     title: "API",
     description: "",
   },
-  "config": {
+  "configuration-options": {
     title: "Options",
     description: "",
   },
-  "css": {
+  "css-essential-and-recommended": {
     title: "CSS",
     description: "",
   },

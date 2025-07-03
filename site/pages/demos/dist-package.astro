@@ -39,7 +39,7 @@ import Carousel from '@components/carousel/Carousel.astro';
       'demo--four-nav-buttons',
       'demo--mixed-widths',
       'demo--snap-center',
-      'demo--steps-many',
+      'demo--steps-auto',
       'demo--digits'
     ]}
     indicators={true}
@@ -49,7 +49,7 @@ import Carousel from '@components/carousel/Carousel.astro';
     <Fragment slot="description">
       <dl>
         <dt>Configuration</dt>
-        <dd><code>scrollSteps: 'many'</code></dd>
+        <dd><code>scrollSteps: 'auto'</code></dd>
         <dd><code>hasEqualWidths: false</code></dd>
       </dl>
     </Fragment>
@@ -94,13 +94,13 @@ import Carousel from '@components/carousel/Carousel.astro';
 
   domReady(() => {
     const peekabooRoot = document.querySelector('.demo--peek-a-boo');
-    const unequalCenteredManyRoot = document.querySelector('.demo--no-2' + '.demo--steps-many' + '.demo--mixed-widths');
+    const unequalCenteredManyRoot = document.querySelector('.demo--no-2' + '.demo--steps-auto' + '.demo--mixed-widths');
     const oneperviewRoot = document.querySelector('.demo--one-per-view');
     
     createOmniCarousel(peekabooRoot as HTMLElement, {}).init();
 
     createOmniCarousel(unequalCenteredManyRoot as HTMLElement, {
-      scrollSteps: 'many',
+      scrollSteps: 'auto',
       hasEqualWidths: false,
     }).init();
 

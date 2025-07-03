@@ -1,0 +1,100 @@
+@use '@sass/mixins/media-queries' as mq;
+
+table {
+  --bg-primary: var(--gray-2);
+  --bg-secondary: var(--gray-3);
+  --bg-tertiary: var(--gray-4);
+
+  --border-color-for-table: var(--gray-4);
+
+  --padding-block-for-row: var(--2xs);
+  --padding-inline-for-row: var(--xs);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--border-radius);
+  background-color: var(--bg-secondary);
+  box-shadow: 0 0 0 1px var(--border-color-for-table);
+}
+
+// Table headers
+th {
+  padding-block: var(--padding-block-for-row);
+  padding-inline: var(--padding-inline-for-row);
+  text-align: left;
+  font-weight: var(--font-weight-bold);
+  background-color: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color-for-table);
+
+  color: var(--black);
+}
+
+// Table cells
+td {
+  border-bottom: 1px solid var(--border-color-for-table);
+
+  padding-block: var(--padding-block-for-row);
+  padding-inline: var(--padding-inline-for-row);
+}
+
+// Remove bottom border from last row
+tr:last-child td {
+  border-bottom: none;
+}
+
+// Alternating row backgrounds
+tbody tr:nth-child(odd) {
+  background-color: var(--bg-primary);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--bg-secondary);
+}
+
+// Hover effect for rows
+tbody tr {
+  transition: background-color var(--transition-duration) ease;
+}
+
+tbody tr:hover {
+  background-color: var(--bg-tertiary);
+}
+
+// Ensure corner radius is maintained
+// Top corners
+thead tr:first-child th:first-child,
+tbody:first-child tr:first-child td:first-child {
+  border-top-left-radius: var(--border-radius);
+}
+
+thead tr:first-child th:last-child,
+tbody:first-child tr:first-child td:last-child {
+  border-top-right-radius: var(--border-radius);
+}
+
+// Bottom corners
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: var(--border-radius);
+}
+
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: var(--border-radius);
+}
+
+// Responsive tables
+@include mq.to-md {
+  table {
+    font-size: var(--md-sm);
+  }
+
+  th,
+  td {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+@include mq.from-multi-col {
+}

@@ -68,7 +68,7 @@ code {
 
     color: var(--color-for-inline-code);
 
-    font-size: 0.9375em;
+    font-size: 0.921875em;
 
     ///
     /// Temper Firefox rendering (Firefox renders in a heavier weight than Chrome)
@@ -76,5 +76,11 @@ code {
     @supports (-moz-appearance: none) {
     //opacity: 0.75;
     }
+  }
+
+  .docs-page table & {
+    margin-inline: initial;
+    background-color: transparent;
+    padding: initial;
   }
 }

@@ -26,7 +26,7 @@ Features
     -   Fixed-width slides of different widths
     -   Peek-a-boo slides
 -   Autodetects scroll alignment from CSS
--   Scrolls one slide at a time or as many as fit
+-   Scrolls one slide at a time or automatically as many as fit
 -   Responds automatically to changes in the track width
 -   Caches slide and navigation data to reduce DOM queries
 -   Uses fully configurable CSS selectors
@@ -112,7 +112,7 @@ which you can use to pass [configuration options](docs/configuration-options.md)
 Example:
 
 ```js
-createOmniCarousel(root, { scrollSteps: 'many' });
+createOmniCarousel(root, { scrollSteps: 'auto' });
 ```
 
 NOTE.
