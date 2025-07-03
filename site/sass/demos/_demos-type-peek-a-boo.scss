@@ -6,7 +6,7 @@
 .demo--peek-a-boo {
   --d-slide-width: calc(var(--width-for-content) * 0.875);
   --d-slide-height: calc(var(--d-slide-width) / var(--d-aspect-ratio));
-  --oc-peek-width: calc((var(--width-for-content) * 0.125) / 2);
+  --d-peek-width: calc((var(--width-for-content) * 0.125) / 2);
 }
 
 .demo--peek-a-boo.demo--peek-a-boo--responsive {
