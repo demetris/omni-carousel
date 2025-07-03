@@ -1,12 +1,12 @@
 import type { Context, ScrollDirection } from '../types';
 
 import { internalConfig as internal } from '../core/internal-config';
-import { getInboundItems } from './steps-many-align-all';
+import { getInboundItems } from './steps-auto-align-all';
 import { placeInvisibleAnchor } from './invisible-anchor';
 import { supportsScrollend } from '../utils/browser-support';
 
 /**
- * @neededfor scrollAlign:'center' + scrollSteps:'many'
+ * @neededfor scrollAlign:'center' + scrollSteps:'auto'
  *
  * Scrolls and centers an item or SET of items in the carousel
  *

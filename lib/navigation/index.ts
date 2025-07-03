@@ -6,7 +6,7 @@ import { determineAlignmentForIndicator } from '../features/indicators';
 import { getAdjacentItem } from '../features/steps-all-align-start';
 import { getCentermostItem } from '../features/steps-all-align-center';
 import { getFallbackItem } from '../features/utils';
-import { getInboundItems } from '../features/steps-many-align-all';
+import { getInboundItems } from '../features/steps-auto-align-all';
 import { scrollToCenter } from '../features/scroll';
 import { updateCenterItem } from '../dom/styles';
 
@@ -17,8 +17,8 @@ type ScrollMode =
     'indicator'                 // Direct navigation via indicator button/index
   | 'steps-one-align-center'    // One-by-one navigation with center scroll alignment
   | 'steps-one-align-start'     // One-by-one navigation with start scroll alignment
-  | 'steps-many-align-center'   // Multi-item navigation with center scroll alignment
-  | 'steps-many-align-start'    // Multi-item navigation with start scroll alignment
+  | 'steps-auto-align-center'   // Auto-item navigation with center scroll alignment
+  | 'steps-auto-align-start'    // Auto-item navigation with start scroll alignment
 ;
 
 /**
@@ -27,7 +27,7 @@ type ScrollMode =
 const determineScrollMode = (
   index: number | 'none',
   scrollAlign: 'start' | 'center',
-  scrollSteps: 'one' | 'many'
+  scrollSteps: 'one' | 'auto'
 ): ScrollMode => {
   if (index !== 'none') {
     return 'indicator';
@@ -36,7 +36,7 @@ const determineScrollMode = (
   if (scrollSteps === 'one') {
     return scrollAlign === 'center' ? 'steps-one-align-center' : 'steps-one-align-start';
   } else {
-    return scrollAlign === 'center' ? 'steps-many-align-center' : 'steps-many-align-start';
+    return scrollAlign === 'center' ? 'steps-auto-align-center' : 'steps-auto-align-start';
   }
 };
 
@@ -120,10 +120,10 @@ export const navigate = (
 
     //
     //
-    // 4. Scroll for scrollSteps:'many' + scrollAlign:'center'
+    // 4. Scroll for scrollSteps:'auto' + scrollAlign:'center'
     //
     //
-    else if (mode === 'steps-many-align-center') {
+    else if (mode === 'steps-auto-align-center') {
       const inboundItems = getInboundItems(context, direction);
 
       if (inboundItems) {
@@ -141,10 +141,10 @@ export const navigate = (
 
     //
     //
-    // 5. Scroll for scrollSteps:'many' + scrollAlign:'start'
+    // 5. Scroll for scrollSteps:'auto' + scrollAlign:'start'
     //
     //
-    else if (mode === 'steps-many-align-start') {
+    else if (mode === 'steps-auto-align-start') {
       const inboundItems = getInboundItems(context, direction);
 
       if (inboundItems) {

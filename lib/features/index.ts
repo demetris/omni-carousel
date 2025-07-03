@@ -20,7 +20,7 @@ export { getAdjacentItem } from './steps-all-align-start';
 
 export { getCentermostItem } from './steps-all-align-center';
 
-export { getInboundItems } from './steps-many-align-all';
+export { getInboundItems } from './steps-auto-align-all';
 
 export {
   calculateCenterScrollPosition,

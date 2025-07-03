@@ -17,7 +17,7 @@ export const getRectCenterX = (element: HTMLElement): number => {
 };
 
 /**
- * @neededfor scrollAlign:'center' + scrollSteps:'many'
+ * @neededfor scrollAlign:'center' + scrollSteps:'auto'
  * @neededfor indicators
  *
  * Calculates the scroll position needed to center a set of items in a container

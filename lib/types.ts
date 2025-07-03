@@ -2,7 +2,7 @@ import type { Emitter, Unsubscribe } from 'nanoevents';
 
 export type ScrollAlign = 'start' | 'center';
 export type ScrollDirection = 'left' | 'right' | 'none';
-export type ScrollSteps = 'one' | 'many';
+export type ScrollSteps = 'one' | 'auto';
 
 export interface OmniAPI {
   //
@@ -119,7 +119,7 @@ export interface State {
   containerLeft?: number;
 
   //
-  // @neededfor scrollSteps:'many'
+  // @neededfor scrollSteps:'auto'
   //
   itemSpacing?: number;
   itemWidth?: number;
@@ -146,7 +146,7 @@ export interface State {
   previousCenteredItemIndex?: number;
 
   //
-  // @neededfor scrollSteps:'many' + scrollAlign:'center'
+  // @neededfor scrollSteps:'auto' + scrollAlign:'center'
   // @neededfor Chrome
   //
   // Stores browser engine detection result for the carousel’s lifecycle
@@ -154,21 +154,21 @@ export interface State {
   detectedBlinkEngine?: boolean;
 
   //
-  // @neededfor scrollAlign:'center' + scrollSteps:'many'
+  // @neededfor scrollAlign:'center' + scrollSteps:'auto'
   //
   // Tracks whether we have old invisible anchors that need cleanup on scrollend
   //
   hasOldInvisibleAnchors?: boolean;
 
   //
-  // @neededfor scrollAlign:'center' + scrollSteps:'many'
+  // @neededfor scrollAlign:'center' + scrollSteps:'auto'
   //
   // Tracks whether we set position:relative on the track element
   //
   addedTrackCSSPosition?: boolean;
 
   //
-  // @neededfor scrollAlign:'center' + scrollSteps:'many' + hasEqualWidths: false
+  // @neededfor scrollAlign:'center' + scrollSteps:'auto' + hasEqualWidths: false
   //
   // Tracks current and previous slide indexes that are part of the centered group
   //

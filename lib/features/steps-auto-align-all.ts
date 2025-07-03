@@ -3,8 +3,8 @@ import type { Context, InboundItems, ScrollDirection } from '../types';
 import { getItemSpacing } from '../utils';
 
 /**
- * @neededfor scrollSteps:'many' + scrollAlign:'start'
- * @neededfor scrollSteps:'many' + scrollAlign:'center'
+ * @neededfor scrollSteps:'auto' + scrollAlign:'start'
+ * @neededfor scrollSteps:'auto' + scrollAlign:'center'
  *
  * Gets the item(s) that would fit into view when scrolling in a direction
  *

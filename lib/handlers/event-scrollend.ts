@@ -28,7 +28,7 @@ export const startIndicatorCentering = (context: Context): void => {
 };
 
 /**
- * @neededfor scrollAlign:'center' + scrollSteps:'many'
+ * @neededfor scrollAlign:'center' + scrollSteps:'auto'
  *
  * Removes old invisible anchor elements when the track finishes scrolling
  *

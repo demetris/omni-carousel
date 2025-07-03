@@ -85,7 +85,7 @@ export const updateCenterItem = (
 }
 
 /**
- * @neededfor scrollAlign:'center' + scrollSteps:'many' AND hasEqualWidths: false
+ * @neededfor scrollAlign:'center' + scrollSteps:'auto' AND hasEqualWidths: false
  *
  * Updates CSS classes for slides that are part of the centered group
  * Adds/removes the centerGroupItem class to slides that are part of the centered group
@@ -104,7 +104,7 @@ export const updateCenterGroupItem = (
   if (
     hasEqualWidths == true
     || scrollAlign !== 'center'
-    || scrollSteps !== 'many'
+    || scrollSteps !== 'auto'
   ) {
     return;
   }

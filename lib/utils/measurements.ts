@@ -1,7 +1,7 @@
 import type { Context } from '../types';
 
 /**
- * @neededfor scrollSteps:'many'
+ * @neededfor scrollSteps:'auto'
  *
  * Measures spacing between carousel slides
  *

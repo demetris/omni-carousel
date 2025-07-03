@@ -2,7 +2,7 @@ import type { Context, ScrollDirection } from '../types';
 
 /**
  * @neededfor scrollAlign:'start' + scrollSteps:'one'
- * @neededfor scrollAlign:'start' + scrollSteps:'many' (as fallback)
+ * @neededfor scrollAlign:'start' + scrollSteps:'auto' (as fallback)
  *
  * Gets the adjacent item
  *

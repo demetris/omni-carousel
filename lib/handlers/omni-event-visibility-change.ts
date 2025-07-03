@@ -78,7 +78,7 @@ export const updateUI = (context: Context, data: {
 
   if (
     context.config.hasEqualWidths === false
-    && context.config.scrollSteps === 'many'
+    && context.config.scrollSteps === 'auto'
     && context.config.scrollAlign === 'center'
   ) {
     updateCenterGroupItem(context);

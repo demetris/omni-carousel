@@ -56,7 +56,7 @@ export const handleSetup = (
   //
   // Ensure track is positioned for invisible element technique if needed
   //
-  if (config.scrollAlign === 'center' && config.scrollSteps === 'many') {
+  if (config.scrollAlign === 'center' && config.scrollSteps === 'auto') {
     ensureTrackPositioned(context, initialState);
   }
 

@@ -134,7 +134,7 @@ export const createOmniCarousel = (
 
   const utils: Utils = {
     //
-    // @neededfor scrollAlign:'center' + scrollSteps:'many'
+    // @neededfor scrollAlign:'center' + scrollSteps:'auto'
     // @neededfor indicators
     //
     getElementRect: (
@@ -157,7 +157,7 @@ export const createOmniCarousel = (
     },
 
     //
-    // @neededfor scrollSteps:'many'
+    // @neededfor scrollSteps:'auto'
     //
     getItemWidth: (index: number): number => {
       if (!state.itemWidthMap.has(index)) {
@@ -168,7 +168,7 @@ export const createOmniCarousel = (
     },
 
     //
-    // @neededfor scrollAlign:'center' + scrollSteps:'many'
+    // @neededfor scrollAlign:'center' + scrollSteps:'auto'
     //
     // Lazily calculates and caches the container's left position
     //
@@ -246,7 +246,7 @@ export const createOmniCarousel = (
       }
     },
     //
-    // @neededfor scrollAlign:'center' + scrollSteps:'many'
+    // @neededfor scrollAlign:'center' + scrollSteps:'auto'
     //
     {
       handler: () => removeInvisibleAnchors(getContext()),
@@ -260,7 +260,7 @@ export const createOmniCarousel = (
           !!context.state.detectedBlinkEngine
           && supportsScrollend()
           && context.config.scrollAlign === 'center'
-          && context.config.scrollSteps === 'many'
+          && context.config.scrollSteps === 'auto'
         );
       }
     },

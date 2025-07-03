@@ -3,7 +3,7 @@ import type { Context } from '../types';
 import { internalConfig } from '../core/internal-config';
 
 /**
- * @needed for scrollAlign:'center' + scrollSteps:'many'
+ * @needed for scrollAlign:'center' + scrollSteps:'auto'
  *
  * Creates or retrieves the invisible anchor element
  *
