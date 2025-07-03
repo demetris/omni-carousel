@@ -97,7 +97,7 @@ Navigation methods
 
 `prev()` and `next()` scroll to the previous and next slide, or
 to the previous and next set of slides, depending on the value of
-`scrollSteps`; see [Configuration options](configuration-options.md).
+`scrollSteps` (see [Configuration options](configuration-options.md)).
 
 `.goTo(number)` scrolls to a slide by its index (zero-based).
 
