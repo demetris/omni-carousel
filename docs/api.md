@@ -46,7 +46,7 @@ const carousel = createOmniCarousel(root, {
 carousel.init();
 ```
 
-Note that the second parameter of `createOmniCarousel` is optional.
+The second parameter of `createOmniCarousel` is optional.
 For the configuration options you can pass with it, see
 [Configuration options](configuration-options.md)
 
