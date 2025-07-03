@@ -7,6 +7,7 @@ import postcssLogical from 'postcss-logical';
 import postcssExponentialFunctions from '@csstools/postcss-exponential-functions';
 
 import { remarkFiles } from './site/utils/remark-files.mjs';
+import { rehypeTables } from './site/utils/rehype-tables.mjs';
 
 export default defineConfig({
   srcDir: './site',
@@ -18,6 +19,7 @@ export default defineConfig({
 
   markdown: {
     remarkPlugins: [remarkFiles],
+    rehypePlugins: [rehypeTables],
     shikiConfig: {
       theme: 'night-owl',
     },
