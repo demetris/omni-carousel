@@ -13,15 +13,6 @@
     width: calc(var(--d-button-height) / pow(var(--scale), 7));
     height: calc(var(--d-button-height) / pow(var(--scale), 7));
   }
-
-  &.section {
-    border-bottom: none;
-    padding-bottom: var(--2xl);
-
-    &:last-child {
-      padding-bottom: var(--space-y-for-section);
-    }
-  }
 }
 
 .demo-header {

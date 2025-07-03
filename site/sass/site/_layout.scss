@@ -54,7 +54,8 @@
   .nav {
     position:fixed;
     top: calc(var(--height-for-header) + var(--border-width-for-section));
-    left: var(--space-x);
+
+    padding-left: var(--space-x);
   }
 
   .main {

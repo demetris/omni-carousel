@@ -1,6 +1,5 @@
 ---
 import MainLayout from '@layouts/MainLayout.astro';
-import { SITE } from '@root/site/site.config';
 
 interface Props {
   title: string;
@@ -21,7 +20,7 @@ const { title, description, pagefindIgnore } = Astro.props;
         >
           {title}
         </h1>
-        {description && <p class="entry__description page-description">{description}}
+        {description && <p class="entry__description page-description">{description}</p>}
       </header>
       
       <slot />

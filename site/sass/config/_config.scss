@@ -35,9 +35,15 @@
   /// Switch to fixed widths (in pixels) at 864px
   ///
   --space-x: 14px;
+
   --width-for-content: calc(100vw - (var(--space-x) * 2));
   --width-for-content-half: calc(var(--width-for-content) / 2);
-  --width: var(--width-for-content);
+
+  --width-for-sidebar: 0rem;
+  --width-for-sidebar-half: calc(var(--width-for-sidebar) / 2);
+
+  --width: calc(var(--width-for-content) + (var(--width-for-sidebar) * 2));
+  --width-half: calc(var(--width) / 2);
 
   @include mq.from-multi-col {
     --column-gap-for-multi-col: var(--xl);
@@ -52,14 +58,12 @@
   }
 
   @include mq.from-md {
-    --space-x: calc(50% - var(--width-half));
-    --width-for-content: 40rem;
-    --width-for-sidebar: 0rem;
-    --width: calc(var(--width-for-content) + (var(--width-for-sidebar) * 2));
-    --width-half: calc(var(--width) / 2);
+    --space-x: 48px;
   }
 
   @include mq.from-lg {
+    --space-x: calc(50% - var(--width-half));
+
     --width-for-content: 40rem;
     --width-for-sidebar: 12rem;
   }
