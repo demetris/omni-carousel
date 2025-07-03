@@ -163,7 +163,7 @@ const count = hasPhotos ? photoIDs.length : (hasDigits ? digitCount : 0);
         { classes?.includes('demo--peek-a-boo--responsive') && <p>Slides per view set in CSS: 1 or 3, depending on viewport.</p> }
         { classes?.includes('demo--snap-center')  && <p>Scroll alignment (center) autodetected from CSS.</p> }
         { classes?.includes('demo--snap-start')   && <p>Scroll alignment (start) autodetected from CSS.</p> }
-        { !classes?.some(c => c.includes('omni--snap-')) && <p>No scroll alignment found in CSS; using start.</p> }
+        { !classes?.some(c => c.includes('demo--snap-')) && <p>No scroll alignment found in CSS; using start.</p> }
         { classes?.includes('demo--no-scrollbar') && <p>Scrollbar hidden in CSS.</p> }
         </>
       )}
