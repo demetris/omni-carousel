@@ -21,7 +21,7 @@ carousel.destroy();  // Clean up and remove everything
 //
 carousel.next();     // Go to next slide(s)
 carousel.prev();     // Go to previous slide(s)
-carousel.goTo(3);    // Go to specific slide by its index
+carousel.goTo(3);    // Go to specific slide by index
 
 //
 // Custom events and event subscription
