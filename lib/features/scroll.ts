@@ -145,7 +145,7 @@ export const scrollToCenter = (
     });
 
     //
-    // Remove old invisible anchor after scroll starts
+    // Remove old invisible anchor on next tick
     //
     if (oldInvisibleAnchor) {
       if (supportsScrollend()) {
