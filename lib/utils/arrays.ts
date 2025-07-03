@@ -39,7 +39,10 @@ export const insertInOrder = <T>(
  * @param array - The array to modify
  * @param index - The index of the element to remove
  */
-export const removeAtIndex = <T>(array: T[], index: number): void => {
+export const removeAtIndex = <T>(
+  array: T[],
+  index: number
+): void => {
   if (index < 0 || index >= array.length) {
     //
     // Do nothing if index is out of bounds
