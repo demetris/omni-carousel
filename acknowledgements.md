@@ -6,7 +6,6 @@ Services
 ----------------------------------------
 
 -   [Netlify](https://netlify.com) - For hosting the Omni Carousel documentation site
--   [Claude Code](https://claude.ai/code) - AI assistance for code architecture, refactoring, and documentation
 -   [GitHub](https://github.com) - For hosting the Omni Carousel source code and documentation
 -   [npm](https://www.npmjs.com) - Package registry for distributing Omni Carousel
 
