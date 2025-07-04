@@ -27,8 +27,8 @@ export const docsMeta: Record<string, DocMeta> = {
     title: "CSS tips",
     description: "",
   },
-  "html": {
-    title: "Options",
+  "html-markup": {
+    title: "HTML markup",
     description: "",
   },
   "css-tips-know-your-width": {
