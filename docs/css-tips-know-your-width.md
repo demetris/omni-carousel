@@ -11,12 +11,12 @@ Carousels built with Grid work differently.
 The challenge
 ---------------------------------------
 
-In many common carousel layouts it is simple to set the slide dimensions;
+In many common carousel layouts setting the slide dimensions is simple;
 for example, you set all slides at 300×200, or you use slides that are
-full-width and have images with the exact same aspect ratio.
+full-width and show images that all have the same aspect ratio.
 
-In other cases things get difficult when you try to set a uniform height
-based on the dynamic width of the slide.
+In other cases things get difficult when you want to set a uniform height
+for the slides based on a dynamic width.
 
 Width is easy:
 
@@ -48,7 +48,7 @@ Two solutions
 
 ### 1. cqw (container query units)
 
-`cqw` is the easiest solution if you can rely on container queries.
+`cqw` is the recommended solution if you can rely on container queries.
 
 ```css
 /*
@@ -81,8 +81,8 @@ Two solutions
 ### 2. Custom property that defines the track width
 
 The second technique works on virtually every browser in use today,
-but it involves a bit more work because you have
-to set explicit widths for your breakpoints.
+but it is more involved because you have to set
+explicit widths for your breakpoints.
 
 ```css
 /*
@@ -126,10 +126,10 @@ to set explicit widths for your breakpoints.
 Browser support
 ----------------------------------------
 
-The second technique—the **custom property** that defines the track width—works everywhere.
+The second technique—the **custom property** that defines the track width—works virtually everywhere.
 It is what all (or almost all) demo carousels on the Omni site use.
 
-The `cqw` technique works on the following browser versions:
+The `cqw` technique works on:
 
 -   Chrome v105+ (Aug 2022)
 -   Firefox v110+ (Feb 2023)
