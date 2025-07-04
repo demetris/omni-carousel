@@ -18,7 +18,8 @@
   }
 }
 
-p + .astro-code {
+p + .astro-code,
+ul + .astro-code {
   margin-top: calc(var(--margin-bottom) * pow(var(--scale), 3));
 }
 
