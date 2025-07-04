@@ -5,6 +5,14 @@
   flex-wrap: wrap;
   row-gap: var(--d-row-gap);
 
+  &:first-of-type {
+    margin-top: var(--space-y-for-section);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: var(--space-y-for-section);
+  }
+
   button .icon {
     pointer-events: none;
 
