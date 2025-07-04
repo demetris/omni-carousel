@@ -31,8 +31,8 @@ export const docsMeta: Record<string, DocMeta> = {
     title: "Options",
     description: "",
   },
-  "css-tips-track-width": {
-    title: "Know your track width",
+  "css-tips-know-your-width": {
+    title: "Know your width",
     description: "",
   },
 };
