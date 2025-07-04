@@ -1,0 +1,34 @@
+---
+import NavLink from '@components/NavLink.astro';
+import MenuClose from '@components/MenuClose.astro';
+---
+
+<nav
+  id="nav"
+  class="nav"
+  aria-label="Site navigation"
+  data-menu
+>
+  <h2>Documentation</h2>
+  <ul class="nav--docs">
+    <li><NavLink href="/">Quick start</NavLink></li>
+    <li><NavLink href="/docs/html/">HTML</NavLink></li>
+    <li><NavLink href="/docs/css-essential-and-recommended/">CSS</NavLink></li>
+    <li><NavLink href="/docs/configuration-options/">Config options</NavLink></li>
+    <li><NavLink href="/docs/css-utilities/">CSS utilities</NavLink></li>
+    <li><NavLink href="/docs/css-tips/">CSS tips</NavLink></li>
+    <li><NavLink href="/docs/css-tips-know-your-width/">Know your width</NavLink></li>
+    <li><NavLink href="/docs/api/">API</NavLink></li>
+  </ul>
+  <h2>Demos</h2>
+  <ul class="nav--demos">
+    <li><NavLink href="/demos/no-js/">No JS</NavLink></li>
+    <li><NavLink href="/demos/one-per-view/">One per view</NavLink></li>
+    <li><NavLink href="/demos/peek-a-boo/">Peek-a-boo</NavLink></li>
+    <li><NavLink href="/demos/responsive/">Responsive</NavLink></li>
+    <li><NavLink href="/demos/fixed-width-slides/">Fixed widths</NavLink></li>
+    <li><NavLink href="/demos/mixed-width-slides/">Mixed widths</NavLink></li>
+    <li><NavLink href="/demos/stress-tests/">Stress tests</NavLink></li>
+  </ul>
+  <MenuClose />
+</nav>
