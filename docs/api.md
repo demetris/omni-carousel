@@ -78,7 +78,7 @@ Omni calls this automatically when needed
 but you can also call it manually to force a setup.
 
 For styling when setup/destroy happen you can also use
-the `is-omni-setup` CSS class. `is-omni-setup` is added
+the `is-omni-ready` CSS class. `is-omni-ready` is added
 to the root element on setup and then removed on destroy.
 
 ### destroy()
