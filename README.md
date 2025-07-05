@@ -9,7 +9,6 @@ Omni Carousel is a library that takes [CSS-only carousels that work like this](h
 
 Omni Carousel leaves the markup and layout up to the author and manages
 only the parts that browsers cannot do without JavaScript.
-If that sounds interesting to you, keep reading!
 
 
 Features
