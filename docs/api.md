@@ -183,7 +183,7 @@ Fires when navigating to a specific slide by index.
 
 ```js
 carousel.on('omni:nav:index', (data) => {
-  console.log(`Navigating to slide ${data.index}`);
+  console.log(`Navigating to slide ${data.index + 1}`);
 });
 ```
 
