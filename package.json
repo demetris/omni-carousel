@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@pagefind/default-ui": "^1.3.0",
-    "astro": "^5.10.2",
+    "astro": "^5.11.0",
     "nanoevents": "^9.1.0"
   },
   "devDependencies": {
