@@ -4,13 +4,6 @@ import MagnifyingGlass from '@icons/fa/magnifying-glass-solid.svg'
 import Logo from 'public/favicon.svg';
 import { SITE } from '@root/site/site.config';
 import MenuToggle from './MenuToggle.astro';
-
-interface Props {
-  title: string;
-  description?: string;
-}
-
-const { title, description } = Astro.props;
 ---
 
 <header class="header">
@@ -23,7 +16,7 @@ const { title, description } = Astro.props;
       class="icon icon--site-logo"
       aria-label="Omni Carousel logo"
     />
-    <span class="site-title">{title}</span>
+    <span class="site-title">{SITE.name}</span>
   </a>
 
   {/*
