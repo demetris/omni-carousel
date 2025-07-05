@@ -23,7 +23,7 @@ For the accessibility attributes, please also see:
   <!--
   Optional navigation buttons — handled by Omni if present.
 
-  The nav element is not necessary.
+  The nav element is not necessary:
   Buttons can be placed anywhere, as long as they are
   within the root element (section.carousel in this example).
 
