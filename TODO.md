@@ -24,6 +24,7 @@ Site and docs
 -   [ ] Document the peek-a-boo carousel CSS technique using pseudo-elements for track spacing
 -   [ ] Extract demo CSS from Astro files into separate SCSS files for each demo type and link to them from demo pages
 -   [ ] Implement search term highlighting on pages when navigating from search results
+-   [ ] Remove unnecessary `data-astro-cid-*` attributes by converting scoped styles to global where appropriate
 
 
 Future enhancements

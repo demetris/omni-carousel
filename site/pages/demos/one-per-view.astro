@@ -47,27 +47,27 @@ import Carousel from '@components/carousel/Carousel.astro';
       </dl>
     </Fragment>
   </Carousel>
-</Demos>
 
-<script>
-  import { domReady } from '@utils/dom-ready';
-  import { createOmniCarousel } from '@lib/index';
+  <script>
+    import { domReady } from '@utils/dom-ready';
+    import { createOmniCarousel } from '@lib/index';
 
-  domReady(() => {
-    const digitsRoot = document.querySelector('.demo--one-per-view.demo--digits');
-    const imagesRoot = document.querySelector('.demo--one-per-view.demo--images');
+    domReady(() => {
+      const digitsRoot = document.querySelector('.demo--one-per-view.demo--digits');
+      const imagesRoot = document.querySelector('.demo--one-per-view.demo--images');
 
-    if (!digitsRoot || !imagesRoot) {
-      console.error('Carousel roots not found');
-      return;
-    }
+      if (!digitsRoot || !imagesRoot) {
+        console.error('Carousel roots not found');
+        return;
+      }
 
-    const digitsCarousel = createOmniCarousel(digitsRoot as HTMLElement, {});
-    const imagesCarousel = createOmniCarousel(imagesRoot as HTMLElement, {
-      preloadAdjacentImages: true,
+      const digitsCarousel = createOmniCarousel(digitsRoot as HTMLElement, {});
+      const imagesCarousel = createOmniCarousel(imagesRoot as HTMLElement, {
+        preloadAdjacentImages: true,
+      });
+
+      digitsCarousel.init();
+      imagesCarousel.init();
     });
-
-    digitsCarousel.init();
-    imagesCarousel.init();
-  });
-</script>
+  </script>
+</Demos>

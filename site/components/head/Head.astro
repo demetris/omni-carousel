@@ -2,7 +2,7 @@
 import '@sass/global.scss';
 
 import Preloads from './Preloads.astro';
-import Styles from './Styles.astro';
+import InlineStyles from './InlineStyles.astro';
 import { SITE } from '@site-config';
 
 interface Props {
@@ -33,7 +33,7 @@ const fullTitle = titleContext + title;
   <title>{ fullTitle }</title>
   { description && <meta name="description" content={description} /> }
 
-  <Styles />
+  <InlineStyles />
   
   <Preloads />
   
