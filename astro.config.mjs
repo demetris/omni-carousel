@@ -22,6 +22,21 @@ export default defineConfig({
     rehypePlugins: [rehypeTables],
     shikiConfig: {
       theme: 'night-owl',
+      transformers: [
+        {
+          span(node) {
+            //
+            // Override comment color for better contrast
+            //
+            if (
+              typeof node.properties?.style === 'string'
+              && node.properties.style.includes('color:#637777')
+            ) {
+              node.properties.style = node.properties.style.replace('#637777', '#A1A7B1');
+            }
+          }
+        }
+      ]
     },
     smartypants: false,
   },
