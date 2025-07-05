@@ -53,11 +53,15 @@ Browser support
 Quick start: Expected markup
 ----------------------------------------
 
-Omni expects a **root** element, a **track**, and **two** or more slides:
+Omni needs THREE things:
+
+-   A **root** container
+-   A slide **track** inside it
+-   Two or more **slides** inside the track
 
 ```html
-<div class="carousel"><!--Root-->
-  <ul data-omni-track><!--Track-->
+<div class="carousel"><!--Root container-->
+  <ul data-omni-track><!--Track for the slides-->
     <li data-omni-slide>Slide 1</li><!--Two or more slides-->
     <li data-omni-slide>Slide 2</li>
     <!-- More slides -->
