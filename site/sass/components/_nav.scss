@@ -11,6 +11,14 @@ body.is-menu-open {
 }
 
 .nav {
+  --translate-duration: var(--transition-duration);
+
+  @include mq.from-md-sm {
+    --translate-duration: var(--transition-duration-lg);
+  }
+}
+
+.nav {
   display: flex;
   flex-direction: column;
 
@@ -27,8 +35,8 @@ body.is-menu-open {
 
     transform: translateX(100%);
     transition:
-      transform var(--transition-duration) ease-out,
-      visibility 0s var(--transition-duration)
+      transform var(--translate-duration) ease-out,
+      visibility 0s var(--translate-duration)
     ;
 
     visibility: hidden;
