@@ -30,8 +30,9 @@ You can check for the same features Omni checks for before it starts setting up:
 How to add gaps for old versions of Safari
 ----------------------------------------
 
-Some versions of Safari do not support gap in flex containers.
-For gaps that work on those versions too, use margin:
+Some old versions of Safari do not support gap in flex containers.
+For gaps that work everywhere, including those old versions of Safari,
+use margin:
 
 ```css
 [data-omni-slide]:not(:last-child) {
