@@ -44,12 +44,30 @@
  * Chrome 88+ (Jan 2021)
  * Firefox 89+ (Jun 2021)
  * Safari 15.4+ (Mar 2022)
+ * 
+ * @returns Object with overall support status and details for each requirement
+ * @returns {boolean} .supported - Whether all requirements are met
+ * @returns {Object} .details - Individual feature support status
+ * @returns {boolean} .details.scrollBehavior - CSS scroll-behavior support
+ * @returns {boolean} .details.aspectRatio - CSS aspect-ratio support
  */
-export const supportsRequirements = (): boolean => {
-  return (
-    CSS.supports('scroll-behavior', 'smooth')
-    && CSS.supports('aspect-ratio', '1')
-  );
+export const supportsRequirements = (): {
+  supported: boolean;
+  details: {
+    scrollBehavior: boolean;
+    aspectRatio: boolean;
+  };
+} => {
+  const scrollBehavior = CSS.supports('scroll-behavior', 'smooth');
+  const aspectRatio = CSS.supports('aspect-ratio', '1');
+  
+  return {
+    supported: scrollBehavior && aspectRatio,
+    details: {
+      scrollBehavior,
+      aspectRatio,
+    },
+  };
 };
 
 /**

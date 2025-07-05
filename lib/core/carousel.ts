@@ -68,8 +68,19 @@ export const createOmniCarousel = (
   root: HTMLElement,
   options?: Options
 ): OmniAPI => {
-  if (!supportsRequirements()) {
-    throw new Error('Browser requirements not met for carousel functionality.');
+  const requirements = supportsRequirements();
+  if (!requirements.supported) {
+    const missing: string[] = [];
+
+    if (!requirements.details.scrollBehavior) {
+      missing.push('scroll-behavior');
+    }
+
+    if (!requirements.details.aspectRatio) {
+      missing.push('aspect-ratio');
+    }
+    
+    throw new Error(`Browser requirements not met: ${missing.join(', ')} CSS support missing`);
   }
 
   //
