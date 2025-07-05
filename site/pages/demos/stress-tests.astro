@@ -103,34 +103,34 @@ import Carousel from '@components/carousel/Carousel.astro';
       </dl>
     </Fragment>
   </Carousel>
+
+  <script>
+    import { domReady } from '@utils/dom-ready';
+    import { createOmniCarousel } from '@lib/index';
+
+    domReady(() => {
+      const manyCenter512Element = document.querySelector('.demo--512-slides');
+      const manyCenter1024Element = document.querySelector('.demo--1024-slides');
+      const oneCenterElement = document.querySelector('.demo--2048-slides');
+      const extremeStressElement = document.querySelector('.demo--16384-slides');
+
+      const manyCenter512Carousel = createOmniCarousel(manyCenter512Element as HTMLElement, {
+        scrollSteps: 'auto',
+        hasEqualWidths: false,
+      });
+      manyCenter512Carousel.init();
+      
+      const manyCenter1024Carousel = createOmniCarousel(manyCenter1024Element as HTMLElement, {
+        scrollSteps: 'auto',
+        hasEqualWidths: false,
+      });
+      manyCenter1024Carousel.init();
+      
+      const oneCenterCarousel = createOmniCarousel(oneCenterElement as HTMLElement, {});
+      oneCenterCarousel.init();
+      
+      const extremeStressCarousel = createOmniCarousel(extremeStressElement as HTMLElement, {});
+      extremeStressCarousel.init();
+    });
+  </script>
 </Demos>
-
-<script>
-  import { domReady } from '@utils/dom-ready';
-  import { createOmniCarousel } from '@lib/index';
-
-  domReady(() => {
-    const manyCenter512Element = document.querySelector('.demo--512-slides');
-    const manyCenter1024Element = document.querySelector('.demo--1024-slides');
-    const oneCenterElement = document.querySelector('.demo--2048-slides');
-    const extremeStressElement = document.querySelector('.demo--16384-slides');
-
-    const manyCenter512Carousel = createOmniCarousel(manyCenter512Element as HTMLElement, {
-      scrollSteps: 'auto',
-      hasEqualWidths: false,
-    });
-    manyCenter512Carousel.init();
-    
-    const manyCenter1024Carousel = createOmniCarousel(manyCenter1024Element as HTMLElement, {
-      scrollSteps: 'auto',
-      hasEqualWidths: false,
-    });
-    manyCenter1024Carousel.init();
-    
-    const oneCenterCarousel = createOmniCarousel(oneCenterElement as HTMLElement, {});
-    oneCenterCarousel.init();
-    
-    const extremeStressCarousel = createOmniCarousel(extremeStressElement as HTMLElement, {});
-    extremeStressCarousel.init();
-  });
-</script>

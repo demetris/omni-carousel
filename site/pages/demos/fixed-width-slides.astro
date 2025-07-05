@@ -146,49 +146,49 @@ import Carousel from '@components/carousel/Carousel.astro';
       </dl>
     </Fragment> 
   </Carousel>
+
+  <script>
+    import { domReady } from '@utils/dom-ready';
+    import { createOmniCarousel } from '@lib/index';
+
+    domReady(() => {
+      const threeSlidesRoot = document.querySelector('.demo--three-slides');
+      const centerMany = document.querySelector('.demo--digits.demo--snap-center.demo--steps-auto');
+      const startMany = document.querySelector('.demo--digits.demo--snap-start.demo--steps-auto');
+      const centerOne = document.querySelector('.demo--digits.demo--snap-center.demo--steps-one');
+      const startOne = document.querySelector('.demo--digits.demo--snap-start.demo--steps-one');
+      const images = document.querySelector('.demo--images');
+
+      const threeSlides = createOmniCarousel(threeSlidesRoot as HTMLElement);
+      threeSlides.init();
+
+      threeSlides.on('omni:destroy', (data) => {
+        if (data?.mode === 'partial') {
+          console.log('Partial teardown of the small carousel');
+        }
+      });
+      
+      const centerManyCarousel = createOmniCarousel(centerMany as HTMLElement, {
+        scrollSteps: 'auto',
+        indicatorNumbers: true,
+      });
+      centerManyCarousel.init();
+
+      const startManyCarousel = createOmniCarousel(startMany as HTMLElement, {
+        scrollSteps: 'auto',
+      });
+      startManyCarousel.init();
+
+      const centerOneCarousel = createOmniCarousel(centerOne as HTMLElement);
+      centerOneCarousel.init();
+
+      const startOneCarousel = createOmniCarousel(startOne as HTMLElement);
+      startOneCarousel.init();
+
+      const imagesCarousel = createOmniCarousel(images as HTMLElement, {
+        scrollSteps: 'auto',
+      });
+      imagesCarousel.init();
+    });
+  </script>
 </Demos>
-
-<script>
-  import { domReady } from '@utils/dom-ready';
-  import { createOmniCarousel } from '@lib/index';
-
-  domReady(() => {
-    const threeSlidesRoot = document.querySelector('.demo--three-slides');
-    const centerMany = document.querySelector('.demo--digits.demo--snap-center.demo--steps-auto');
-    const startMany = document.querySelector('.demo--digits.demo--snap-start.demo--steps-auto');
-    const centerOne = document.querySelector('.demo--digits.demo--snap-center.demo--steps-one');
-    const startOne = document.querySelector('.demo--digits.demo--snap-start.demo--steps-one');
-    const images = document.querySelector('.demo--images');
-
-    const threeSlides = createOmniCarousel(threeSlidesRoot as HTMLElement);
-    threeSlides.init();
-
-    threeSlides.on('omni:destroy', (data) => {
-      if (data?.mode === 'partial') {
-        console.log('Partial teardown of the small carousel');
-      }
-    });
-    
-    const centerManyCarousel = createOmniCarousel(centerMany as HTMLElement, {
-      scrollSteps: 'auto',
-      indicatorNumbers: true,
-    });
-    centerManyCarousel.init();
-
-    const startManyCarousel = createOmniCarousel(startMany as HTMLElement, {
-      scrollSteps: 'auto',
-    });
-    startManyCarousel.init();
-
-    const centerOneCarousel = createOmniCarousel(centerOne as HTMLElement);
-    centerOneCarousel.init();
-
-    const startOneCarousel = createOmniCarousel(startOne as HTMLElement);
-    startOneCarousel.init();
-
-    const imagesCarousel = createOmniCarousel(images as HTMLElement, {
-      scrollSteps: 'auto',
-    });
-    imagesCarousel.init();
-  });
-</script>

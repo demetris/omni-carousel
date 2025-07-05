@@ -55,21 +55,21 @@ import Carousel from '@components/carousel/Carousel.astro';
       </dl>
     </Fragment>
   </Carousel>
-</Demos>
 
-<script>
-  import { domReady } from '@utils/dom-ready';
-  import { createOmniCarousel } from '@lib/index';
+  <script>
+    import { domReady } from '@utils/dom-ready';
+    import { createOmniCarousel } from '@lib/index';
 
-  domReady(() => {
-    const carouselElements = document.querySelectorAll('.demo--responsive');
-    const carousels = [];
+    domReady(() => {
+      const carouselElements = document.querySelectorAll('.demo--responsive');
+      const carousels = [];
 
-    carouselElements.forEach((element) => {
-      const carousel = createOmniCarousel(element as HTMLElement, {});
+      carouselElements.forEach((element) => {
+        const carousel = createOmniCarousel(element as HTMLElement, {});
 
-      carousel.init();
-      carousels.push(carousel);
+        carousel.init();
+        carousels.push(carousel);
+      });
     });
-  });
-</script>
+  </script>
+</Demos>

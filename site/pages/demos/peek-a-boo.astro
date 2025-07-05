@@ -96,25 +96,25 @@ import Carousel from '@components/carousel/Carousel.astro';
       </dl>
     </Fragment>
   </Carousel>
+
+  <script>
+    import { domReady } from '@utils/dom-ready';
+    import { createOmniCarousel } from '@lib/index';
+
+    domReady(() => {
+      const digitsCarouselRoot = document.querySelector('.demo--digits');
+      const imagesCarouselRoot = document.querySelector('.demo--images.demo--no-2');
+      const responsiveImagesCarouselRoot = document.querySelector('.demo--images.demo--peek-a-boo--responsive');
+      
+      createOmniCarousel(digitsCarouselRoot as HTMLElement).init();
+
+      createOmniCarousel(imagesCarouselRoot as HTMLElement, {
+        preloadAdjacentImages: true,
+      }).init();
+
+      createOmniCarousel(responsiveImagesCarouselRoot as HTMLElement, {
+        scrollSteps: 'auto',
+      }).init();
+    });
+  </script>
 </Demos>
-
-<script>
-  import { domReady } from '@utils/dom-ready';
-  import { createOmniCarousel } from '@lib/index';
-
-  domReady(() => {
-    const digitsCarouselRoot = document.querySelector('.demo--digits');
-    const imagesCarouselRoot = document.querySelector('.demo--images.demo--no-2');
-    const responsiveImagesCarouselRoot = document.querySelector('.demo--images.demo--peek-a-boo--responsive');
-    
-    createOmniCarousel(digitsCarouselRoot as HTMLElement).init();
-
-    createOmniCarousel(imagesCarouselRoot as HTMLElement, {
-      preloadAdjacentImages: true,
-    }).init();
-
-    createOmniCarousel(responsiveImagesCarouselRoot as HTMLElement, {
-      scrollSteps: 'auto',
-    }).init();
-  });
-</script>

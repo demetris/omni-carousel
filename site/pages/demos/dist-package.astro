@@ -85,27 +85,27 @@ import Carousel from '@components/carousel/Carousel.astro';
       </dl>
     </Fragment>
   </Carousel>
+
+  <script>
+    import { domReady } from '@utils/dom-ready';
+    import { createOmniCarousel } from '@lib/index';
+  //import { createOmniCarousel } from '@omni-package';
+
+    domReady(() => {
+      const peekabooRoot = document.querySelector('.demo--peek-a-boo');
+      const unequalCenteredManyRoot = document.querySelector('.demo--no-2' + '.demo--steps-auto' + '.demo--mixed-widths');
+      const oneperviewRoot = document.querySelector('.demo--one-per-view');
+      
+      createOmniCarousel(peekabooRoot as HTMLElement, {}).init();
+
+      createOmniCarousel(unequalCenteredManyRoot as HTMLElement, {
+        scrollSteps: 'auto',
+        hasEqualWidths: false,
+      }).init();
+
+      createOmniCarousel(oneperviewRoot as HTMLElement, {
+        preloadAdjacentImages: true,
+      }).init();
+    });
+  </script>
 </Demos>
-
-<script>
-  import { domReady } from '@utils/dom-ready';
-  import { createOmniCarousel } from '@lib/index';
-//import { createOmniCarousel } from '@omni-package';
-
-  domReady(() => {
-    const peekabooRoot = document.querySelector('.demo--peek-a-boo');
-    const unequalCenteredManyRoot = document.querySelector('.demo--no-2' + '.demo--steps-auto' + '.demo--mixed-widths');
-    const oneperviewRoot = document.querySelector('.demo--one-per-view');
-    
-    createOmniCarousel(peekabooRoot as HTMLElement, {}).init();
-
-    createOmniCarousel(unequalCenteredManyRoot as HTMLElement, {
-      scrollSteps: 'auto',
-      hasEqualWidths: false,
-    }).init();
-
-    createOmniCarousel(oneperviewRoot as HTMLElement, {
-      preloadAdjacentImages: true,
-    }).init();
-  });
-</script>

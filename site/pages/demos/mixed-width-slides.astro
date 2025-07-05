@@ -123,41 +123,41 @@ import Carousel from '@components/carousel/Carousel.astro';
       </dl>
     </Fragment>
   </Carousel>
+
+  <script>
+    import { domReady } from '@utils/dom-ready';
+    import { createOmniCarousel } from '@lib/index';
+
+    domReady(() => {
+      const manyCenterRoot = document.querySelector('.demo--digits.demo--snap-center.demo--steps-auto');
+      const manyStartRoot = document.querySelector('.demo--digits.demo--no-2.demo--steps-auto');
+      const oneCenterRoot = document.querySelector('.demo--digits.demo--snap-center.demo--steps-one');
+      const oneStartRoot = document.querySelector('.demo--digits.demo--snap-start.demo--steps-one');
+      const imagesRoot = document.querySelector('.demo--images');
+
+      const manyCenterCarousel = createOmniCarousel(manyCenterRoot as HTMLElement, {
+        scrollSteps: 'auto',
+        hasEqualWidths: false,
+      });
+      manyCenterCarousel.init();
+
+      const manyStartCarousel = createOmniCarousel(manyStartRoot as HTMLElement, {
+        scrollSteps: 'auto',
+        hasEqualWidths: false,
+      });
+      manyStartCarousel.init();
+
+      const oneCenterCarousel = createOmniCarousel(oneCenterRoot as HTMLElement);
+      oneCenterCarousel.init();
+
+      const oneStartCarousel = createOmniCarousel(oneStartRoot as HTMLElement);
+      oneStartCarousel.init();
+
+      const imagesCarousel = createOmniCarousel(imagesRoot as HTMLElement, {
+        scrollSteps: 'auto',
+        hasEqualWidths: false,
+      });
+      imagesCarousel.init();
+    });
+  </script>
 </Demos>
-
-<script>
-  import { domReady } from '@utils/dom-ready';
-  import { createOmniCarousel } from '@lib/index';
-
-  domReady(() => {
-    const manyCenterRoot = document.querySelector('.demo--digits.demo--snap-center.demo--steps-auto');
-    const manyStartRoot = document.querySelector('.demo--digits.demo--no-2.demo--steps-auto');
-    const oneCenterRoot = document.querySelector('.demo--digits.demo--snap-center.demo--steps-one');
-    const oneStartRoot = document.querySelector('.demo--digits.demo--snap-start.demo--steps-one');
-    const imagesRoot = document.querySelector('.demo--images');
-
-    const manyCenterCarousel = createOmniCarousel(manyCenterRoot as HTMLElement, {
-      scrollSteps: 'auto',
-      hasEqualWidths: false,
-    });
-    manyCenterCarousel.init();
-
-    const manyStartCarousel = createOmniCarousel(manyStartRoot as HTMLElement, {
-      scrollSteps: 'auto',
-      hasEqualWidths: false,
-    });
-    manyStartCarousel.init();
-
-    const oneCenterCarousel = createOmniCarousel(oneCenterRoot as HTMLElement);
-    oneCenterCarousel.init();
-
-    const oneStartCarousel = createOmniCarousel(oneStartRoot as HTMLElement);
-    oneStartCarousel.init();
-
-    const imagesCarousel = createOmniCarousel(imagesRoot as HTMLElement, {
-      scrollSteps: 'auto',
-      hasEqualWidths: false,
-    });
-    imagesCarousel.init();
-  });
-</script>
