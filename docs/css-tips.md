@@ -2,11 +2,17 @@
 CSS tips
 ================================================================================
 
-**This document is WIP**
+Tips for improving carousels/scrollers made with CSS
 
 
 How to hide the track scrollbar
 ----------------------------------------
+
+Be careful to hide the scrollbar only when there is other UI
+for users to interact with the carousel; that is, only when
+Omni has set up and is enhancing the scrollable area.
+
+You can check for the same features Omni checks for before it starts setting up:
 
 ```css
 @supports (scroll-behavior: smooth) and (aspect-ratio: 1) {
@@ -20,30 +26,25 @@ How to hide the track scrollbar
 }
 ```
 
-CSS `scroll-behavior` and `aspect-ratio` are the features Omni checks for before it initializes,
-so this will hide the scrollbar only in scrollable areas that are enhanced by Omni.
 
-
-How to add gaps that work on old versions of Safari
+How to add gaps for old versions of Safari
 ----------------------------------------
 
+Some versions of Safari do not support gap in flex containers.
+For gaps that work on those versions too, use margin:
+
 ```css
-@supports (scroll-behavior: smooth) and (aspect-ratio: 1) {
-  [data-omni-slide]:not(:last-child) {
-    margin-right: 1rem;
-  }
+[data-omni-slide]:not(:last-child) {
+  margin-right: 1rem;
 }
 ```
-
-Some old Safari versions support Flexbox but not `gap` for Flexbox.
-Use `margin-right` if you want your gaps to work in those versions too.
 
 
 How to prevent cumulative layout shifts (CLS)
 ----------------------------------------
 
-If you have an element with the `data-omni-indicators` attribute within the root,
-Omni will autogenerate indicators (dots) for it and insert them into it.
+If there is an element with the `data-omni-indicators` attribute within the root,
+Omni autogenerates indicators (dots) for it and inserts them into it.
 
 Make sure that this element has a mininum height equal or larger than
 the height of your indicators.
