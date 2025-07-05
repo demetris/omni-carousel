@@ -15,7 +15,7 @@ In many common carousel layouts setting the slide dimensions is simple;
 for example, you set all slides at 300×200, or you use slides that are
 full-width and show images that all have the same aspect ratio.
 
-In other cases things get difficult when you want to set a uniform height
+Things get difficult when you want to set a uniform height
 for the slides based on a dynamic width.
 
 Width is easy:
