@@ -3,6 +3,12 @@ Omni Carousel releases and changes
 ================================================================================
 
 
+0.2.2 (2025-07-05)
+----------------------------------------
+
+-   Improved browser requirements error messages to specify which CSS features are missing
+
+
 0.2.1 (2025-07-03)
 ----------------------------------------
 
