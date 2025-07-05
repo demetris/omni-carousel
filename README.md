@@ -79,6 +79,8 @@ The `data-omni-*` attributes are the default selectors of Omni.
 You can change them in the [configuration options](docs/configuration-options.md)
 or add your own classes next to them and use those.
 
+For a complete example with all markup options, see [HTML markup](docs/html-markup.md).
+
 For the CSS needed to make a functional scroller/carousel, see:
 
 -   [Essential and recommended CSS](docs/css-essential-and-recommended.md)
