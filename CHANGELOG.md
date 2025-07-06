@@ -3,7 +3,7 @@ Omni Carousel releases and changes
 ================================================================================
 
 
-0.2.3 (2025-07-06)
+0.2.4 (2025-07-06)
 ----------------------------------------
 
 -   Removed check of reduced-motion pref to leave final determination of scrollBehavior to the user agent
