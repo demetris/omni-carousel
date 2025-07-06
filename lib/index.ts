@@ -18,5 +18,5 @@
 //
 // Re-export from core module
 //
-export * from './core';
+export { createOmniCarousel } from './core';
 
