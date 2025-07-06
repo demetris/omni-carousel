@@ -9,31 +9,31 @@ interface DocMeta {
 export const docsMeta: Record<string, DocMeta> = {
   "api": {
     title: "API",
-    description: "",
+    description: "The public API made available by createOmniCarousel(): lifecycle methods, navigation controls, and custom event handling",
   },
   "configuration-options": {
     title: "Options",
-    description: "",
+    description: "Configure Omni Carousel with scroll steps, image preloading, your own selectors and more",
   },
   "css-essential-and-recommended": {
     title: "CSS",
-    description: "",
+    description: "Essential and recommended CSS for setting the foundations of a carousel layout",
   },
   "css-utilities": {
     title: "CSS utilities",
-    description: "CSS classes and one CSS custom property provided by Omni Carousel for styling and effects",
+    description: "CSS classes provided by Omni Carousel for styling and effects",
   },
   "css-tips": {
     title: "CSS tips",
-    description: "",
+    description: "Tips for carousels made with CSS: hide the scrollbar, add backward-compatible gaps and more",
   },
   "html-markup": {
     title: "HTML markup",
-    description: "",
+    description: "Example HTML markup for carousels with semantic elements, ARIA attributes, and navigation controls",
   },
   "css-tips-know-your-width": {
     title: "Know your width",
-    description: "",
+    description: "Techniques for controlling width and height of responsive slides in flex-based carousels",
   },
 };
 

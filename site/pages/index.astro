@@ -1,9 +1,10 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
 import Readme from '@root/README.md';
+import { SITE } from '@site-config';
 ---
 
-<Layout title="Omni Carousel">
+<Layout title="Omni Carousel" description={SITE.description}>
 
   <Fragment slot="main">
 
