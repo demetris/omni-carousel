@@ -21,12 +21,12 @@
     "README.md"
   ],
   "keywords": [
-    "carousel",
     "slider",
+    "carousel",
+    "slideshow",
+    "gallery",
     "javascript",
-    "typescript",
-    "lightweight",
-    "performance"
+    "typescript"
   ],
   "repository": {
     "type": "git",
