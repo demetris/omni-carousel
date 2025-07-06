@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Omni Carousel documentation and demos site
+# All bots welcome to crawl respectfully
