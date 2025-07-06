@@ -43,7 +43,7 @@
     "typescript": "^5.8.3"
   },
   "scripts": {
-    "build": "tsup index.ts --format esm --dts",
+    "build": "tsup index.ts --format esm --dts --sourcemap",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "cp ../README.md ../LICENSE ../CHANGELOG.md . && cp -r ../docs .",
     "postpublish": "rm -f README.md LICENSE CHANGELOG.md && rm -rf docs"
