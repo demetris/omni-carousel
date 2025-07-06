@@ -36,6 +36,8 @@ Accessibility (a11y)
 General
 ----------------------------------------
 
+-   <https://chrome.dev/carousel/>
+-   <https://css.oddbird.net/overflow/explainer/>
 -   <https://dimanech.github.io/scroll-snap-carousel/>
 -   <https://github.com/dimanech/scroll-snap-carousel>
 -   <https://gui-challenges.web.app/carousel/dist/>
