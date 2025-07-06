@@ -34,27 +34,11 @@ interface InternalConfig {
   };
 }
 
-/**
- * Determines scroll behavior based on user preference
- *
- * @returns 'auto' if user prefers reduced motion, 'smooth' otherwise
- */
-const determineScrollBehavior = (): ScrollBehavior => {
-  if (typeof window === 'undefined' || !window.matchMedia) {
-    return 'smooth';
-  }
-
-  return window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ? 'auto'
-    : 'smooth'
-  ;
-};
-
 export const internalConfig: InternalConfig = {
   ioRootMargin: '0px 1px 0px 1px',
   ioThresholds: [0, 1],
 
-  scrollBehavior: determineScrollBehavior(),
+  scrollBehavior: 'smooth',
   scrollBlock: 'nearest',
 
   centerTolerance: 1,
