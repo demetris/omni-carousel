@@ -39,7 +39,6 @@
     "nanoevents": "^9.1.0"
   },
   "devDependencies": {
-    "terser": "^5.43.1",
     "tsup": "^8.5.0",
     "typescript": "^5.8.3"
   },
