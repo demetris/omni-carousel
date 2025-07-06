@@ -6,7 +6,7 @@
   ///
   --d-decipixel: 0.1px;
 
-  --d-button-height: 36px;
+  --d-button-height: 40px;
 
   --d-nav-width: calc((var(--d-button-height) * 2) + var(--d-nav-gap));
 
@@ -26,8 +26,8 @@
 
   --d-border-color-for-slide: var(--gray-7);
   --d-bg-color-for-slide: var(--bg-color);
-  --d-bg-color-for-button: var(--gray-6);
-  --d-bg-color-for-button-interaction: var(--blue-7);
+  --d-bg-color-for-button: var(--bg-color-for-button);
+  --d-bg-color-for-button-interaction: var(--bg-color-for-button-interaction);
 
   @include mq.from-md {
   }

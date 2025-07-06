@@ -8,19 +8,20 @@
 
   --color-for-logo: var(--teal-11);
 
-  --color-for-link: var(--brown-11);
+  --color-for-link: var(--amber-11-25);
   --color-for-link-decoration: rgba(127, 127, 127, 0.125);
   --color-for-link-decoration-interaction: var(--color);
   --color-for-button-interaction: var(--blue-11);
 
-  --bg-color-for-button: var(--gray-3);
+  --bg-color-for-button: var(--gray-4);
+  --bg-color-for-button-interaction: var(--gray-6);
 
   --border-color-for-section: var(--gray-5);
   --border-color-for-button: var(--gray-5);
 
   --color-for-nav-link: var(--color);
   --color-for-menu-item-current: var(--teal-13);
-  --bg-color-for-menu-item-interactive: var(--gray-3);
+  --bg-color-for-menu-item-interaction: var(--gray-3);
   --bg-color-for-menu-item-current: var(--teal-3);
 
   --bg-color-for-menu-mobile: var(--gray-1);
@@ -34,7 +35,7 @@
   --color-for-inline-code: rgba(0, 0, 0, 1);
 
   --color-for-infobox: inherit;
-  --color-for-infobox-link: var(--brown-11-25);
+  --color-for-infobox-link: var(--color-for-link);
   --bg-color-for-infobox: var(--gray-2-5);
 
   --bg-color-for-footer: var(--gray-3);
@@ -45,8 +46,8 @@
   --border-color-for-search-input-hover: var(--gray-7);
   --bg-color-for-search-input-hover: var(--gray-6);
 
-  --bg-color-for-search-icon-docs: var(--blue-10-5);
-  --bg-color-for-search-icon-demos: var(--orange-10-5);
+  --bg-color-for-search-icon-docs: var(--teal-10-50);
+  --bg-color-for-search-icon-demos: var(--tomato-10);
 
   --bg-color-for-search-highlight: var(--yellow-3);
   --color-for-search-highlight: var(--yellow-13);
