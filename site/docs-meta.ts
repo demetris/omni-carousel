@@ -9,7 +9,7 @@ interface DocMeta {
 export const docsMeta: Record<string, DocMeta> = {
   "api": {
     title: "API",
-    description: "The public API made available by createOmniCarousel(): lifecycle methods, navigation controls, and custom event handling",
+    description: "Complete API reference for Omni Carousel: initialization, navigation methods, event handling, and lifecycle management",
   },
   "configuration-options": {
     title: "Options",
@@ -17,7 +17,7 @@ export const docsMeta: Record<string, DocMeta> = {
   },
   "css-essential-and-recommended": {
     title: "CSS",
-    description: "Essential and recommended CSS for setting the foundations of a carousel layout",
+    description: "Essential CSS for setting the foundations of a flex-based carousel layout",
   },
   "css-utilities": {
     title: "CSS utilities",
@@ -25,7 +25,7 @@ export const docsMeta: Record<string, DocMeta> = {
   },
   "css-tips": {
     title: "CSS tips",
-    description: "Tips for carousels made with CSS: hide the scrollbar, add backward-compatible gaps and more",
+    description: "CSS tips for carousels made with CSS: hide the scrollbar, add backward-compatible gaps and more",
   },
   "html-markup": {
     title: "HTML markup",

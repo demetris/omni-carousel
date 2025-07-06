@@ -15,7 +15,7 @@ export interface Site {
 
 export const SITE: Site = {
   name: 'Omni Carousel',
-  description: 'A lightweight carousel component to enhance scrollable areas',
+  description: 'A JavaScript library that enhances CSS-only carousels with keyboard navigation, indicators, and scroll controls',
   siteURL: 'https://omnicarousel.dev',
   githubURL: 'https://github.com/demetris/omni-carousel',
   npmURL: 'https://www.npmjs.com/package/omni-carousel',
