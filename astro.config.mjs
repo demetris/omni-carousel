@@ -12,6 +12,7 @@ import { rehypeTables } from './site/utils/rehype-tables.mjs';
 
 export default defineConfig({
   site: 'https://omnicarousel.dev',
+
   srcDir: './site',
   
   experimental: {

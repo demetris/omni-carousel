@@ -2,13 +2,12 @@
 
 .demo {
   --d-indicator-width: calc(var(--d-indicator-height) * var(--d-aspect-ratio));
-  --d-indicator-height: 16px;
-  --d-indicator-gap: calc(var(--d-indicator-height) / 2);
+  --d-indicator-height: 22px;
+  --d-indicator-gap: 8px;
 }
 
 .demo--numbered-indicators {
-  --d-indicator-height: 34px;
-  --d-indicator-gap: calc(var(--d-indicator-height) / 4);
+  --d-indicator-height: 36px;
 }
 
 ///
