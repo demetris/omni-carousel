@@ -1,6 +1,7 @@
 // @ts-check
 
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 import autoprefixer from 'autoprefixer';
 import postcssLogical from 'postcss-logical';
@@ -10,6 +11,7 @@ import { remarkFiles } from './site/utils/remark-files.mjs';
 import { rehypeTables } from './site/utils/rehype-tables.mjs';
 
 export default defineConfig({
+  site: 'https://omnicarousel.dev',
   srcDir: './site',
   
   experimental: {
@@ -58,5 +60,8 @@ export default defineConfig({
   },
 
   integrations: [
+    sitemap({
+      filter: (page) => !page.includes('/demos/dist-package/')
+    }),
   ],
 });

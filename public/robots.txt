@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://omnicarousel.dev/sitemap-index.xml
+
 # Omni Carousel documentation and demos site
 # All bots welcome to crawl respectfully
