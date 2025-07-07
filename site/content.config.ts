@@ -28,9 +28,10 @@ const docsMeta = defineCollection({
     //
     // Use statically imported metadata to avoid module runner issues during build
     //
-    return Object.entries(docsMetadata).map(([id, data]) => ({
+    return Object.entries(docsMetadata).map(([id, metadata]) => ({
       id,
-      data
+      // Don't nest under 'data' - let Astro handle that
+      ...metadata
     }));
   },
   schema: z.object({
