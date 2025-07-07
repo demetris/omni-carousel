@@ -39,7 +39,7 @@ Height is not. You cannot do this:
 ```
 
 For carousels whose slide dimensions are controlled in CSS only,
-like the [No JS demos on this website](https://omnicarousel.dev/demos/no-js/),
+like all demos on this website,
 this is a problem that needs solving. There are two ways to solve it.
 
 
