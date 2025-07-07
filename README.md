@@ -25,11 +25,11 @@ Features
     -   Fixed-width slides of different widths
     -   Peek-a-boo slides
 -   Autodetects scroll alignment from CSS
--   Scrolls one slide at a time or automatically as many as fit
+-   Scrolls one slide at a time or as many as fit automatically
 -   Responds automatically to changes in the track width
 -   Caches slide and navigation data to reduce DOM queries
 -   Uses fully configurable CSS selectors
--   Sets up lazily (i.e., only if needed)
+-   Sets up lazily (only when needed)
 -   Fully typed
 
 
@@ -112,8 +112,8 @@ const carousel = createOmniCarousel(root);
 carousel.init();
 ```
 
-`createOmniCarousel` also takes a second parameter,
-which you can use to pass [configuration options](docs/configuration-options.md)
+`createOmniCarousel` also takes a second parameter, for passing
+[configuration options](docs/configuration-options.md)
 
 Example:
 
@@ -143,6 +143,6 @@ npm install
 Then:
 
 -   `npm run dev` — Start the whole project (site and lib) and watch for changes
--   `npm run lint` — Check code style in TypeScript files
--   `npm run typecheck` — Check TypeScript types
+-   `npm run lint` — Check code style in the TypeScript files
+-   `npm run typecheck` — Check the TypeScript types
 -   `cd lib && npm run build` — Build the library
