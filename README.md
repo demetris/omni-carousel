@@ -50,8 +50,11 @@ Browser support
 -   Safari v15.4+ (Mar 2022)
 
 
-Quick start: Expected markup
+Quick start
 ----------------------------------------
+
+
+### Expected markup
 
 Omni needs THREE things:
 
@@ -91,16 +94,14 @@ For the CSS needed to make a functional scroller/carousel, see:
 -   [CSS tips](docs/css-tips.md)
 
 
-Quick start: Installation
-----------------------------------------
+### Installation
 
 ```bash
 npm install omni-carousel
 ```
 
 
-Quick start: Initialization
-----------------------------------------
+### Initialization
 
 ```js
 import { createOmniCarousel } from 'omni-carousel';
