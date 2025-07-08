@@ -127,7 +127,7 @@ Browser support
 ----------------------------------------
 
 The second technique—the **custom property** that defines the track width—works virtually everywhere.
-It is what all (or almost all) demo carousels on the Omni site use.
+It is what all (or almost all) Omni demos use.
 
 The `cqw` technique works on:
 
