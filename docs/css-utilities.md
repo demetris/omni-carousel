@@ -98,7 +98,7 @@ is-omni-indicator-overflow
 
 CSS class added to the *root Omni element* when the indicators overflow their container.
 
-For example, you can use this to display the start/end buttons only when
+For example, you can use this to display start/end buttons only when
 the indicators are overflowing and the first and/or last indicators are hidden:
 
 ```css
