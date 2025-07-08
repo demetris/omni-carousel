@@ -3,17 +3,16 @@ Configuration options
 ================================================================================
 
 
-
-
 Configuration example
 -----------------------------------------
 
-Here is an example of how to configure a carousel with custom options:
+This is a basic example that starts Omni for a carousel
+while also passing a few options:
 
 ```js
 import createOmniCarousel from 'omni-carousel';
 
-const root = document.querySelector('#carousel');
+const root = document.querySelector('.carousel');
 
 const carousel = createOmniCarousel(root, {
   scrollSteps: 'auto',
@@ -60,8 +59,8 @@ Default configuration
 selectors
 ----------------------------------------
 
-Omni has a set of default selectors for the carousel elements it manages or needs to know about.
-You can change those to any valid CSS selectors.
+Omni has default selectors for the carousel elements it manages or needs to know about.
+You can change any of those to any valid CSS selectors.
 
 Default:
 
