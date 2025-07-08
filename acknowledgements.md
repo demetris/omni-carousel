@@ -14,6 +14,7 @@ Libraries, frameworks & tools
 ----------------------------------------
 
 -   [nanoevents](https://github.com/ai/nanoevents) - Tiny event emitter library
+-   [tsup](https://tsup.egoist.dev/) - The tool used to bundle the Omni Carousel library
 -   [Astro](https://astro.build) - The framework used to build this site
 -   [Bootstrap](https://getbootstrap.com/) — For the visually-hidden mixins
 -   [Vite](https://vitejs.dev) - Frontend build tool
