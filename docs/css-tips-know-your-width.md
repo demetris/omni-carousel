@@ -12,10 +12,10 @@ The challenge
 ---------------------------------------
 
 In many common carousel layouts setting the slide dimensions is simple;
-for example, you set all slides at 300×200, or you use slides that are
-full-width and show images that all have the same aspect ratio.
+for example, all slides are 300×200, or all slides are full-width
+and show images that all have the exact same aspect ratio.
 
-Things get difficult when you want to set a uniform height
+Things get difficult if you want to set a uniform height
 for the slides based on a dynamic width.
 
 Width is easy:
@@ -39,8 +39,8 @@ Height is not. You cannot do this:
 ```
 
 For carousels whose slide dimensions are controlled in CSS only,
-like all demos on this website,
-this is a problem that needs solving. There are two ways to solve it.
+like all demos on this website, this is a problem that needs solving.
+There are two ways to solve it.
 
 
 Two solutions
