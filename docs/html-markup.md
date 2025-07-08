@@ -23,21 +23,21 @@ For the accessibility attributes, please also see:
   <!--
   Optional navigation buttons — handled by Omni if present.
 
-  The nav element is not necessary:
+  The nav element is not required:
   Buttons can be placed anywhere, as long as they are
   within the root element (section.carousel in this example).
 
   You can also add buttons to go to the first/last slide.
-  The default selectors for those are:
+  Omni handles those too. Their default selectors are:
   - data-omni-button-start
   - data-omni-button-end
   -->
   <nav>
     <!--
-      The previous button usually starts disabled (we are at the start).
+      The previous button should typically be disabled at first (we are at the start).
       Omni manages this and sets the button to disabled when it starts,
-      but you can also include the attribute here to prevent
-      the flash from enabled (default) to disabled.
+      but you can also include the attribute here to avoid
+      the initial state mismatch.
     -->
     <button
       disabled
