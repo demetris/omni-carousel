@@ -16,8 +16,8 @@ Features
 
 -   Enhances scrollable areas with:
     -   Better keyboard support
-    -   Buttons (previous/next/start/end)
-    -   Indicators (that are also navigation buttons)
+    -   Button handling (previous/next/start/end)
+    -   Indicators (that are also navigation controls)
 -   Works with different setups:
     -   Responsive slides
     -   Full-width slides
