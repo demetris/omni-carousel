@@ -9,7 +9,7 @@ How to hide the track scrollbar
 ----------------------------------------
 
 Be careful to hide the scrollbar only when there is other UI
-for users to interact with the carousel; that is, only when
+for interacting with the carousel; that is, only when
 Omni has set up and is enhancing the scrollable area.
 
 You can check for the same features Omni checks for before it starts:
