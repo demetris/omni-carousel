@@ -7,7 +7,7 @@ Libraries
 ----------------------------------------
 
 | Name                  | URL                                                       | Notes            |
-|---------------------  |:----------------------------------------------------------|------------------|
+|:--------------------  |:----------------------------------------------------------|:-----------------|
 | Blaze Slider          | <https://blaze-slider.dev/>                               |                  |
 | BoxSlider             | <https://philparsons.co.uk/slider/>                       |                  |
 | CarouSCCel            | <https://github.com/schorfES/caroucssel>                  | Interesting!     |
