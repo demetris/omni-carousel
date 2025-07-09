@@ -6,6 +6,7 @@ TODO items for the Omni Carousel project
 Library
 ----------------------------------------
 
+-   [ ] Ignore non-button buttons in setup, print appropriate and informative message
 -   [ ] `scrollToCenter`. Use happy path for unequal widths too if inboundItems is just one.
 
 
