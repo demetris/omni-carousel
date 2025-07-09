@@ -218,16 +218,11 @@ Feature detection
 
 -   `debounce()` - Function debouncing
 
-### memoization.ts
-
-Performance optimization
-
--   `memoize()` - Creates memoized function
--   `clearMemoizedMeasurements()` - Cache clearing
-
 ### measurements.ts
 
--   `getItemSpacing()` - Item spacing calculation
+Item spacing calculation
+
+-   `getItemSpacing()` - Calculates spacing between slides, caches result in state
 
 
 Key architectural patterns
@@ -254,7 +249,7 @@ init() → setup() → active carousel → destroy()
 
 ### Performance optimizations
 
--   Memoization for expensive calculations
+-   State-based caching for expensive calculations
 -   Observers for efficient change detection
 -   Passive event listeners
 -   Minimal DOM manipulation
