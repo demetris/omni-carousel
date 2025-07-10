@@ -71,8 +71,31 @@
   margin-bottom: var(--margin-bottom);
 }
 
+.entry > ul + h3 {
+  margin-top: calc(var(--margin-bottom)
+    * var(--scale)
+    * var(--scale)
+    * var(--scale)
+    * var(--scale)
+  );
+}
+
+.entry .astro-code + h3 {
+  margin-top: calc(var(--margin-bottom)
+    * var(--scale)
+    * var(--scale)
+    * var(--scale)
+    * var(--scale)
+    * var(--scale)
+  );
+}
+
 .entry > h2 + h3 {
-//margin-top: calc(var(--margin-bottom) * var(--scale));
+  margin-top: calc(var(--margin-bottom)
+    * var(--scale)
+    * var(--scale)
+    * var(--scale)
+  );
   margin-bottom: var(--margin-bottom);
 }
 
