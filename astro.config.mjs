@@ -3,9 +3,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-import autoprefixer from 'autoprefixer';
-import postcssLogical from 'postcss-logical';
-import postcssExponentialFunctions from '@csstools/postcss-exponential-functions';
 
 import { remarkFiles } from './site/utils/remark-files.mjs';
 import { rehypeTables } from './site/utils/rehype-tables.mjs';
@@ -49,15 +46,6 @@ export default defineConfig({
       assetsInlineLimit: 0,
       sourcemap: process.env.NODE_ENV === 'localhost',
     },
-    css: {
-      postcss: {
-        plugins: [
-          autoprefixer(),
-          postcssLogical(),
-          postcssExponentialFunctions(),
-        ]
-      }
-    }
   },
 
   integrations: [
