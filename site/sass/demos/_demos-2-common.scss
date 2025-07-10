@@ -18,8 +18,24 @@
 
     fill: currentColor;
 
-    width: calc(var(--d-button-height) / pow(var(--scale), 7));
-    height: calc(var(--d-button-height) / pow(var(--scale), 7));
+    width: calc(var(--d-button-height)
+      / var(--scale)
+      / var(--scale)
+      / var(--scale)
+      / var(--scale)
+      / var(--scale)
+      / var(--scale)
+      / var(--scale)
+    );
+    height: calc(var(--d-button-height)
+      / var(--scale)
+      / var(--scale)
+      / var(--scale)
+      / var(--scale)
+      / var(--scale)
+      / var(--scale)
+      / var(--scale)
+    );
   }
 }
 

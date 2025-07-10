@@ -130,8 +130,8 @@
 //--font-size-adjust: 0.511;            /// Lato
 
   --line-height: 1.618;
-  --line-height-for-headings: calc(var(--line-height) * pow(var(--scale), -1));
-  --line-height-for-intro: calc(var(--line-height) * pow(var(--scale), -0.5));
+  --line-height-for-headings: calc(var(--line-height) / var(--scale));
+  --line-height-for-intro: calc((var(--line-height) + var(--line-height-for-headings)) / 2);
 
   ///
   /// Use 'normal' rather than numeric value.

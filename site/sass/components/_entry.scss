@@ -42,21 +42,37 @@
 /// For entries generated dicrectly from Markdown files
 ///
 .entry > h2 {
-  margin-top: calc(var(--space-y-for-section) / pow(var(--scale), 5));
+  margin-top: calc(var(--margin-bottom)
+    * var(--scale)
+    * var(--scale)
+    * var(--scale)
+    * var(--scale)
+    * var(--scale)
+    * var(--scale)
+  );
   margin-bottom: var(--margin-bottom);
 }
 
 .entry .astro-code + h2 {
-  margin-top: calc(var(--space-y-for-section) / pow(var(--scale), 3));
+  margin-top: calc(var(--margin-bottom)
+    * var(--scale)
+    * var(--scale)
+    * var(--scale)
+    * var(--scale)
+    * var(--scale)
+    * var(--scale)
+  );
 }
 
 .entry h3 {
-  margin-top: calc(var(--space-y-for-section) / pow(var(--scale), 4));
+  margin-top: calc(var(--margin-bottom)
+    * var(--scale)
+  );
   margin-bottom: var(--margin-bottom);
 }
 
 .entry > h2 + h3 {
-  margin-top: calc(var(--space-y-for-section) / pow(var(--scale), 8));
+//margin-top: calc(var(--margin-bottom) * var(--scale));
   margin-bottom: var(--margin-bottom);
 }
 
