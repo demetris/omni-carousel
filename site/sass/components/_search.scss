@@ -16,17 +16,42 @@
 @use '@sass/mixins/media-queries' as mq;
 
 :root {
+  ///
+  /// Search input states
+  ///
+  ///
+  --border-color-for-input: var(--gray-5);
+
+  --border-color-for-search-input-hover: transparent;
+  --bg-color-for-search-input-hover: var(--gray-4);
+
+  --bg-color-for-search-highlight: var(--gray-3);
+  --color-for-search-placeholder: rgba(14, 14, 14, 0.625);
+
+  ///
+  ///
+  ///
+  --bg-color-for-search-icon-docs: var(--teal-10-50);
+  --bg-color-for-search-icon-demos: var(--tomato-10);
+
+  ///
+  ///
+  ///
+  --width-for-marker: calc(1em * 1.25);
+  --width-for-marker-heavy: calc(1em * 1.1875);
+
+  --padding-left-for-results: var(--4xl);
+
   --top-for-input: var(--height-for-header-row-title);
   --left-for-input: calc(50% - var(--width-for-content-half));
 
-  --top-for-icon: calc(
+  --top-for-search-icon: calc(
     var(--height-for-header-row-title)
-    + (var(--height-for-input) / 2) - (var(--height-for-icon)) / 2)
+    + (var(--height-for-input) / 2) - (var(--height-for-search-icon)) / 2)
   ;
-  --left-for-icon: calc(var(--left-for-input) + ((var(--width-for-input) - var(--width-for-icon)) / 2));
-  --left-for-icon: calc(
+  --left-for-search-icon: calc(
     var(--left-for-input)
-    + ((var(--height-for-input) - var(--width-for-icon)) / 2)
+    + ((var(--height-for-input) - var(--width-for-search-icon)) / 2)
     + (var(--border-width-for-input) / 2)
   );
 
@@ -35,15 +60,20 @@
     + var(--border-width-for-input)
     + var(--gap-for-clear)
   );
-  --right-for-clear: calc(var(--space-x) + var(--border-width-for-input) + var(--gap-for-clear));
+  --right-for-clear: calc(
+    var(--space-x)
+    + var(--border-width-for-input)
+    + var(--gap-for-clear)
+  );
 
   --z-index-for-input: calc(var(--z-index-for-header) + 1);
-  --z-index-for-icon: calc(var(--z-index-for-header) + 2);
+  --z-index-for-search-icon: calc(var(--z-index-for-header) + 2);
 
-  --width-for-icon: var(--md-sm);
-  --height-for-icon: var(--width-for-icon);
+  --width-for-search-icon: var(--md-sm);
+  --height-for-search-icon: var(--width-for-search-icon);
 
   --width-for-input: var(--width-for-content);
+
   --height-for-clear: calc(
     var(--height-for-button)
     - (var(--border-width-for-input) * 2)
@@ -58,12 +88,13 @@
 
   --bg-color-for-input: var(--gray-2-5);
   --bg-color-for-input-focus: var(--blue-3);
+  --border-color-for-input-focus: var(--teal-10);
 
   --gap-for-clear: 2px;
 
   @include mq.from-multi-col {
     --top-for-input: calc((var(--height-for-header) - var(--height-for-input)) / 2);
-    --top-for-icon: calc((var(--height-for-header) - var(--height-for-icon)) / 2);
+    --top-for-search-icon: calc((var(--height-for-header) - var(--height-for-search-icon)) / 2);
     --top-for-clear: calc((var(--height-for-header) - var(--height-for-clear)) / 2);
     --right-for-clear: calc(
       50%
@@ -85,11 +116,10 @@ body {
 }
 
 .search-close {
-  border-color: var(--border-color-for-button);
+  border-color: transparent;
 
   &:hover,
   &:focus-visible {
-    border-color: var(--border-color-for-search-input-hover);
     background-color: var(--bg-color-for-search-input-hover);
   }
 }
@@ -126,9 +156,8 @@ body {
 
   opacity: 1;
 
-  transition-property: opacity;
+  transition-property: opacity, background-color, border-color;
   transition-duration: calc(var(--transition-duration) / 2);
-  transition-duration: 250ms;
   transition-timing-function: ease-out;
 
   border-color: transparent;
@@ -142,6 +171,11 @@ body {
   ///
   color: var(--color-for-search-placeholder) !important;
 
+  &:hover {
+    border-color: var(--border-color-for-search-input-hover);
+    background-color: var(--bg-color-for-search-input-hover);
+  }
+
   .is-pagefind-ready & {
     opacity: 0;
   }
@@ -151,13 +185,13 @@ body {
   pointer-events: none;
 
   position: fixed;
-  top: var(--top-for-icon);
-  left: var(--left-for-icon);
+  top: var(--top-for-search-icon);
+  left: var(--left-for-search-icon);
 
-  z-index: var(--z-index-for-icon);
+  z-index: var(--z-index-for-search-icon);
 
-  width: var(--width-for-icon);
-  height: var(--height-for-icon);
+  width: var(--width-for-search-icon);
+  height: var(--height-for-search-icon);
 }
 
 .pagefind-ui {
@@ -173,7 +207,7 @@ body {
   margin-bottom: calc((var(--height-for-header) - var(--height-for-input)) / 2);
   border-width: var(--border-width-for-input); /// NEEDS TO BE ADDED!
 
-  border-color: var(--bg-color-for-input);
+  border-color: var(--border-color-for-input);
 
   font-family: inherit;
   font-size: inherit;
@@ -195,7 +229,7 @@ body {
 
   height: var(--height-for-clear);
   border-radius: var(--border-radius-sm);
-  background-color: var(--bg-color-for-button);
+  background-color: var(--gray-3);
   padding-inline: var(--2xl);
 
   font-size: var(--sm);
@@ -239,12 +273,12 @@ body {
 }
 
 .pagefind-ui__message {
-  font-size: var(--sm);
+  font-style: italic;
 }
 
 .pagefind-ui__results {
   margin-left: 0;
-  padding-left: var(--2xl);
+  padding-left: var(--padding-left-for-results);
 
   list-style: none;
 }
@@ -261,14 +295,11 @@ body {
   display: inline-block;
 
   position: absolute;
+  left: calc(var(--padding-left-for-results) * -1);
+  top: 0.25rem;
 
-  width: calc(1em * 0.96875);
-  height: calc(1em * 0.96875);
   background-color: currentColor;
 
-  font-size: calc(1em * 0.96875);
-
-  mask: url('../assets/icons/fa/file-lines-solid-no-attrs.svg') no-repeat 50% 50%;
   mask-size: cover;
 
   content: '';
@@ -276,19 +307,25 @@ body {
 
 .pagefind-ui__result:has(a[href="/"])::before,
 .pagefind-ui__result:has(a[href^="/docs"])::before {
-  top: calc(var(--2xs) - 0px);
-  left: calc(var(--2xl) * -1);
+  width: var(--width-for-marker);
+  height: var(--width-for-marker);
 
   background-color: var(--bg-color-for-search-icon-docs);
+
+  font-size: var(--width-for-marker);
 
   mask: url('../assets/icons/fa/file-lines-regular-no-attrs.svg') no-repeat 50% 50%;
 }
 
 .pagefind-ui__result:has(a[href^="/demos"])::before {
-  top: calc(var(--2xs) - 0px);
-  left: calc(var(--2xl) * -1);
+  top: 0.375rem;
+
+  width: var(--width-for-marker-heavy);
+  height: var(--width-for-marker-heavy);
 
   background-color: var(--bg-color-for-search-icon-demos);
+
+  font-size: var(--width-for-marker-heavy);
 
   mask: url('../assets/icons/fa/image-regular-no-attrs.svg') no-repeat 50% 50%;
 }
@@ -303,11 +340,13 @@ body {
 .pagefind-ui__result-title {
   margin-bottom: calc(var(--margin-bottom) / 8);
 
-  font-size: var(--md-lg);
+  font-size: var(--lg-xl);
 }
 
 .pagefind-ui__result-excerpt {
   margin-bottom: 0;
+
+  font-size: var(--md-lg);
 }
 
 .pagefind-ui__result-excerpt mark {
@@ -316,5 +355,4 @@ body {
   padding-bottom: var(--6xs);
   padding-inline: var(--4xs);
 
-  color: var(--color-for-search-highlight);
 }
