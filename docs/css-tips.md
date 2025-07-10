@@ -121,7 +121,7 @@ use margin:
 ```
 
 
-How to prevent cumulative layout shifts (CLS)
+How to prevent shifts from the indicators container
 ----------------------------------------
 
 If there is an element with the `data-omni-indicators` attribute within the root,
