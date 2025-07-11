@@ -62,7 +62,7 @@ Starts the Omni operation.
 carousel.init();
 ```
 
-Note that `init()` does not do the setup by itself.
+Note that `init()` does not do the setup.
 Setup only happens if the carousel root is visible
 in the viewport and if the carousel track overflows.
 

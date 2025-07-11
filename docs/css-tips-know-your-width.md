@@ -11,12 +11,12 @@ Carousels built with Grid work differently.
 The challenge
 ---------------------------------------
 
-In many common carousel layouts setting the slide dimensions is simple;
+Setting the slide dimensions is simple in some common carousel layouts;
 for example, all slides are 300×200, or all slides are full-width
 and show images that all have the exact same aspect ratio.
 
-Things get difficult if you want to set a uniform height
-for the slides based on a dynamic width.
+Things get difficult if you want to set a uniform slide height
+based on a dynamic width.
 
 Width is easy:
 
@@ -26,7 +26,7 @@ Width is easy:
 }
 ```
 
-Height is not. You cannot do this:
+Height is not. You can’t do this:
 
 ```css
 /*
@@ -39,7 +39,7 @@ Height is not. You cannot do this:
 ```
 
 For carousels whose slide dimensions are controlled in CSS only,
-like all demos on this website, this is a problem that needs solving.
+like the demos one the Omni website, this is a problem that needs solving.
 There are two ways to solve it.
 
 
@@ -52,26 +52,26 @@ Two solutions
 
 ```css
 /*
-* Make the track a container of the inline-size type
-*/
+ * Make the track a container of the inline-size type
+ */
 .track {
   container-type: inline-size;
 }
 
 /*
-* Set slide dimensions with cqw
-*
-* For example, for slides as wide as the track
-* (one per view) and with an aspect ratio of 16 / 9
-*/
+ * Set slide dimensions with cqw
+ *
+ * For example, for slides as wide as the track
+ * (one per view) and with an aspect ratio of 16 / 9
+ */
 .slide {
   width: 100cqw;
   height: calc(100cqw / (16 / 9));
 }
 
 /*
-* Or, for three slides per view
-*/
+ * Or, for three slides per view
+ */
 .slide {
   width: calc(100cqw / 3);
   height: calc(100cqw / 3 / (16 / 9));
@@ -80,8 +80,8 @@ Two solutions
 
 ### 2. Custom property that defines the track width
 
-The second technique works on virtually every browser in use today,
-but it is more involved because you have to set
+The second technique works on virtually every browser in use today
+but is more involved because you have to set
 explicit widths for your breakpoints.
 
 ```css
@@ -126,8 +126,8 @@ explicit widths for your breakpoints.
 Browser support
 ----------------------------------------
 
-The second technique—the **custom property** that defines the track width—works virtually everywhere.
-It is what all (or almost all) Omni demos use.
+The second technique—the **custom property** for the track width—works virtually everywhere.
+It is what the Omni demos use.
 
 The `cqw` technique works on:
 
