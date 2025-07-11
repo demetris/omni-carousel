@@ -45,7 +45,7 @@
   "scripts": {
     "build": "tsup index.ts --format esm --dts --sourcemap",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "cp ../README.md ../LICENSE ../CHANGELOG.md . && cp -r ../docs .",
+    "prepublishOnly": "cp ../README.md ../LICENSE ../CHANGELOG.md . && mkdir -p docs && cp ../docs/*.md docs/",
     "postpublish": "rm -f README.md LICENSE CHANGELOG.md && rm -rf docs"
   }
 }
