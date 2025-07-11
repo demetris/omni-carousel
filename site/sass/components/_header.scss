@@ -83,7 +83,11 @@
   transition-duration: var(--transition-duration);
 
   margin-left: auto;
-  margin-right: var(--md);
+  margin-right: var(--sm);
+
+  @include mq.from-sm {
+    margin-right: var(--md);
+  }
 
   @include mq.from-multi-col {
     margin-right: 0;
@@ -102,13 +106,21 @@
   transition-duration: var(--transition-duration);
 
   height: calc(var(--height-for-button) / var(--scale));
-  padding-right: var(--4xs);
+  padding-right: var(--8xs);
 
   color: var(--color);
   text-decoration: none;
 
+  @include mq.from-sm {
+    padding-right: var(--4xs);
+  }
+
   &:not(:last-child) {
-    margin-right: var(--4xs);
+    margin-right: var(--8xs);
+
+    @include mq.from-sm {
+      margin-right: var(--4xs);
+    }
   }
 
   &:hover,
