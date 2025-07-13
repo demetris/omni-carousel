@@ -16,6 +16,7 @@ Site and docs
 -   [ ] Extract demo CSS from Astro files into separate SCSS files for each demo type and link to them from demo pages
 -   [ ] Implement search term highlighting on pages when navigating from search results
 -   [ ] Remove unnecessary `data-astro-cid-*` attributes by converting scoped styles to global where appropriate
+-   [ ] Improve description for the three-slide demo to highlight the responsive overflow detection feature: "Try resizing your window or rotating your device to see how Omni responds."
 
 
 Future enhancements
