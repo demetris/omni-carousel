@@ -56,7 +56,7 @@ and then exits.
 The features Omni checks for are:
 
 1.  CSS scroll-behavior
-2.  CSS aspect-ratio
+2.  CSS aspect-ratio (good rough proxy for several native JS APIs)
 
 
 Quick start
