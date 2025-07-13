@@ -1,0 +1,19 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+import Changelog from '@root/CHANGELOG.md';
+---
+
+<Layout title="Changelog - Omni Carousel" description="Release notes and version history for Omni Carousel">
+
+  <Fragment slot="main">
+
+    <article 
+      class="entry entry--changelog"
+      aria-label="Changelog for Omni Carousel"
+    >
+      <Changelog />
+    </article>
+
+  </Fragment>
+
+</Layout>
