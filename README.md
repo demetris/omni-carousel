@@ -49,6 +49,15 @@ Browser support
 -   Firefox v89+ (Jun 2021)
 -   Safari v15.4+ (Mar 2022)
 
+In older browsers Omni logs a message
+with the features it looked for and did not find
+and then exits.
+
+The features Omni checks for are:
+
+1.  CSS scroll-behavior
+2.  CSS aspect-ratio
+
 
 Quick start
 ----------------------------------------
