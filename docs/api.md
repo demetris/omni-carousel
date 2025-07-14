@@ -121,7 +121,7 @@ All events bubble.
 | `omni:setup`             | Setup begins                    | None                     |
 | `omni:destroy`           | Teardown begins                 | `{ mode }` (optional)    |
 
-Omni uses these events internally and, of course, you can listen to them too.
+Omni uses these events internally. Of course, you can listen to them too.
 
 
 Event subscription
