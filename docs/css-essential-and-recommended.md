@@ -19,7 +19,7 @@ Useful custom properties
 ----------------------------------------
 
 Custom properties are not “essential” but I find them useful.
-I include a few here with some values just for the snippets.
+I include a few here for the snippets.
 
 ```css
 .carousel {

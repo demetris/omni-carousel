@@ -11,9 +11,9 @@ Carousels built with Grid work differently.
 The challenge
 ---------------------------------------
 
-Setting the slide dimensions is simple in some common carousel layouts;
-for example, all slides are 300×200, or all slides are full-width
-and show images that all have the exact same aspect ratio.
+Setting slide dimensions is simple in some layouts; for example,
+all slides are 300×200, or all slides are full-width and show
+images that all have the exact same aspect ratio.
 
 Things get difficult if you want to set a uniform slide height
 based on a dynamic width.
@@ -39,7 +39,7 @@ Height is not. You can’t do this:
 ```
 
 For carousels whose slide dimensions are controlled in CSS only,
-like the demos one the Omni website, this is a problem that needs solving.
+like the Omni demos, this is a problem that needs solving.
 There are two ways to solve it.
 
 

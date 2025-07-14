@@ -12,7 +12,7 @@ Be careful to hide the scrollbar only when there is other UI
 for interacting with the carousel; that is, only when
 Omni has set up and is enhancing the scrollable area.
 
-You can check for the same features Omni checks for before it starts:
+You can check for the same features Omni checks for:
 
 ```css
 @supports (scroll-behavior: smooth) and (aspect-ratio: 1) {
