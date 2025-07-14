@@ -22,12 +22,17 @@
     "README.md"
   ],
   "keywords": [
-    "slider",
+    "accessibility",
     "carousel",
-    "slideshow",
-    "gallery",
+    "css",
     "javascript",
-    "typescript"
+    "intersection-observer",
+    "slider",
+    "scroll-behavior",
+    "scroll-into-view",
+    "scroll-snap-align",
+    "typescript",
+    "vanilla-js"
   ],
   "repository": {
     "type": "git",
