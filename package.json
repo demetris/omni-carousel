@@ -22,7 +22,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.4.1",
     "@pagefind/default-ui": "^1.3.0",
-    "astro": "^5.11.0",
+    "astro": "^5.11.1",
     "nanoevents": "^9.1.0"
   },
   "devDependencies": {
