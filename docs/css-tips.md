@@ -8,9 +8,7 @@ Tips for improving carousels/scrollers made with CSS
 How to hide the track scrollbar
 ----------------------------------------
 
-Be careful to hide the scrollbar only when there is other UI
-for interacting with the carousel; that is, only when
-Omni has set up and is enhancing the scrollable area.
+Be careful to hide the scrollbar only when Omni has set up and is enhancing the scrollable area with alternative navigation.
 
 You can check for the same features Omni checks for:
 
