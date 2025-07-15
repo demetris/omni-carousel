@@ -1,29 +1,60 @@
 import type { Context } from '../types';
 
 /**
- * Updates the previous and start button states based on whether the first item is fully visible
+ * Updates the previous and start button states based on current position
  *
  * @param context - The carousel context
  */
 export const updateBackwardButtons = (context: Context): void => {
   const { prevButton, startButton } = context.elements;
-  const { startItemFullIntersecting } = context.state;
+  const { startItemFullIntersecting, centeredItemIndex } = context.state;
+  const { hasCenterMode } = context.config;
 
-  prevButton?.toggleAttribute('disabled', startItemFullIntersecting);
-  startButton?.toggleAttribute('disabled', startItemFullIntersecting);
+  let atStart;
+
+  if (hasCenterMode) {
+    //
+    // @neededfor hasCenterMode:true
+    //
+     atStart =
+      startItemFullIntersecting
+      && (centeredItemIndex === 0)
+    ;
+  } else {
+    atStart = startItemFullIntersecting;
+  }
+
+  prevButton?.toggleAttribute('disabled', atStart);
+  startButton?.toggleAttribute('disabled', atStart);
 };
 
 /**
- * Updates the next and end button states based on whether the last item is fully visible
+ * Updates the next and end button states based on current position
  *
  * @param context - The carousel context
  */
 export const updateForwardButtons = (context: Context): void => {
   const { nextButton, endButton } = context.elements;
-  const { endItemFullIntersecting } = context.state;
+  const { endItemFullIntersecting, centeredItemIndex } = context.state;
+  const { hasCenterMode } = context.config;
+  const { slides } = context.elements;
 
-  nextButton?.toggleAttribute('disabled', endItemFullIntersecting);
-  endButton?.toggleAttribute('disabled', endItemFullIntersecting);
+  let atEnd;
+
+  if (hasCenterMode) {
+    //
+    // @neededfor hasCenterMode:true
+    //
+    atEnd =
+      endItemFullIntersecting
+      && (centeredItemIndex === slides.length - 1)
+    ;
+  } else {
+    atEnd = endItemFullIntersecting;
+  }
+
+  nextButton?.toggleAttribute('disabled', atEnd);
+  endButton?.toggleAttribute('disabled', atEnd);
 };
 
 /**

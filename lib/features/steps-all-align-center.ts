@@ -1,5 +1,7 @@
 import type { Context, ScrollDirection } from '../types';
 
+import { updateBackwardButtons, updateForwardButtons } from './buttons';
+
 import {
   getFallbackItem,
   getRectCenterX,
@@ -83,6 +85,14 @@ export const getCentermostItem = (
   if (context.state.centeredItemIndex !== itemIndex) {
     context.state.previousCenteredItemIndex = context.state.centeredItemIndex;
     context.state.centeredItemIndex = itemIndex;
+
+    //
+    // @neededfor hasCenterMode:true
+    //
+    if (context.config.hasCenterMode) {
+      updateBackwardButtons(context);
+      updateForwardButtons(context);
+    }
   }
 
   return item;

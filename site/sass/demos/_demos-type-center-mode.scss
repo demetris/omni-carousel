@@ -1,0 +1,40 @@
+@use '@sass/mixins/media-queries' as mq;
+
+///
+///
+///
+.demo--center-mode {
+  --d-center-push: calc((var(--width-for-content) - var(--d-slide-width)) / 2);
+}
+
+.demo--center-mode {
+  [data-omni-track] {
+    &::before,
+    &::after {
+      flex: none;
+
+      width: var(--d-center-push);
+
+      content: "";
+    }
+  }
+
+  [data-omni-slide] {
+  }
+}
+
+.demo--center-mode.is-omni-ready {
+  [data-omni-slide] {
+    transition-duration: calc(var(--transition-duration) * 2);
+    transition-property: opacity;
+    transition-timing-function: linear;
+  }
+
+  .is-omni-current {
+    opacity: 1;
+  }
+
+  [data-omni-slide]:not(.is-omni-current) {
+    opacity: 0.5;
+  }
+}

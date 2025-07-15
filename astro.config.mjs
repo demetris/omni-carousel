@@ -50,7 +50,7 @@ export default defineConfig({
 
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/demos/dist-package/')
+      filter: (page) => !page.includes('/demos/dist-package/') && !page.includes('/demos/center-mode/')
     }),
   ],
 });

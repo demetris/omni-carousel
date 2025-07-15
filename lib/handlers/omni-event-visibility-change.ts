@@ -47,12 +47,20 @@ export const updateUI = (context: Context, data: {
     wasPartIntersecting,
   );
 
-  if (data.startBoundaryChanged) {
-    updateBackwardButtons(context);
-  }
+  //
+  // @neededfor hasCenterMode:true
+  //
+  // To be exact:
+  // Needed to exclude the case were hasCenterMode is true
+  //
+  if (!context.config.hasCenterMode) {
+    if (data.startBoundaryChanged) {
+      updateBackwardButtons(context);
+    }
 
-  if (data.endBoundaryChanged) {
-    updateForwardButtons(context);
+    if (data.endBoundaryChanged) {
+      updateForwardButtons(context);
+    }
   }
 
   if (context.state.hasIndicators) {

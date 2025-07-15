@@ -1,0 +1,43 @@
+---
+import Demos from '@components/Demos.astro';
+import Carousel from '@components/carousel/Carousel.astro';
+---
+
+<Demos
+  title="Center mode"
+  description="Carousels with the first and last slide centered"
+>
+  <Carousel
+    title="Digits"
+    ariaLabel="Center mode carousel with digit slides"
+    classes={[
+      'demo--snap-center',
+      'demo--center-mode',
+      'demo--digits',
+      'demo--squares',
+      'demo--no-scrollbar',
+    ]}
+    indicators={true}
+    digitCount={12}
+  >
+    <Fragment slot="description">
+      <dl>
+        <dt>Experimental demo</dt>
+        <dd></dd>
+      </dl>
+    </Fragment>
+  </Carousel>
+
+  <script>
+    import { domReady } from '@utils/dom-ready';
+    import { createOmniCarousel } from '@lib/index';
+
+    domReady(() => {
+      const digitsCarouselRoot = document.querySelector('.demo--digits');
+      
+      createOmniCarousel(digitsCarouselRoot as HTMLElement, {
+        hasCenterMode: true }
+      ).init();
+    });
+  </script>
+</Demos>

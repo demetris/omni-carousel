@@ -33,6 +33,7 @@ export interface Options {
   scrollSteps?: ScrollSteps;
   scrollAlign?: ScrollAlign;
   hasEqualWidths?: boolean;
+  hasCenterMode?: boolean;
   indicatorNumbers?: boolean;
   transitionHelpers?: boolean;
   preloadAdjacentImages?: boolean;
@@ -105,6 +106,7 @@ export interface Config {
   selectors: Selectors;
 
   hasEqualWidths: boolean;
+  hasCenterMode: boolean;
   indicatorNumbers: boolean;
   transitionHelpers: boolean;
   preloadAdjacentImages: boolean;

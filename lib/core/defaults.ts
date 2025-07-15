@@ -24,6 +24,7 @@ export const defaults = {
   selectors: defaultSelectors,
 
   hasEqualWidths: true,
+  hasCenterMode: false,
   indicatorNumbers: false,
   transitionHelpers: false,
   preloadAdjacentImages: false,
