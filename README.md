@@ -30,6 +30,7 @@ Features
 -   Caches slide and navigation data to reduce DOM queries
 -   Uses fully configurable CSS selectors
 -   Sets up lazily (only when needed)
+-   Uses browser APIs exclusively
 -   Fully typed
 
 
