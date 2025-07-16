@@ -51,7 +51,7 @@ Browser support
 -   Safari v15.4+ (Mar 2022)
 
 In older browsers Omni logs the features it looked for
-and did not find and then exits.
+and didn’t find and then exits.
 
 The features Omni checks for are:
 
