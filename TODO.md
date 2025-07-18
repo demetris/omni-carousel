@@ -9,6 +9,12 @@ Library
 -   [ ] Ignore non-button buttons in setup, print appropriate and informative message
 -   [ ] `scrollToCenter`. Use happy path for unequal widths too if inboundItems is just one.
 -   [ ] Create GitHub releases for new versions (minimal approach - point to CHANGELOG.md)
+-   [ ] Add missing @returns JSDoc tags for non-void functions (5 functions)
+    -   determineScrollMode
+    -   getContainerLeft
+    -   getItemIndex
+    -   getItemWidth
+    -   handleInit
 
 
 Site and docs
