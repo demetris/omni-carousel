@@ -18,6 +18,7 @@ Features
     -   Better keyboard support
     -   Button handling (previous/next/start/end)
     -   Indicators (that are also navigation controls)
+-   Adds CSS state classes for conditional styling
 -   Works with different setups:
     -   Responsive slides
     -   Full-width slides
