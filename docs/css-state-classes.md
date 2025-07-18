@@ -1,13 +1,13 @@
 
-CSS utilities
+CSS state classes
 ================================================================================
 
 
-CSS utility classes added by Omni based on the state of the carousel and its parts
+CSS classes added by Omni based on the state of the carousel and its parts
 
 
-You can use the CSS utility classes on this page
-to add styling based on visibility, position, and user interaction.
+Use these CSS state classes to create conditional styling
+based on carousel state, slide visibility, and user interaction.
 
 
 is-omni-ready

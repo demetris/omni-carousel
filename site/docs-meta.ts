@@ -19,9 +19,9 @@ export const docsMeta: Record<string, DocMeta> = {
     title: "CSS",
     description: "Essential CSS for setting the foundations of a flex-based carousel layout",
   },
-  "css-utilities": {
-    title: "CSS utilities",
-    description: "CSS classes provided by Omni Carousel for styling and effects",
+  "css-state-classes": {
+    title: "CSS state classes",
+    description: "CSS classes provided by Omni Carousel for conditional styling based on carousel state",
   },
   "css-tips": {
     title: "CSS tips",
