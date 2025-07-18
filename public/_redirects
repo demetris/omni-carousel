@@ -6,14 +6,14 @@
 #
 # Omni Carousel pages
 #
-/docs/config/       /docs/configuration-options/            301
-/docs/tips/         /docs/css-tips/                         301
-/docs/css/          /docs/css-essential-and-recommended/    301
-/docs/html/         /docs/html-markup/                      301
-/docs/css-utilities/ /docs/css-state-classes/               301
+/docs/config/           /docs/configuration-options/             301
+/docs/tips/             /docs/css-tips/                          301
+/docs/css/              /docs/css-essential-and-recommended/     301
+/docs/html/             /docs/html-markup/                       301
+/docs/css-utilities/    /docs/css-state-classes/                 301
 
 #
 # Stupid bots
 #
-/sitemap.xml        /sitemap-index.xml                      301
-/sitemap_index.xml  /sitemap-index.xml                      301
+/sitemap.xml            /sitemap-index.xml                       301
+/sitemap_index.xml      /sitemap-index.xml                       301
