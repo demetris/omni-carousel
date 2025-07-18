@@ -92,6 +92,8 @@ is-omni-entering & is-omni-exiting
 
 CSS classes added to slides as they enter and leave the track viewport.
 
+These classes are not added by default. If you want to use them, add `transitionHelpers: true` in your configuration.
+
 
 is-omni-indicator-overflow
 ----------------------------------------
