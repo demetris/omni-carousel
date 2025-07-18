@@ -100,8 +100,10 @@ For a complete example with all markup options, see [HTML markup](docs/html-mark
 For the CSS needed to make a functional scroller/carousel, see:
 
 -   [Essential and recommended CSS](docs/css-essential-and-recommended.md)
--   [CSS state classes available in Omni](docs/css-state-classes.md)
 -   [CSS tips](docs/css-tips.md)
+
+For conditional styling using the Omni classes, see
+[CSS state classes](docs/css-state-classes.md)
 
 
 ### Installation
