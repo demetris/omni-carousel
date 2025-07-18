@@ -119,9 +119,13 @@
 }
 
 [data-omni-track] {
-  width: var(--width-for-content);
+  position: relative;               /// Used for positioning the invisible anchor; added if missing
+
+  margin-block: 0;
   margin-inline: auto;
+  width: var(--width-for-content);
   padding-bottom: var(--md);
+  padding-inline: 0;
 }
 
 [data-omni-slide] {
@@ -130,6 +134,21 @@
   width: var(--d-slide-width);
   height: var(--d-slide-height);
   padding-left: 0;
+
+  &:first-child {
+    margin-left: auto;
+  }
+
+  &:last-child {
+    margin-right: auto;
+  }
+
+  ///
+  /// Use margin-right instead of gap in order to support Safari before v14.1
+  ///
+  &:not(:last-child) {
+    margin-right: var(--d-gap);
+  }
 
   img {
     object-fit: cover;

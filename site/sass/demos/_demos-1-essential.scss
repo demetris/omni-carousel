@@ -4,31 +4,8 @@
   display: flex;                    /// Required for horizontal layout
   width: 100%;                      /// Required for proper sizing
   overflow-x: auto;                 /// Essential for scrolling
-
-  margin-block: 0;
-  padding-right: 0;
-  padding-left: 0;
 }
 
 [data-omni-slide] {
   flex: none;                       /// Essential to prevent slides from shrinking
-  max-width: 100%;
-
-  &:first-child {
-    margin-left: auto;
-  }
-
-  &:last-child {
-    margin-right: auto;
-  }
-
-  ///
-  /// Use margin-right instead of gap in order to support Safari before v14.1
-  ///
-  &:not(:last-child) {
-    margin-right: var(--d-gap);
-  }
-}
-
-@include mq.from-md {
 }
