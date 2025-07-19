@@ -124,7 +124,7 @@ const carousel = createOmniCarousel(root);
 carousel.init();
 ```
 
-`createOmniCarousel` also takes a second parameter, for passing
+`createOmniCarousel` also takes a second argument, for passing
 [configuration options](docs/configuration-options.md)
 
 Example:
