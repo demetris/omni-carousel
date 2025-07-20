@@ -296,7 +296,7 @@ body {
 
   position: absolute;
   left: calc(var(--padding-left-for-results) * -1);
-  top: 0.25rem;
+  top: 0.4375rem;
 
   background-color: currentColor;
 
@@ -318,7 +318,7 @@ body {
 }
 
 .pagefind-ui__result:has(a[href^="/demos"])::before {
-  top: 0.375rem;
+  top: 0.4375rem;
 
   width: var(--width-for-marker-heavy);
   height: var(--width-for-marker-heavy);
