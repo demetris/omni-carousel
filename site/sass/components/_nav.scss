@@ -60,6 +60,7 @@ body.is-menu-open {
   }
 
   @include mq.from-multi-col {
+    padding-bottom: 0;
   }
 }
 

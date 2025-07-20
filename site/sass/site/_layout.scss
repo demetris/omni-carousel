@@ -52,10 +52,13 @@
   }
 
   .nav {
-    position:fixed;
+    position: fixed;
     top: calc(var(--height-for-header) + var(--border-width-for-section));
+    max-height: var(--max-height-for-nav);
+    overflow-y: auto;
 
     padding-left: var(--space-x);
+    padding-right: var(--lg);
   }
 
   .main {

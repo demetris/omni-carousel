@@ -89,7 +89,9 @@
   --height-for-header-row-title: 72px;
   --height-for-header-row-search: 60px;
   --height-for-header: calc(var(--height-for-header-row-title) + var(--height-for-header-row-search));
-  --height-for-footer: 128px;
+
+  --max-height-for-footer: 128px;
+  --height-for-footer: var(--max-height-for-footer);
 
   --gap-for-branding: var(--xs);
   --width-for-logo: var(--xl);
@@ -99,6 +101,16 @@
 
     --height-for-header-row-search: 6rem;
     --height-for-header: var(--height-for-header-row-search);
+
+    --min-height-for-footer: 72px;
+    --height-for-footer: clamp(var(--min-height-for-footer), 12.5vh, var(--max-height-for-footer));
+
+    --max-height-for-nav: calc(
+      100vh
+      - var(--height-for-header)
+      - var(--border-width-for-section)
+      - var(--height-for-footer)
+    );
   }
 }
 
@@ -160,6 +172,11 @@
 
   @include mq.from-md-lg {
     --scale: var(--scale-lg);
+  }
+
+  @include mq.from-2xl {
+    --font-size-for-menu-title: var(--md-sm);
+    --font-size-for-menu: var(--sm);
   }
 }
 
