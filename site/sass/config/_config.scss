@@ -18,6 +18,8 @@
   --z-index-for-skip-link:    10000;
   --z-index-for-header:       1000;
   --z-index-for-mobile-menu:  1;
+  
+  --is-multi-col: 0;
 }
 
 ///
@@ -97,6 +99,8 @@
   --width-for-logo: var(--xl);
 
   @include mq.from-multi-col {
+    --is-multi-col: 1;
+    
     --height-for-button: 3rem;
 
     --height-for-header-row-search: 6rem;
