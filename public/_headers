@@ -4,3 +4,6 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
+  Link: </fonts/lato-v24-latin-regular.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
+  Link: </fonts/lato-v24-latin-700.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
+  Link: </fonts/ibm-plex-mono-v19-latin-regular.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
