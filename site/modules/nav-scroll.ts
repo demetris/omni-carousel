@@ -35,9 +35,7 @@ if (nav) {
   }
 }
 
-//
-// Footer intersection detection for accurate nav height calculation
-//
+/*
 const footer = document.querySelector('body > .footer') as HTMLElement | null;
 
 if (footer) {
@@ -53,3 +51,4 @@ if (footer) {
 
   observer.observe(footer);
 }
+*/
