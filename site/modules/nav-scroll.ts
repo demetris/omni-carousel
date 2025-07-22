@@ -34,3 +34,22 @@ if (nav) {
     nav.scrollTop = parseInt(sessionStorage.getItem('nav-scroll-top')!, 10);
   }
 }
+
+//
+// Footer intersection detection for accurate nav height calculation
+//
+const footer = document.querySelector('body > .footer') as HTMLElement | null;
+
+if (footer) {
+  const observer = new IntersectionObserver((entries) => {
+    const ratio = entries[0].intersectionRatio;
+    document.documentElement.style.setProperty(
+      '--footer-intersection-ratio',
+      ratio.toString()
+    );
+  }, {
+    threshold: [0, 0.25, 0.5, 0.75, 1.0]
+  });
+
+  observer.observe(footer);
+}

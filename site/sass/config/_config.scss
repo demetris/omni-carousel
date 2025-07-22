@@ -17,6 +17,7 @@
 :root {
   --z-index-for-skip-link:    10000;
   --z-index-for-header:       1000;
+  --z-index-for-footer:       2;
   --z-index-for-mobile-menu:  1;
 
   --is-multi-col: 0;
@@ -109,7 +110,7 @@
       100vh
       - var(--height-for-header)
       - var(--border-width-for-section)
-      - var(--height-for-footer)
+      - (var(--height-for-footer) * var(--footer-intersection-ratio, 1))
     );
   }
 }
