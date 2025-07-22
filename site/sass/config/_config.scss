@@ -18,7 +18,7 @@
   --z-index-for-skip-link:    10000;
   --z-index-for-header:       1000;
   --z-index-for-mobile-menu:  1;
-  
+
   --is-multi-col: 0;
 }
 
@@ -92,22 +92,18 @@
   --height-for-header-row-search: 60px;
   --height-for-header: calc(var(--height-for-header-row-title) + var(--height-for-header-row-search));
 
-  --max-height-for-footer: 128px;
-  --height-for-footer: var(--max-height-for-footer);
+  --height-for-footer: 224px;
 
   --gap-for-branding: var(--xs);
   --width-for-logo: var(--xl);
 
   @include mq.from-multi-col {
     --is-multi-col: 1;
-    
+
     --height-for-button: 3rem;
 
     --height-for-header-row-search: 6rem;
     --height-for-header: var(--height-for-header-row-search);
-
-    --min-height-for-footer: 72px;
-    --height-for-footer: clamp(var(--min-height-for-footer), 12.5vh, var(--max-height-for-footer));
 
     --max-height-for-nav: calc(
       100vh

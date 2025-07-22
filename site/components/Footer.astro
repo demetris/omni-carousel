@@ -6,5 +6,17 @@ const yearRange = currentYear === SITE.since ? SITE.since : `${SITE.since}–${c
 ---
 
 <footer class="footer">
-  © {SITE.authorName} {yearRange}
+  <div class="footer__euripides">
+    <p>
+      <span lang="grc">σώφρονος δ᾽ ἀπιστίας οὐκ ἔστιν οὐδὲν χρησιμώτερον βροτοις</span>
+      <br />
+      <cite class="footer__euripides-attribution">—Euripides, Helene, 1616–1617</cite>
+    </p>
+    <p>
+      Man’s most valuable trait is a judicious sense of what not to believe.
+    </p>
+  </div>
+  <div class="footer__copy">
+    © {SITE.authorName} {yearRange}
+  </div>
 </footer>
