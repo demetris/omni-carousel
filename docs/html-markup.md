@@ -21,7 +21,7 @@ For the accessibility attributes, please also see:
 >
 
   <!--
-  Optional navigation buttons — handled by Omni if present.
+  Optional navigation buttons — handled if present.
 
   The nav element is not required:
   Buttons can be placed anywhere, as long as they are
@@ -34,9 +34,10 @@ For the accessibility attributes, please also see:
   -->
   <nav>
     <!--
-      The previous button should typically be disabled at first (we are at the start).
-      Omni manages this and sets the button to disabled when it starts,
-      but you can also include the attribute here to avoid
+      The previous button should typically be disabled at first
+      (since we are at the start). Omni manages this and sets
+      the button to disabled when it starts, but you can
+      also include the attribute here to avoid
       the initial state mismatch.
     -->
     <button
