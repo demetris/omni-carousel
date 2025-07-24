@@ -20,6 +20,7 @@ Library
 Site and docs
 ----------------------------------------
 
+-   [ ] Create css-tips-responsive.md with mathematical responsive calculations and decipixel technique
 -   [ ] Add clarification to Browser support section: what happens to carousel when Omni exits?
 -   [ ] Extract demo CSS from Astro files into separate SCSS files for each demo type and link to them from demo pages
 -   [ ] Implement search term highlighting on pages when navigating from search results
