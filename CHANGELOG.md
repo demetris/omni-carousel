@@ -3,6 +3,13 @@ Omni Carousel releases and changes
 ================================================================================
 
 
+0.2.6 (2025-07-25)
+----------------------------------------
+
+-   Added logic to handle (unhide) initially hidden navigation buttons (a11y)
+-   Updated *HTML markup* page to include the hidden attribute and explain its utility
+
+
 0.2.5 (2025-07-06)
 ----------------------------------------
 
