@@ -96,27 +96,30 @@ const count = hasPhotos ? photoIDs.length : (hasDigits ? digitCount : 0);
     <nav class="demo-nav">
       { boundaryButtons && (
         <button
+          hidden
+          disabled
           class="demo-button"
           type="button"
           aria-label="Go to first slide"
           aria-controls={trackID}
           data-omni-button-start
-          disabled
         >
           <AnglesLeft />
         </button>
       )}
       <button
+        hidden
+        disabled
         class="demo-button"
         type="button"
         aria-label="Go to previous slide"
         aria-controls={trackID}
         data-omni-button-prev
-        disabled
       >
         <AngleLeft />
       </button>
       <button
+        hidden
         class="demo-button"
         type="button"
         aria-label="Go to next slide"
@@ -127,6 +130,7 @@ const count = hasPhotos ? photoIDs.length : (hasDigits ? digitCount : 0);
       </button>
       { boundaryButtons && (
         <button
+          hidden
           class="demo-button"
           type="button"
           aria-label="Go to last slide"
