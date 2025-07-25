@@ -237,7 +237,7 @@ export interface InboundItems {
 }
 
 export interface InitialState {
-  buttonAttributes: Map<HTMLButtonElement, boolean>;
+  buttonAttributes: Map<HTMLButtonElement, { disabled: boolean; hidden: boolean; }>;
   trackCSSPosition?: string;
 }
 

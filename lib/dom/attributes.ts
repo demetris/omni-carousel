@@ -21,7 +21,10 @@ export const captureInitialAttributes = (
   [prevButton, nextButton, startButton, endButton]
     .filter((button): button is HTMLButtonElement => button !== undefined)
     .forEach(button => {
-      initialState.buttonAttributes.set(button, button.hasAttribute('disabled'));
+      initialState.buttonAttributes.set(button, {
+        disabled: button.hasAttribute('disabled'),
+        hidden: button.hasAttribute('hidden')
+      });
     }
   );
 };
@@ -35,13 +38,22 @@ export const captureInitialAttributes = (
  * @param context - The carousel context
  */
 export const setElementAttributes = (context: Context): void => {
-  const { root, indicators } = context.elements;
+  const { root, indicators, prevButton, nextButton, startButton, endButton } = context.elements;
 
   root.classList.add(internal.classes.setupComplete);
 
   indicators.forEach((indicator, index) => {
     indicator.setAttribute('aria-label', `Go to slide ${index + 1}`);
   });
+
+  //
+  // Remove hidden attribute from buttons to make them accessible
+  //
+  [prevButton, nextButton, startButton, endButton]
+    .filter((button): button is HTMLButtonElement => button !== undefined)
+    .forEach(button => {
+      button.removeAttribute('hidden');
+    });
 };
 
 /**
@@ -65,8 +77,9 @@ export const resetElementAttributes = (
   //
   // Restore button states
   //
-  initialState.buttonAttributes.forEach((initiallyDisabled: boolean, button: HTMLButtonElement) => {
-    button.toggleAttribute('disabled', initiallyDisabled);
+  initialState.buttonAttributes.forEach((initialState: { disabled: boolean; hidden: boolean; }, button: HTMLButtonElement) => {
+    button.toggleAttribute('disabled', initialState.disabled);
+    button.toggleAttribute('hidden', initialState.hidden);
   });
 
   //
