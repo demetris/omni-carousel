@@ -38,7 +38,14 @@ export const captureInitialAttributes = (
  * @param context - The carousel context
  */
 export const setElementAttributes = (context: Context): void => {
-  const { root, indicators, prevButton, nextButton, startButton, endButton } = context.elements;
+  const {
+    root,
+    indicators,
+    prevButton,
+    nextButton,
+    startButton,
+    endButton
+  } = context.elements;
 
   root.classList.add(internal.classes.setupComplete);
 
@@ -77,10 +84,12 @@ export const resetElementAttributes = (
   //
   // Restore button states
   //
-  initialState.buttonAttributes.forEach((initialState: { disabled: boolean; hidden: boolean; }, button: HTMLButtonElement) => {
-    button.toggleAttribute('disabled', initialState.disabled);
-    button.toggleAttribute('hidden', initialState.hidden);
-  });
+  initialState.buttonAttributes.forEach(
+		(initialState: { disabled: boolean; hidden: boolean }, button: HTMLButtonElement) => {
+			button.toggleAttribute('disabled', initialState.disabled);
+			button.toggleAttribute('hidden', initialState.hidden);
+		}
+	);
 
   //
   // Restore track position if we changed it
