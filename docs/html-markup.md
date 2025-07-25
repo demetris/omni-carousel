@@ -34,6 +34,12 @@ For the accessibility attributes, please also see:
   -->
   <nav>
     <!--
+      HIDDEN attribute
+      The buttons do nothing if Omni is not set up.
+      Remove them from the accessibility tree.
+      Omni will unhide them when it sets up.
+
+      DISABLED attribute
       The previous button should typically be disabled at first
       (since we are at the start). Omni manages this and sets
       the button to disabled when it starts, but you can
@@ -41,6 +47,7 @@ For the accessibility attributes, please also see:
       the initial state mismatch.
     -->
     <button
+      hidden
       disabled
       data-omni-button-prev
       type="button"
@@ -50,6 +57,7 @@ For the accessibility attributes, please also see:
       Prev
     </button>
     <button
+      hidden
       data-omni-button-next
       type="button"
       aria-label="Go to next slide"
@@ -93,5 +101,5 @@ For the accessibility attributes, please also see:
 </section>
 ```
 
-The `data-omni-*` attributes tell Omni which elements to manage.
+The `data-omni-*` attributes tell Omni which elements to watch and manage.
 You can customize these selectors in the [configuration options](configuration-options.md).
