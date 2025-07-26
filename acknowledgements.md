@@ -38,4 +38,3 @@ Icons
 
 -   [FontAwesome](https://fontawesome.com) - SVG icons used throughout the site
 -   [Simple Icons](https://simpleicons.org) - Brand icons
--   [Veronika Krpciarova](https://thenounproject.com/creator/v.krpciarova) - The logo asterisk (CC BY 3.0)
