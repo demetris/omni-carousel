@@ -35,6 +35,14 @@ export const docsMeta: Record<string, DocMeta> = {
     title: "Know your width",
     description: "Techniques for controlling width and height of responsive slides in flex-based carousels",
   },
+  "css-tips-peek-a-boo": {
+    title: "CSS tips: Peek-a-boo effect",
+    description: "How to create peek-a-boo effects in flex-based carousels using pseudo-elements and custom properties",
+  },
+  "css-tips-responsive-slides": {
+    title: "CSS tips: Responsive slides",
+    description: "Techniques for creating slides that adapt to different screen sizes using per-view calculations and aspect ratios",
+  },
 };
 
 export function getDocMeta(docId: string): DocMeta | undefined {
