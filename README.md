@@ -66,7 +66,7 @@ Quick start
 
 ### Expected markup
 
-Omni needs THREE things:
+Omni needs three things:
 
 -   A **root** container
 -   A slide **track** inside it
