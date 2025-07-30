@@ -8,7 +8,7 @@ A JavaScript library to enhance scrollable areas
 Omni Carousel is a library that takes [CSS-only carousels that work like this](https://omnicarousel.dev/demos/no-js/) and [adds enhancements and affordances like these](https://omnicarousel.dev/demos/one-per-view/).
 
 Omni Carousel leaves the markup and layout up to the author
-and focuses on the things you cannot do without JavaScript.
+and focuses on the things you can only do with JavaScript.
 
 
 Features
