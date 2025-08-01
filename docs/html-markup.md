@@ -38,7 +38,7 @@ For the accessibility attributes, please also see:
       The buttons do nothing when Omni is not set up
       and should not be in the accessibility tree.
       Add the hidden attribute to remove them.
-      Omni will unhide them automaticaaly
+      Omni will unhide them automatically
       when it sets up.
 
       DISABLED attribute
