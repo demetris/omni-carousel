@@ -35,9 +35,11 @@ For the accessibility attributes, please also see:
   <nav>
     <!--
       HIDDEN attribute
-      The buttons do nothing if Omni is not set up.
-      Remove them from the accessibility tree.
-      Omni will unhide them when it sets up.
+      The buttons do nothing when Omni is not set up
+      and should not be in the accessibility tree.
+      Add the hidden attribute to remove them.
+      Omni will unhide them automaticaaly
+      when it sets up.
 
       DISABLED attribute
       The previous button should typically be disabled at first
