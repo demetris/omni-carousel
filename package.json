@@ -20,9 +20,9 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.4.1",
+    "@astrojs/sitemap": "^3.4.2",
     "@pagefind/default-ui": "^1.3.0",
-    "astro": "^5.12.2",
+    "astro": "^5.12.8",
     "nanoevents": "^9.1.0"
   },
   "devDependencies": {
