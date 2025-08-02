@@ -31,6 +31,7 @@ export default tseslint.config(
       '**/node_modules/**',
       '**/.astro/**',
       '**/*.js',
+      '**/*.cjs',
       '**/*.mjs',
       '**/*.astro',
     ],
