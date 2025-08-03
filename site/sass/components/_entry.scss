@@ -120,11 +120,11 @@
   background-color: currentColor;
 
   font-size: calc(1em / var(--scale));
+
   ///
   /// When in a SCSS module, the URL should be relative to
   /// the main SCSS file, rather than the module itself!
   ///
-
   mask: url('../assets/icons/fa/arrow-up-right-from-square-solid-no-attrs.svg') no-repeat 50% 50%;
   mask-size: cover;
 
