@@ -141,12 +141,10 @@ Omni just expects a root with a track and two or more slides in the track.
 Development
 ----------------------------------------
 
-To work on Omni Carousel:
+To work on Omni Carousel,
+first clone the repo and install the dependencies:
 
 ```bash
-#
-# Clone and install dependencies
-#
 git clone https://github.com/demetris/omni-carousel.git
 cd omni-carousel
 npm install
