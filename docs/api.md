@@ -205,7 +205,7 @@ carousel.on('omni:destroy', (data) => {
 Native event handling
 ----------------------------------------
 
-You can also listen to custom events using native DOM methods:
+You can also listen to the custom Omni events using native DOM methods:
 
 ```js
 root.addEventListener('omni:nav:next', () => {
