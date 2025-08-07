@@ -11,15 +11,15 @@ import Carousel from '@components/carousel/Carousel.astro';
     title="Peek-a-boo effect"
     ariaLabel="Peek-a-boo carousel with photo slides (in CSS only)"
     classes={[
-      'demo--snap-center', 
+      'demo--no-js',
+      'demo--snap-center',
       'demo--peek-a-boo',
-      'demo--images',
-      'demo--no-js'
+      'demo--images'
     ]}
     indicators={false}
     photoIDs={[
       "alex-padurariu-5rlktbEX5bY",
-      "alex-padurariu-ZR48YvUpk04", 
+      "alex-padurariu-ZR48YvUpk04",
       "hamed-daram-776370",
       "clark-van-der-beken-chcyjyRQV74",
       "delila-ziebart-3P6E2y2lyus",
@@ -34,15 +34,15 @@ import Carousel from '@components/carousel/Carousel.astro';
     title="Responsive slides (1/2/3 per view)"
     ariaLabel="Carousel with slides of responsive width"
     classes={[
-      'demo--responsive',
+      'demo--no-js',
       'demo--snap-start',
-      'demo--images',
-      'demo--no-js'
+      'demo--responsive',
+      'demo--images'
     ]}
     indicators={false}
     photoIDs={[
       "alex-padurariu-5rlktbEX5bY",
-      "alex-padurariu-ZR48YvUpk04", 
+      "alex-padurariu-ZR48YvUpk04",
       "hamed-daram-776370",
       "clark-van-der-beken-chcyjyRQV74",
       "delila-ziebart-3P6E2y2lyus",
@@ -57,10 +57,11 @@ import Carousel from '@components/carousel/Carousel.astro';
     title="Fixed-width slides"
     ariaLabel="Carousel with slides of fixed width"
     classes={[
+      'demo--no-js',
+      'demo--snap-start',
       'demo--fixed-widths',
       'demo--squares',
-      'demo--digits',
-      'demo--no-js'
+      'demo--digits'
     ]}
     indicators={false}
     digitCount={16}
@@ -68,11 +69,12 @@ import Carousel from '@components/carousel/Carousel.astro';
 
   <Carousel
     title="One slide per view"
-    ariaLabel="Carousel with slides of full width (on per page)"
+    ariaLabel="Carousel with slides of full width (one per page)"
     classes={[
+      'demo--no-js',
+      'demo--snap-center',
       'demo--one-per-view',
-      'demo--digits',
-      'demo--no-js'
+      'demo--digits'
     ]}
     indicators={false}
     digitCount={4}
