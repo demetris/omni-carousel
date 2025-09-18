@@ -5,6 +5,11 @@
 .local/
 
 #
+# Deployment script
+#
+deploy.sh
+
+#
 # Claude Code
 #
 CLAUDE.md
