@@ -1,7 +1,27 @@
+#
+# DISALLOW
+#
+User-agent: Amazonbot
+User-agent: Bytespider
+User-agent: facebookexternalhit
+User-agent: meta-externalagent
+User-agent: Meta-ExternalAgent
+User-agent: MJ12bot
+User-agent: PetalBot
+User-agent: TurnitinBot
+Disallow: /
+
+#
+# ALLOW
+#
 User-agent: *
 Allow: /
 
+#
+# SITEMAP
+#
 Sitemap: https://omnicarousel.dev/sitemap-index.xml
 
+#
 # Omni Carousel documentation and demos site
-# All bots welcome to crawl respectfully
+#
