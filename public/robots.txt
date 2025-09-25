@@ -1,6 +1,7 @@
 #
 # DISALLOW
 #
+User-Agent: AliyunSecBot/Aliyun
 User-agent: Amazonbot
 User-agent: Bytespider
 User-agent: facebookexternalhit
