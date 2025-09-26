@@ -5,6 +5,7 @@ User-Agent: AliyunSecBot/Aliyun
 User-agent: Amazonbot
 User-agent: Bytespider
 User-agent: facebookexternalhit
+User-agent: GPTBot
 User-agent: meta-externalagent
 User-agent: Meta-ExternalAgent
 User-agent: MJ12bot
