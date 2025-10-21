@@ -60,6 +60,28 @@ The features Omni checks for are:
 2.  CSS aspect-ratio (good rough proxy for several browser APIs)
 
 
+Device and OS support
+----------------------------------------
+
+Chrome 88 is available on:
+
+-   Android 5.0 Lollipop (Nov 2014) and newer
+-   macOS 10.11 El Capitan (Sep 2015) and newer
+-   Windows 7 (Oct 2009) and newer
+
+Firefox 89 is available on:
+
+-   Android 5.0 Lollipop (Nov 2014) and newer
+-   macOS 10.12 Sierra (Jun 2016) and newer
+-   Windows 7 (Oct 2009) and newer
+
+Safari 15.4 is available on:
+
+-   iPad Air 2 (Oct 2014) and newer
+-   iPhone 6s and 6s Plus (Sep 2015) and newer
+-   macOS 10.15 Catalina (Oct 2019) and newer
+
+
 Quick start
 ----------------------------------------
 
