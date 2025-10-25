@@ -1,6 +1,6 @@
 
 #
-# Directory to for various files not tracked in Git
+# Directory for various files not tracked in Git
 #
 .local/
 
