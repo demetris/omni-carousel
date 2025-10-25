@@ -2,8 +2,9 @@
 Omni Carousel library map
 ================================================================================
 
-Concept inspired by Aider: <https://aider.chat/docs/repomap.html>
+Map concept inspired by Aider: <https://aider.chat/docs/repomap.html>
 
+-   2025-10-25. Tweak and simplify
 -   2025-10-21. Simplify and humanize the language in some places
 -   2025-07-20. Added description of 3-phase init
 -   2025-07-19. Updated by CC and Demetris, new section added (DOM querying)
@@ -229,7 +230,7 @@ Item spacing calculation
 -   `getItemSpacing()` - Calculates spacing between slides, caches result in state
 
 
-Key architectural patterns
+Key patterns
 ----------------------------------------
 
 ### Event flow
@@ -262,14 +263,9 @@ A ResizeObserver runs continuously after visibility, enabling:
 -   Automatic partial destroy on overflow → no overflow
 -   Automatic setup on no overflow → overflow
 
-### Performance optimizations
-
--   State-based caching for expensive calculations
--   Observers for efficient change detection
--   Passive event listeners
 
 
-Key architectural patterns: Performance: DOM querying
+Key patterns: Performance optimizations
 ----------------------------------------
 
 The codebase uses a number of techniques that
