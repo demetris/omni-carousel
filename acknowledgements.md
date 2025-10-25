@@ -5,7 +5,6 @@ Acknowledgements
 Services
 ----------------------------------------
 
--   [Netlify](https://netlify.com) - For hosting the Omni Carousel documentation site
 -   [GitHub](https://github.com) - For hosting the Omni Carousel source code and documentation
 -   [npm](https://www.npmjs.com) - Package registry for distributing Omni Carousel
 
