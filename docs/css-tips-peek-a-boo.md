@@ -5,6 +5,7 @@ How to create a peek-a-boo effect for flex-based carousels
 
 
 This page describes the technique used in the peek-a-boo demos on the Omni site.
+*peek-a-boo* is the term I use to describe centered carousels with partially visible previous and next slides.
 See [Know your width](css-tips-know-your-width.md) to understand how the
 responsive demos deal with the problem of slide dimensions.
 

@@ -37,7 +37,7 @@ export const docsMeta: Record<string, DocMeta> = {
   },
   "css-tips-peek-a-boo": {
     title: "CSS tips: Peek-a-boo effect",
-    description: "How to create peek-a-boo effects in flex-based carousels using pseudo-elements and custom properties",
+    description: "How to create peek-a-boo effects (carousels with partially visible previous and next slides) using CSS pseudo-elements and custom properties",
   },
   "css-tips-responsive-slides": {
     title: "CSS tips: Responsive slides",
