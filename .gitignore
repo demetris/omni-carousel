@@ -13,7 +13,7 @@ deploy.sh
 # Claude Code
 #
 CLAUDE.md
-**/.claude/settings.local.json
+.claude/
 
 #
 # build output
